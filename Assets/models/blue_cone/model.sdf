@@ -1,0 +1,39 @@
+<sdf version="1.7">
+    <model name="blue_cone">
+        <link name="link">
+            <visual name="visual">
+                <geometry>
+                    <mesh>
+                        <uri>model://blue_cone/meshes/mesh.dae</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+            <collision name="collision">
+                <geometry>
+                    <mesh>
+                        <uri>model://blue_cone/meshes/collision_mesh.dae</uri>
+                    </mesh>
+                </geometry>
+                <surface>
+                    <friction>
+                        <ode>
+                            <mu>1.2</mu>
+                            <mu2>1.2</mu2>
+                        </ode>
+                    </friction>
+                </surface>
+            </collision>
+            <inertial>
+                <mass>0.45</mass>
+                <inertia>
+                    <ixx>0.0016</ixx>
+                    <iyy>0.0016</iyy>
+                    <izz>0.001</izz>
+                    <iyz>0</iyz>
+                    <ixy>0</ixy>
+                    <ixz>0</ixz>
+                </inertia>
+            </inertial>
+        </link>
+    </model>
+</sdf>
