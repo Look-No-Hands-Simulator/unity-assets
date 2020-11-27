@@ -40,19 +40,6 @@ public class UDPReceive : MonoBehaviour {
 	public string allReceivedUDPPackets=""; // clean up this from time to time!
 	
 	
-	// start from shell
-	private static void Main()
-	{
-		UDPReceive receiveObj=new UDPReceive();
-		receiveObj.init();
-		
-		string text="";
-		do
-		{
-		//	text = Console.ReadLine();
-		}
-		while(!text.Equals("exit"));
-	}
 	// start from unity3d
 	public void Start()
 	{
@@ -135,8 +122,8 @@ public class UDPReceive : MonoBehaviour {
 
 
 				UDPData.xFloat= (float)convertedData[0];
-				UDPData.yFloat= (float)convertedData[1];
-				UDPData.zFloat= (float)convertedData[2];
+				UDPData.yFloat= (float)convertedData[2];
+				UDPData.zFloat= (float)convertedData[1];
 				//UDPData.pFloat= (float)convertedData[3];
 				//UDPData.qFloat= (float)convertedData[4];
 				//UDPData.rFloat= (float)convertedData[5];
