@@ -5,6 +5,7 @@ using System.IO;
 using System;
 using UnityEngine.UI;
 using System.Linq;
+using System.Text;
 
 // Class to hold values to pass through functions and events
 public class ClickArgs
@@ -14,6 +15,12 @@ public class ClickArgs
     public GameObject yellow = null;
     public List<GameObject> coneTrack = new List<GameObject>();
     public string choice;
+    public List<string> blueConeFiles = new List<string>();
+    public List<string> yellowConeFiles = new List<string>();
+    public List<List<string>> blueConesCoords = new List<List<string>>();
+    public List<List<string>> yellowConesCoords = new List<List<string>>();
+    public List<GameObject> yellowConeObjs = new List<GameObject>();
+    public List<GameObject> blueConeObjs = new List<GameObject>();
 }
 
 public class TrackGeneration : MonoBehaviour
@@ -36,14 +43,20 @@ public class TrackGeneration : MonoBehaviour
 
         // Tracks
         Dictionary<string, string> trackDirs = new Dictionary<string, string>();
-        trackDirs.Add("track1", "Assets/CSV/test1.csv");
-        trackDirs.Add("yellowdiagonal", "Assets/CSV/yellowdiag.csv");
-        dropOption = fillTrackDropdown(dropOption, trackDirs);
 
+        // Get track names
+        readCSVFolder(clickProps);
+        // Fill dropdown with track names
+        dropOption = fillTrackDropdown(dropOption, clickProps);
+
+        // Default dropdown track
         clickProps.choice = dropOption.captionText.text;
-        dropOption.onValueChanged.AddListener(delegate { updateChoice(clickProps, dropOption); } );
+        updateChoice(clickProps, dropOption);
+
+        // Allow for selection of track using dropdown
+        dropOption.onValueChanged.AddListener(delegate { updateChoice(clickProps, dropOption); });
         // Change track dir to selection on button click
-        trackButton.onClick.AddListener(() => { changeTrack(trackDirs, clickProps); } );
+        trackButton.onClick.AddListener(() => { loadTrack(yellow, blue, clickProps); });
 
     }
 
@@ -53,101 +66,140 @@ public class TrackGeneration : MonoBehaviour
 
     }
 
-    public static void updateChoice(ClickArgs clickProps, Dropdown dropOption)
+    public static void readCSVFolder(ClickArgs clickProps)
     {
-        clickProps.choice = dropOption.captionText.text;
+        // Get file names of cones
+        List<string> fileNames = new List<string>();
+        string[] files = Directory.GetFiles("Assets/CSV/", "*.csv");
+        foreach (string file in files)
+        {
+            fileNames.Add(Path.GetFileName(file));
+        }
+        // Split yellow cone file names into new structure
+        foreach (string name in fileNames)
+        {
+            if (name.EndsWith("tight.json.csv"))
+            {
+                // Yellow file
+                clickProps.yellowConeFiles.Add(name);
+            }
+            else if (name.EndsWith(".json.csv"))
+            {
+                // Blue file
+                clickProps.blueConeFiles.Add(name);
+            }
+        }
+
     }
 
-    public static Dropdown fillTrackDropdown(Dropdown dropOption, Dictionary<string, string> trackDirs) 
+    public static Dropdown fillTrackDropdown(Dropdown dropOption, ClickArgs clickProps)
     {
         dropOption.ClearOptions();
         List<string> dropOptionsList = new List<String>();
         // Fill the dropdown with track names
-        foreach (var track in trackDirs)
+        foreach (var track in clickProps.blueConeFiles)
         {
-            dropOptionsList.Add(track.Key);
+            dropOptionsList.Add(track);
         }
         // Fill dropdown obj with tracks
         dropOption.AddOptions(dropOptionsList);
         return dropOption;
     }
 
-    public static void changeTrack(Dictionary<string, string> trackDirs, ClickArgs clickProps)
+    public static void updateChoice(ClickArgs clickProps, Dropdown dropOption)
     {
-        string trackDir = "";
-        foreach (var val in trackDirs)
-        {
-            if (val.Key == clickProps.choice)
-            {
-                trackDir = val.Value;
-            }
-        }
-        clickProps.trackDir = trackDir;
-
-        if (clickProps.trackDir != "")
-        {
-            Debug.Log(trackDir);
-            // Read CSV. Each cone in list is {colour, x, y}
-            var trackInfo = readCSV(clickProps.trackDir);
-            loadTrack(trackInfo, clickProps.yellow, clickProps.blue, clickProps);
-        }
+        clickProps.choice = dropOption.captionText.text;
+        readCSVfiles(clickProps, clickProps.choice);
     }
 
-    public static List<List<string>> readCSV(string trackCSV)
+    public static void readCSVfiles(ClickArgs clickProps, string choice)
     {
-        // Read cone positions xy and colour from CSV
-        List<List<string>> trackInfo = new List<List<string>>();
-        using (var reader = new StreamReader(trackCSV))
+        // Get cone file directories
+        string blueConeFile = $"Assets/CSV/{choice}";
+        string yellowConeFile = $"Assets/CSV/{choice.Replace(".json.csv", "_tight.json.csv")}";
+
+        // Use directories to get cone coordinates
+        getConeCoords(clickProps, blueConeFile, clickProps.blueConesCoords);
+        getConeCoords(clickProps, yellowConeFile, clickProps.yellowConesCoords);
+    }
+
+
+    public static void getConeCoords(ClickArgs clickProps, string file, List<List<string>> coordList)
+    {
+        using (StreamReader reader = new StreamReader(file))
         {
             while (!reader.EndOfStream)
             {
                 var line = reader.ReadLine();
                 var values = line.Split(',');
 
-                trackInfo.Add(new List<string> { values[0], values[1], values[2] });
+                // XY
+                coordList.Add(new List<string> { values[0], values[1] });
             }
         }
 
-        return trackInfo;
     }
 
-    public static void loadTrack(List<List<string>> trackInfo, GameObject yellow, GameObject blue, ClickArgs clickProps)
+    public static void createConeObjects(List<GameObject> copyTrack,
+        GameObject coneColour, ClickArgs clickProps, char col,
+        List<List<string>> coneCoords)
+    {
+        // Delete old track
+        foreach (var cone in copyTrack)
+        {
+            Destroy(cone);
+        }
+        // Store edited cone objects; the reference to clickProps is necessary since C# can't pass obj
+        // properties as references
+        switch (col)
+        {
+            case 'y':
+                clickProps.yellowConeObjs = copyTrack;
+                break;
+            case 'b':
+                clickProps.blueConeObjs = copyTrack;
+                break;
+        }
+
+        // Generate track objects
+        foreach (var cone in coneCoords)
+        {
+            // Create a new cone in the correct colour
+            GameObject newCone = new GameObject();
+            newCone = GameObject.Instantiate(coneColour);
+
+            // Position cone to x and y
+            newCone.transform.position = new Vector3(float.Parse(cone[0]), 0, float.Parse(cone[1]));
+            // Append to storage
+            switch (col)
+            {
+                case 'y':
+                    clickProps.yellowConeObjs.Add(newCone);
+                    break;
+                case 'b':
+                    clickProps.blueConeObjs.Add(newCone);
+                    break;
+            }
+        }
+
+    }
+
+    public static void loadTrack(GameObject yellow, GameObject blue, ClickArgs clickProps)
     {
         // Show default objects to allow for duplication
         blue.SetActive(true);
         yellow.SetActive(true);
 
-        // Make copy of coneTrack
-        var copyConeTrack = clickProps.coneTrack.ToList();
+        // Make copies of cone tracks to allow for enumeration
+        var copyYellowTrack = clickProps.yellowConeObjs.ToList();
+        var copyBlueTrack = clickProps.blueConeObjs.ToList();
 
-        // Delete old track
-        foreach (var cone in copyConeTrack)
-        {
-            Destroy(cone);
-        }
-        // Store edited cone objects
-        clickProps.coneTrack = copyConeTrack;
+        // Create cone objects
+        createConeObjects(copyYellowTrack, yellow, clickProps, 'y',
+            clickProps.yellowConesCoords);
+        createConeObjects(copyBlueTrack, blue, clickProps, 'b',
+            clickProps.blueConesCoords);
 
-        // Generate track objects
-        foreach (var cone in trackInfo)
-        {
-            // Create a new cone in the correct colour
-            GameObject newCone = new GameObject();
-            switch (cone[0])
-            {
-                case "y":
-                    newCone = GameObject.Instantiate(yellow);
-                    break;
-                case "b":
-                    newCone = GameObject.Instantiate(blue);
-                    break;
-            }
-
-            // Position cone to x and y
-            newCone.transform.position = new Vector3(Int32.Parse(cone[1]), 0, Int32.Parse(cone[2]));
-            // Append to storage
-            clickProps.coneTrack.Add(newCone);
-        }
         // Hide default objects
         blue.SetActive(false);
         yellow.SetActive(false);
