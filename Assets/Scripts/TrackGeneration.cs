@@ -5,7 +5,6 @@ using System.IO;
 using System;
 using UnityEngine.UI;
 using System.Linq;
-using System.Text;
 
 // Class to hold values to pass through functions and events
 public class ClickArgs
@@ -13,7 +12,6 @@ public class ClickArgs
     public string trackDir = "";
     public GameObject blue = null;
     public GameObject yellow = null;
-    public List<GameObject> coneTrack = new List<GameObject>();
     public string choice;
     public List<string> blueConeFiles = new List<string>();
     public List<string> yellowConeFiles = new List<string>();
@@ -140,27 +138,10 @@ public class TrackGeneration : MonoBehaviour
 
     }
 
-    public static void createConeObjects(List<GameObject> copyTrack,
+    public static void createConeObjects(
         GameObject coneColour, ClickArgs clickProps, char col,
         List<List<string>> coneCoords)
     {
-        // Delete old track
-        foreach (var cone in copyTrack)
-        {
-            Destroy(cone);
-        }
-        // Store edited cone objects; the reference to clickProps is necessary since C# can't pass obj
-        // properties as references
-        switch (col)
-        {
-            case 'y':
-                clickProps.yellowConeObjs = copyTrack;
-                break;
-            case 'b':
-                clickProps.blueConeObjs = copyTrack;
-                break;
-        }
-
         // Generate track objects
         foreach (var cone in coneCoords)
         {
@@ -194,15 +175,29 @@ public class TrackGeneration : MonoBehaviour
         var copyYellowTrack = clickProps.yellowConeObjs.ToList();
         var copyBlueTrack = clickProps.blueConeObjs.ToList();
 
+        // Delete old track
+        foreach (var cone in copyYellowTrack)
+        {
+            Destroy(cone);
+        }
+        foreach (var cone in copyBlueTrack)
+        {
+            Destroy(cone);
+        }
+        clickProps.yellowConeObjs = copyYellowTrack;
+        clickProps.blueConeObjs = copyBlueTrack;
+
         // Create cone objects
-        createConeObjects(copyYellowTrack, yellow, clickProps, 'y',
-            clickProps.yellowConesCoords);
-        createConeObjects(copyBlueTrack, blue, clickProps, 'b',
-            clickProps.blueConesCoords);
+        createConeObjects(yellow, clickProps, 'y', clickProps.yellowConesCoords);
+        createConeObjects(blue, clickProps, 'b', clickProps.blueConesCoords);
 
         // Hide default objects
         blue.SetActive(false);
         yellow.SetActive(false);
+
+        // Empty the old coord lists
+        clickProps.blueConesCoords.Clear();
+        clickProps.yellowConesCoords.Clear();
 
     }
 
