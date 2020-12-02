@@ -25,15 +25,23 @@ using System.Threading;
 
 public class UDPReceive : MonoBehaviour {
 	
-	// receiving Thread
-	Thread receiveThread;
+	// car receiving Thread
+	Thread carReceiveThread;
 	
-	// udpclient object
+	//Cone position thread
+	private Thread coneRecieveThread;
+	
+	// udpclient object UNUSED?
 	UdpClient client;
+	
+	//Cone UDP client UNUSED?
+	UdpClient coneClient;
 	
 	// public
 	// public string IP = "127.0.0.1"; default local
 	public int port; // define > 8051
+	public int conePort; // define > 8051
+	
 	
 	// infos
 	public string lastReceivedUDPPacket="";
@@ -66,32 +74,21 @@ public class UDPReceive : MonoBehaviour {
 	// init
 	private void init()
 	{
-		// Endpunkt definieren, von dem die Nachrichten gesendet werden.
-		print("UDPSend.init()");
 		
 		// define port
 		port = 8051;
-		
-		// status
-		// print("Sending to 127.0.0.1 : "+port);
-		// print("Test-Sending to this Port: nc -u 127.0.0.1  "+port+"");
+		conePort = 8052;
 		
 		
-		// ----------------------------
-		// Abh�ren
-		// ----------------------------
-		// Lokalen Endpunkt definieren (wo Nachrichten empfangen werden).
-		// Einen neuen Thread f�r den Empfang eingehender Nachrichten erstellen.
-		receiveThread = new Thread(
-			new ThreadStart(ReceiveData));
-		receiveThread.IsBackground = true;
-		receiveThread.Start();
-		Debug.Log("Hey");
+		carReceiveThread = new Thread(
+			new ThreadStart(ReceiveCarData));
+		carReceiveThread.IsBackground = true;
+		carReceiveThread.Start();
 
 	}
 	
 	// receive thread
-	private  void ReceiveData()
+	private  void ReceiveCarData()
 	{
 		
 		client = new UdpClient(port);
@@ -143,6 +140,71 @@ public class UDPReceive : MonoBehaviour {
 		}
 	}
 	
+	private  void ReceiveConeData()
+	{
+		
+		client = new UdpClient(conePort);
+		
+		while (true)
+		{
+			
+			try
+			{
+				// Bytes empfangen.
+				IPEndPoint anyIP = new IPEndPoint(IPAddress.Any, 0);
+				byte[] data = client.Receive(ref anyIP);
+				Debug.Log(BitConverter.ToDouble(data,0).ToString());
+
+				double[] convertedData = new double[data.Length / 8];
+				Debug.Log("Data  length: " + data.Length);
+
+				Debug.Log("Converted  length: " + convertedData.Length);
+				double blueCount = BitConverter.ToDouble(data, 0);
+				double yellowCount =  BitConverter.ToDouble(data, 8);
+				UDPData.blueX = new float[(int)blueCount];
+				UDPData.blueY = new float[(int)blueCount];
+				UDPData.blueZ = new float[(int)blueCount];
+				
+				
+				UDPData.yellowX = new float[(int)yellowCount];
+				UDPData.yellowY = new float[(int)yellowCount];
+				UDPData.yellowZ = new float[(int)yellowCount];
+
+				for (int ii = 2; ii < convertedData.Length; ii++)
+				{
+					if (ii -2 <= blueCount)
+					{
+						UDPData.blueX[ii -2] = ((float) BitConverter.ToDouble(data, ii *8));
+						ii++;
+						UDPData.blueY[ii -2] = ((float) BitConverter.ToDouble(data, ii *8));
+						ii++;
+						UDPData.blueZ[ii -2] = ((float) BitConverter.ToDouble(data, ii* 8));
+					}
+					else
+					{
+						UDPData.yellowX[ii -2] = ((float) BitConverter.ToDouble(data, ii *8));
+						ii++;
+						UDPData.yellowY[ii -2] = ((float) BitConverter.ToDouble(data, ii *8));
+						ii++;
+						UDPData.yellowZ[ii -2] = ((float) BitConverter.ToDouble(data, ii* 8));
+					}
+				}
+
+				string text = Encoding.UTF8.GetString(data);
+
+
+
+				lastReceivedUDPPacket = text;
+				allReceivedUDPPackets=allReceivedUDPPackets+text;
+				
+			}
+			catch (Exception err)
+			{
+				print(err.ToString());
+			}
+		}
+	}
+	
 	// getLatestUDPPacket
 	// cleans up the rest
 	public string getLatestUDPPacket()
@@ -153,8 +215,8 @@ public class UDPReceive : MonoBehaviour {
 
 	void OnDisable() 
 	{ 
-		if ( receiveThread!= null) 
-			receiveThread.Abort(); 
+		if ( carReceiveThread!= null) 
+			carReceiveThread.Abort(); 
 		
 	//	client.Close(); 
 		print("client closed");
