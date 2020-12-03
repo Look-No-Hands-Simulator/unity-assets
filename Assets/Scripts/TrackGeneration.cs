@@ -48,8 +48,8 @@ public class TrackGeneration : MonoBehaviour
         dropOption = fillTrackDropdown(dropOption, clickProps);
 
         // Default dropdown track
-        // clickProps.choice = dropOption.captionText.text;
-        // updateChoice(clickProps, dropOption);
+        clickProps.choice = dropOption.captionText.text;
+        updateChoice(clickProps, dropOption);
 
         // Allow for selection of track using dropdown
         dropOption.onValueChanged.AddListener(delegate { updateChoice(clickProps, dropOption); });
@@ -117,7 +117,7 @@ public class TrackGeneration : MonoBehaviour
         string yellowConeFile = $"Assets/CSV/{choice.Replace(".json.csv", "_tight.json.csv")}";
 
         // Use directories to get cone coordinates
-        getConeCoords(clickProps, yellowConeFile, "b");
+        getConeCoords(clickProps, blueConeFile, "b");
         getConeCoords(clickProps, yellowConeFile, "y");
     }
 
@@ -161,29 +161,13 @@ public class TrackGeneration : MonoBehaviour
             GameObject newCone = new GameObject();
             newCone = GameObject.Instantiate(coneColour);
 
-            //float val1 = float.Parse("20");
-            //float val2 = float.Parse("1.5");
-            //float val3 = float.Parse("4");
-            //float val4 = float.Parse("1.8");
-
-            //Debug.Log("string");
-            //foreach (var charry in cone)
-            //{
-            //    Debug.Log(charry);
-            //}
-
-
             // Position cone to x and y
             switch (col)
             {
                 case 'y':
-                    // new Vector3(cone[0], 0, cone[1])
                     newCone.transform.Translate(cone[0], 0, cone[1], Space.World);
-                    //Debug.Log("Float");
-                    //Debug.Log(float.Parse(cone[0]));
                     break;
                 case 'b':
-                    // new Vector3(cone[0], 0, cone[1])
                     newCone.transform.Translate(cone[0], 0, cone[1], Space.World);
                     break;
             }
@@ -208,7 +192,7 @@ public class TrackGeneration : MonoBehaviour
         yellow.SetActive(true);
 
         // Make copies of cone tracks to allow for enumeration
-        var copyYellowTrack = clickProps.blueConeObjs.ToList();
+        var copyYellowTrack = clickProps.yellowConeObjs.ToList();
         var copyBlueTrack = clickProps.blueConeObjs.ToList();
 
         // Delete old track
