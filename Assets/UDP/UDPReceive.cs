@@ -84,6 +84,12 @@ public class UDPReceive : MonoBehaviour {
 			new ThreadStart(ReceiveCarData));
 		carReceiveThread.IsBackground = true;
 		carReceiveThread.Start();
+		
+		coneRecieveThread = new Thread(
+			new ThreadStart(ReceiveConeData));
+		coneRecieveThread.IsBackground = true;
+		coneRecieveThread.Start();
+		
 
 	}
 	
@@ -100,18 +106,18 @@ public class UDPReceive : MonoBehaviour {
 				// Bytes empfangen.
 				IPEndPoint anyIP = new IPEndPoint(IPAddress.Any, 0);
 				byte[] data = client.Receive(ref anyIP);
-				Debug.Log(BitConverter.ToDouble(data,0).ToString());
-				Debug.Log("Recieving packetssss");
+				//Debug.Log(BitConverter.ToDouble(data,0).ToString());
+				//Debug.Log("Recieving packetssss");
 				double[] convertedData = new double[data.Length / 8];
-				Debug.Log("Data  length: " + data.Length);
+				//Debug.Log("Data  length: " + data.Length);
 
-				Debug.Log("Converted  length: " + convertedData.Length);
+				//Debug.Log("Converted  length: " + convertedData.Length);
 
 				for (int ii = 0; ii < convertedData.Length; ii++)
 				{
 					
 					convertedData[ii] = BitConverter.ToDouble(data, 8 * ii);
-					Debug.Log("ConvERRR:" + (float)convertedData[ii]);
+					//Debug.Log("ConvERRR:" + (float)convertedData[ii]);
 				}
 
 				string text = Encoding.UTF8.GetString(data);
@@ -126,9 +132,9 @@ public class UDPReceive : MonoBehaviour {
 				//UDPData.rFloat= (float)convertedData[5];
 				// latest UDPpacket
 				lastReceivedUDPPacket=text;
-				Debug.Log("X = " + UDPData.xFloat);
-				Debug.Log("Y = " + UDPData.yFloat);
-				Debug.Log("Z = " + UDPData.zFloat);
+				//Debug.Log("X = " + UDPData.xFloat);
+				//Debug.Log("Y = " + UDPData.yFloat);
+				//Debug.Log("Z = " + UDPData.zFloat);
 				// ....
 				allReceivedUDPPackets=allReceivedUDPPackets+text;
 				
@@ -153,14 +159,20 @@ public class UDPReceive : MonoBehaviour {
 				// Bytes empfangen.
 				IPEndPoint anyIP = new IPEndPoint(IPAddress.Any, 0);
 				byte[] data = client.Receive(ref anyIP);
-				Debug.Log(BitConverter.ToDouble(data,0).ToString());
+				//Debug.Log(BitConverter.ToDouble(data,0).ToString());
 
 				double[] convertedData = new double[data.Length / 8];
 				Debug.Log("Data  length: " + data.Length);
 
-				Debug.Log("Converted  length: " + convertedData.Length);
+				//Debug.Log("Converted  length: " + convertedData.Length);
 				double blueCount = BitConverter.ToDouble(data, 0);
 				double yellowCount =  BitConverter.ToDouble(data, 8);
+				
+				UDPData.blueCount = (int) blueCount;
+				UDPData.yellowCount = (int) yellowCount;
+				Debug.Log(blueCount);
+				Debug.Log(yellowCount);
+				
 				UDPData.blueX = new float[(int)blueCount];
 				UDPData.blueY = new float[(int)blueCount];
 				UDPData.blueZ = new float[(int)blueCount];
@@ -170,24 +182,25 @@ public class UDPReceive : MonoBehaviour {
 				UDPData.yellowY = new float[(int)yellowCount];
 				UDPData.yellowZ = new float[(int)yellowCount];
 
-				for (int ii = 2; ii < convertedData.Length; ii++)
+				//Debug.Log("TotalCount: " + (blueCount + yellowCount));
+				for (int ii = 2; ii < ((blueCount + yellowCount)*3);  ii = ii+3)
 				{
-					if (ii -2 <= blueCount)
+					if (ii > blueCount)
 					{
-						UDPData.blueX[ii -2] = ((float) BitConverter.ToDouble(data, ii *8));
-						ii++;
-						UDPData.blueY[ii -2] = ((float) BitConverter.ToDouble(data, ii *8));
-						ii++;
-						UDPData.blueZ[ii -2] = ((float) BitConverter.ToDouble(data, ii* 8));
+						//Debug.Log("worked");
+						UDPData.yellowX[(ii-2)-(int)blueCount] = ((float) BitConverter.ToDouble(data, ii *8));
+						UDPData.yellowZ[(ii-2)-(int)blueCount] = ((float) BitConverter.ToDouble(data, (ii+1) *8));
+						UDPData.yellowY[(ii-2)-(int)blueCount] = ((float) BitConverter.ToDouble(data, (ii+2)* 8));
+						
+			
 					}
 					else
 					{
-						UDPData.yellowX[ii -2] = ((float) BitConverter.ToDouble(data, ii *8));
-						ii++;
-						UDPData.yellowY[ii -2] = ((float) BitConverter.ToDouble(data, ii *8));
-						ii++;
-						UDPData.yellowZ[ii -2] = ((float) BitConverter.ToDouble(data, ii* 8));
+						UDPData.blueX[ii-2] = ((float) BitConverter.ToDouble(data, ii *8));
+						UDPData.blueZ[ii-2] = ((float) BitConverter.ToDouble(data, (ii+1) *8));
+						UDPData.blueY[ii-2] = ((float) BitConverter.ToDouble(data, (ii+2)* 8));
 					}
+					
 				}
 
 				string text = Encoding.UTF8.GetString(data);
@@ -197,6 +210,9 @@ public class UDPReceive : MonoBehaviour {
 				lastReceivedUDPPacket = text;
 				allReceivedUDPPackets=allReceivedUDPPackets+text;
 				
+				
+				if ( coneRecieveThread!= null) 
+					coneRecieveThread.Abort();
 			}
 			catch (Exception err)
 			{
@@ -217,6 +233,8 @@ public class UDPReceive : MonoBehaviour {
 	{ 
 		if ( carReceiveThread!= null) 
 			carReceiveThread.Abort(); 
+		if ( coneRecieveThread!= null) 
+			coneRecieveThread.Abort(); 
 		
 	//	client.Close(); 
 		print("client closed");
