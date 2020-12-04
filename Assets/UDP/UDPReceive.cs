@@ -25,6 +25,7 @@ using System.Threading;
 
 public class UDPReceive : MonoBehaviour {
 	
+	
 	// car receiving Thread
 	Thread carReceiveThread;
 	
@@ -53,6 +54,7 @@ public class UDPReceive : MonoBehaviour {
 	{
 		
 		init();
+
 	}
 	
 	// OnGUI
@@ -89,7 +91,8 @@ public class UDPReceive : MonoBehaviour {
 			new ThreadStart(ReceiveConeData));
 		coneRecieveThread.IsBackground = true;
 		coneRecieveThread.Start();
-		
+	
+
 
 	}
 	
@@ -183,14 +186,17 @@ public class UDPReceive : MonoBehaviour {
 				UDPData.yellowZ = new float[(int)yellowCount];
 
 				//Debug.Log("TotalCount: " + (blueCount + yellowCount));
-				for (int ii = 2; ii < ((blueCount + yellowCount)*3);  ii = ii+3)
+				//Read packet, start at 2 to meant to skip
+				//first 2 byes but relly skipping blue count and yellow coun
+				for (int ii = 2; ii < ((blueCount + yellowCount));  ii = ii+3)
 				{
-					if (ii > blueCount)
+					if (ii > blueCount) //Why not >= ??
 					{
 						//Debug.Log("worked");
 						UDPData.yellowX[(ii-2)-(int)blueCount] = ((float) BitConverter.ToDouble(data, ii *8));
 						UDPData.yellowZ[(ii-2)-(int)blueCount] = ((float) BitConverter.ToDouble(data, (ii+1) *8));
 						UDPData.yellowY[(ii-2)-(int)blueCount] = ((float) BitConverter.ToDouble(data, (ii+2)* 8));
+						print("Ran");
 						
 			
 					}
@@ -203,21 +209,23 @@ public class UDPReceive : MonoBehaviour {
 					
 				}
 
+				UDPData.readyToRun = true;
 				string text = Encoding.UTF8.GetString(data);
 
 
 
 				lastReceivedUDPPacket = text;
 				allReceivedUDPPackets=allReceivedUDPPackets+text;
+
 				
-				
-				if ( coneRecieveThread!= null) 
-					coneRecieveThread.Abort();
 			}
 			catch (Exception err)
 			{
 				print(err.ToString());
 			}
+
+			coneRecieveThread.Abort();
+
 		}
 	}
 	
