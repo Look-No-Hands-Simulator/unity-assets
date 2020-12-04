@@ -27,15 +27,15 @@ public class UDPReceive : MonoBehaviour {
 	
 	
 	// car receiving Thread
-	Thread carReceiveThread;
+	private Thread carReceiveThread;
 	
 	//Cone position thread
 	private Thread coneRecieveThread;
 	
-	// udpclient object UNUSED?
-	UdpClient client;
+	//UDP client for car pose
+	UdpClient carDataClient;
 	
-	//Cone UDP client UNUSED?
+	//UDP client for cone pose
 	UdpClient coneClient;
 	
 	// public
@@ -84,7 +84,7 @@ public class UDPReceive : MonoBehaviour {
 		
 		carReceiveThread = new Thread(
 			new ThreadStart(ReceiveCarData));
-		carReceiveThread.IsBackground = true;
+		carReceiveThread.IsBackground = false;
 		carReceiveThread.Start();
 		
 		coneRecieveThread = new Thread(
@@ -100,7 +100,7 @@ public class UDPReceive : MonoBehaviour {
 	private  void ReceiveCarData()
 	{
 		
-		client = new UdpClient(port);
+		carDataClient = new UdpClient(port);
 		while (true)
 		{
 			
@@ -108,7 +108,7 @@ public class UDPReceive : MonoBehaviour {
 			{
 				// Bytes empfangen.
 				IPEndPoint anyIP = new IPEndPoint(IPAddress.Any, 0);
-				byte[] data = client.Receive(ref anyIP);
+				byte[] data = carDataClient.Receive(ref anyIP);
 				//Debug.Log(BitConverter.ToDouble(data,0).ToString());
 				//Debug.Log("Recieving packetssss");
 				double[] convertedData = new double[data.Length / 8];
@@ -152,7 +152,7 @@ public class UDPReceive : MonoBehaviour {
 	private  void ReceiveConeData()
 	{
 		
-		client = new UdpClient(conePort);
+		coneClient = new UdpClient(conePort);
 		
 		while (true)
 		{
@@ -161,11 +161,9 @@ public class UDPReceive : MonoBehaviour {
 			{
 				// Bytes empfangen.
 				IPEndPoint anyIP = new IPEndPoint(IPAddress.Any, 0);
-				byte[] data = client.Receive(ref anyIP);
+				byte[] data = coneClient.Receive(ref anyIP);
 				//Debug.Log(BitConverter.ToDouble(data,0).ToString());
 
-				double[] convertedData = new double[data.Length / 8];
-				Debug.Log("Data  length: " + data.Length);
 
 				//Debug.Log("Converted  length: " + convertedData.Length);
 				double blueCount = BitConverter.ToDouble(data, 0);
