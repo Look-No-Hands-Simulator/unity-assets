@@ -14,6 +14,7 @@ public static float zFloat;
 public static float pFloat;
 public static float qFloat;
 public static float rFloat;
+public static float wFloat;
 
 public static int blueCount;
 public static int yellowCount;
