@@ -5,6 +5,16 @@ using System.IO;
 using System;
 using UnityEngine.UI;
 using System.Linq;
+using Newtonsoft.Json;
+
+public class Track
+{
+    public List<List<float>> blue { get; set; }
+    public List<List<float>> yellow { get; set; }
+    public List<List<float>> orange { get; set; }
+    public List<List<float>> big { get; set; }
+
+}
 
 // Class to hold values to pass through functions and events
 public class ClickArgs
@@ -13,12 +23,12 @@ public class ClickArgs
     public GameObject blue = null;
     public GameObject yellow = null;
     public string choice;
-    public List<string> blueConeFiles = new List<string>();
-    public List<string> yellowConeFiles = new List<string>();
-    public List<List<float>> blueConesCoords = new List<List<float>>();
-    public List<List<float>> yellowConesCoords = new List<List<float>>();
+    public List<string> coneFiles = new List<string>();
     public List<GameObject> yellowConeObjs = new List<GameObject>();
     public List<GameObject> blueConeObjs = new List<GameObject>();
+    public List<GameObject> bigConeObjs = new List<GameObject>();
+    public List<GameObject> orangeConeObjs = new List<GameObject>();
+    public Track track = new Track();
 }
 
 public class TrackGeneration : MonoBehaviour
@@ -29,6 +39,8 @@ public class TrackGeneration : MonoBehaviour
         // Load in cone objects to duplicate
         GameObject blue = GameObject.Find("blue");
         GameObject yellow = GameObject.Find("yellow");
+        GameObject orange = GameObject.Find("orange");
+        GameObject big = GameObject.Find("bigorange");
 
         // UI objects
         Dropdown dropOption = GameObject.Find("trackDropdown").GetComponent<Dropdown>();
@@ -54,7 +66,7 @@ public class TrackGeneration : MonoBehaviour
         // Allow for selection of track using dropdown
         dropOption.onValueChanged.AddListener(delegate { updateChoice(clickProps, dropOption); });
         // Change track dir to selection on button click
-        trackButton.onClick.AddListener(() => { loadTrack(yellow, blue, clickProps); });
+        trackButton.onClick.AddListener(() => { loadTrack(yellow, blue, big, orange, clickProps); });
 
     }
 
@@ -68,24 +80,14 @@ public class TrackGeneration : MonoBehaviour
     {
         // Get file names of cones
         List<string> fileNames = new List<string>();
-        string[] files = Directory.GetFiles("Assets/CSV/", "*.csv");
+        string[] files = Directory.GetFiles("Assets/json/", "*.json");
         foreach (string file in files)
         {
             fileNames.Add(Path.GetFileName(file));
         }
-        // Split yellow cone file names into new structure
         foreach (string name in fileNames)
         {
-            if (name.EndsWith("tight.json.csv"))
-            {
-                // Yellow file
-                clickProps.yellowConeFiles.Add(name);
-            }
-            else if (name.EndsWith(".json.csv"))
-            {
-                // Blue file
-                clickProps.blueConeFiles.Add(name);
-            }
+            clickProps.coneFiles.Add(name);
         }
 
     }
@@ -95,7 +97,7 @@ public class TrackGeneration : MonoBehaviour
         dropOption.ClearOptions();
         List<string> dropOptionsList = new List<String>();
         // Fill the dropdown with track names
-        foreach (var track in clickProps.blueConeFiles)
+        foreach (var track in clickProps.coneFiles)
         {
             dropOptionsList.Add(track);
         }
@@ -113,45 +115,25 @@ public class TrackGeneration : MonoBehaviour
     public static void readCSVfiles(ClickArgs clickProps, string choice)
     {
         // Get cone file directories
-        string blueConeFile = $"Assets/CSV/{choice}";
-        string yellowConeFile = $"Assets/CSV/{choice.Replace(".json.csv", "_tight.json.csv")}";
+        string coneFile = $"Assets/json/{choice}";
 
         // Use directories to get cone coordinates
-        getConeCoords(clickProps, blueConeFile, "b");
-        getConeCoords(clickProps, yellowConeFile, "y");
+        getConeCoords(clickProps, coneFile);
+
     }
 
-
-    public static void getConeCoords(ClickArgs clickProps, string file, string col)
+    public static void getConeCoords(ClickArgs clickProps, string file)
     {
-        using (StreamReader reader = new StreamReader(file))
+        using (StreamReader fileRead = File.OpenText(file))
         {
-            while (!reader.EndOfStream)
-            {
-                var line = reader.ReadLine();
-                var values = line.Split(',');
-
-                float copy1 = float.Parse(values[0]);
-                float copy2 = float.Parse(values[1]);
-
-                // XY
-                switch (col)
-                {
-                    case "b":
-                        clickProps.blueConesCoords.Add(new List<float> { copy1, copy2 });
-                        break;
-                    case "y":
-                        clickProps.yellowConesCoords.Add(new List<float> { copy1, copy2 });
-                        break;
-                }
-
-            }
+            JsonSerializer serializer = new JsonSerializer();
+            clickProps.track = (Track)serializer.Deserialize(fileRead, typeof(Track));
         }
 
     }
 
     public static void createConeObjects(
-        GameObject coneColour, ClickArgs clickProps, char col,
+        GameObject coneColour, ClickArgs clickProps, string col,
         List<List<float>> coneCoords)
     {
         // Generate track objects
@@ -162,38 +144,42 @@ public class TrackGeneration : MonoBehaviour
             newCone = GameObject.Instantiate(coneColour);
 
             // Position cone to x and y
-            switch (col)
-            {
-                case 'y':
-                    newCone.transform.Translate(cone[0], 0, cone[1], Space.World);
-                    break;
-                case 'b':
-                    newCone.transform.Translate(cone[0], 0, cone[1], Space.World);
-                    break;
-            }
+            newCone.transform.Translate(cone[0], 0, cone[1], Space.World);
+
             // Append to storage
             switch (col)
             {
-                case 'y':
+                case "y":
                     clickProps.yellowConeObjs.Add(newCone);
                     break;
-                case 'b':
+                case "b":
                     clickProps.blueConeObjs.Add(newCone);
+                    break;
+                case "bo":
+                    clickProps.bigConeObjs.Add(newCone);
+                    break;
+                case "o":
+                    clickProps.orangeConeObjs.Add(newCone);
                     break;
             }
         }
 
     }
 
-    public static void loadTrack(GameObject yellow, GameObject blue, ClickArgs clickProps)
+    public static void loadTrack(GameObject yellow, GameObject blue, GameObject big, GameObject orange, 
+        ClickArgs clickProps)
     {
         // Show default objects to allow for duplication
         blue.SetActive(true);
         yellow.SetActive(true);
+        big.SetActive(true);
+        orange.SetActive(true);
 
         // Make copies of cone tracks to allow for enumeration
         var copyYellowTrack = clickProps.yellowConeObjs.ToList();
         var copyBlueTrack = clickProps.blueConeObjs.ToList();
+        var copyOrangeTrack = clickProps.orangeConeObjs.ToList();
+        var copyBigTrack = clickProps.bigConeObjs.ToList();
 
         // Delete old track
         foreach (var cone in copyYellowTrack)
@@ -204,20 +190,31 @@ public class TrackGeneration : MonoBehaviour
         {
             Destroy(cone);
         }
+        foreach (var cone in copyBigTrack)
+        {
+            Destroy(cone);
+        }
+        foreach (var cone in copyOrangeTrack)
+        {
+            Destroy(cone);
+        }
         clickProps.yellowConeObjs = copyYellowTrack;
         clickProps.blueConeObjs = copyBlueTrack;
+        clickProps.bigConeObjs = copyBigTrack;
+        clickProps.orangeConeObjs = copyOrangeTrack;
 
         // Create cone objects
-        createConeObjects(yellow, clickProps, 'y', clickProps.yellowConesCoords);
-        createConeObjects(blue, clickProps, 'b', clickProps.blueConesCoords);
+        createConeObjects(yellow, clickProps, "y", clickProps.track.yellow);
+        createConeObjects(blue, clickProps, "b", clickProps.track.blue);
+        createConeObjects(big, clickProps, "bo", clickProps.track.big);
+        createConeObjects(orange, clickProps, "o", clickProps.track.orange);
 
         // Hide default objects
         blue.SetActive(false);
         yellow.SetActive(false);
+        orange.SetActive(false);
+        big.SetActive(false);
 
-        // Empty the old coord lists
-        clickProps.blueConesCoords.Clear();
-        clickProps.yellowConesCoords.Clear();
 
     }
 
