@@ -31,6 +31,7 @@ public class SetConePose : MonoBehaviour
             }
 
             UDPData.coneInst = true;
+            enabled = false;
         }
     }
 }
