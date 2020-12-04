@@ -130,9 +130,10 @@ public class UDPReceive : MonoBehaviour {
 				UDPData.xFloat= (float)convertedData[0];
 				UDPData.yFloat= (float)convertedData[2];
 				UDPData.zFloat= (float)convertedData[1];
-				//UDPData.pFloat= (float)convertedData[3];
-				//UDPData.qFloat= (float)convertedData[4];
-				//UDPData.rFloat= (float)convertedData[5];
+				UDPData.pFloat= (float)convertedData[3];
+				UDPData.qFloat= (float)convertedData[5];
+				UDPData.rFloat= (float)convertedData[4];
+				UDPData.wFloat= (float)convertedData[6];
 				// latest UDPpacket
 				lastReceivedUDPPacket=text;
 				//Debug.Log("X = " + UDPData.xFloat);
