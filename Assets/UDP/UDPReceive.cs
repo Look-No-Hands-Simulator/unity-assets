@@ -1,22 +1,5 @@
-// REF http://forum.unity3d.com/threads/simple-udp-implementation-send-read-via-mono-c.15900/
-/*
- 
-    -----------------------
-    UDP-Receive (send to)
-    -----------------------
-    // [url]http://msdn.microsoft.com/de-de/library/bb979228.aspx#ID0E3BAC[/url]
-   
-   
-    // > receive
-    // 127.0.0.1 : 8051
-   
-    // send
-    // nc -u 127.0.0.1 8051
- 
-*/
 using UnityEngine;
 using System.Collections;
-
 using System;
 using System.Text;
 using System.Net;
@@ -26,7 +9,7 @@ using System.Threading;
 public class UDPReceive : MonoBehaviour {
 	
 	
-	// car receiving Thread
+	// Car position/rotation thread
 	private Thread carReceiveThread;
 	
 	//Cone position thread
@@ -38,15 +21,8 @@ public class UDPReceive : MonoBehaviour {
 	//UDP client for cone pose
 	UdpClient coneClient;
 	
-	// public
-	// public string IP = "127.0.0.1"; default local
 	public int port; // define > 8051
-	public int conePort; // define > 8051
-	
-	
-	// infos
-	public string lastReceivedUDPPacket="";
-	public string allReceivedUDPPackets=""; // clean up this from time to time!
+	public int conePort; 
 	
 	
 	// start from unity3d
@@ -57,31 +33,15 @@ public class UDPReceive : MonoBehaviour {
 
 	}
 	
-	// OnGUI
-
-	/*/
-	void OnGUI()
-	{
-		Rect rectObj=new Rect(40,10,200,400);
-		GUIStyle style = new GUIStyle();
-		style.alignment = TextAnchor.UpperLeft;
-		GUI.Box(rectObj,"# UDPReceive\n127.0.0.1 "+8051+" #\n"
-		        + "shell> nc -u 127.0.0.1 : "+8051+" \n"
-		        + "\nLast Packet: \n"+ lastReceivedUDPPacket
-		        + "\n\nAll Messages: \n"+allReceivedUDPPackets
-		        ,style);
-	}
-	/*/
-
 	// init
 	private void init()
 	{
 		
-		// define port
+		// define ports
 		port = 8051;
 		conePort = 8052;
 		
-		
+		//Start threads for both UDP receivers
 		carReceiveThread = new Thread(
 			new ThreadStart(ReceiveCarData));
 		carReceiveThread.IsBackground = false;
@@ -96,53 +56,48 @@ public class UDPReceive : MonoBehaviour {
 
 	}
 	
-	// receive thread
+	// Car pose receive thread
 	private  void ReceiveCarData()
 	{
-		
+		//Create UDP client on port 8051
 		carDataClient = new UdpClient(port);
+		
 		while (true)
 		{
 			
 			try
 			{
-				// Bytes empfangen.
+				//Set up UDP client to recieve packets
 				IPEndPoint anyIP = new IPEndPoint(IPAddress.Any, 0);
 				byte[] data = carDataClient.Receive(ref anyIP);
-				//Debug.Log(BitConverter.ToDouble(data,0).ToString());
-				//Debug.Log("Recieving packetssss");
+
+				
+				//Create array for the data in the packet. Each var is is a double -> 8 bytes long
 				double[] convertedData = new double[data.Length / 8];
-				//Debug.Log("Data  length: " + data.Length);
-
-				//Debug.Log("Converted  length: " + convertedData.Length);
-
+				
+				//Loop through packet and store in array
 				for (int ii = 0; ii < convertedData.Length; ii++)
 				{
 					
 					convertedData[ii] = BitConverter.ToDouble(data, 8 * ii);
-					//Debug.Log("ConvERRR:" + (float)convertedData[ii]);
 				}
 
 				string text = Encoding.UTF8.GetString(data);
 
 
-
+				//Set position data from array - y and z are flipped due to different reference planes
 				UDPData.xFloat= (float)convertedData[0];
 				UDPData.yFloat= (float)convertedData[2];
 				UDPData.zFloat= (float)convertedData[1];
+				
+				//Set rotation data form array - q and r are flipped again due to different reference planes
 				UDPData.pFloat= (float)convertedData[3];
 				UDPData.qFloat= (float)convertedData[5];
 				UDPData.rFloat= (float)convertedData[4];
 				UDPData.wFloat= (float)convertedData[6];
-				// latest UDPpacket
-				lastReceivedUDPPacket=text;
-				//Debug.Log("X = " + UDPData.xFloat);
-				//Debug.Log("Y = " + UDPData.yFloat);
-				//Debug.Log("Z = " + UDPData.zFloat);
-				// ....
-				allReceivedUDPPackets=allReceivedUDPPackets+text;
 				
 			}
+			//Handle errors in reception
 			catch (Exception err)
 			{
 				print(err.ToString());
@@ -150,9 +105,12 @@ public class UDPReceive : MonoBehaviour {
 		}
 	}
 	
+	
+	//Cone pose recieve thread
 	private  void ReceiveConeData()
 	{
 		
+		//Create UDP client on port 8052
 		coneClient = new UdpClient(conePort);
 		
 		while (true)
@@ -160,38 +118,42 @@ public class UDPReceive : MonoBehaviour {
 			
 			try
 			{
-				// Bytes empfangen.
+				//Set up UDP client to recieve packets
 				IPEndPoint anyIP = new IPEndPoint(IPAddress.Any, 0);
 				byte[] data = coneClient.Receive(ref anyIP);
-				//Debug.Log(BitConverter.ToDouble(data,0).ToString());
 
 
-				//Debug.Log("Converted  length: " + convertedData.Length);
+				//Get amount of blue and yellow cones specified in first 2 vars
 				double blueCount = BitConverter.ToDouble(data, 0);
 				double yellowCount =  BitConverter.ToDouble(data, 8);
 				
+				// Store cone counts in UDPData
 				UDPData.blueCount = (int) blueCount;
 				UDPData.yellowCount = (int) yellowCount;
 				Debug.Log(blueCount);
 				Debug.Log(yellowCount);
 				
+				//Create blue cone arrays of correct size
 				UDPData.blueX = new float[(int)blueCount];
 				UDPData.blueY = new float[(int)blueCount];
 				UDPData.blueZ = new float[(int)blueCount];
 				
-				
+				//Create yellow cone arrays of correct size
 				UDPData.yellowX = new float[(int)yellowCount];
 				UDPData.yellowY = new float[(int)yellowCount];
 				UDPData.yellowZ = new float[(int)yellowCount];
 
-				//Debug.Log("TotalCount: " + (blueCount + yellowCount));
-				//Read packet, start at 2 to meant to skip
-				//first 2 byes but relly skipping blue count and yellow coun
+				
+				//Loop through packet, store blue cone x,y,z then yellow cone x,y,z
+				//Starts at first cone pose value in packet
 				for (int ii = 2; ii < ((blueCount + yellowCount));  ii = ii+3)
 				{
-					if (ii > blueCount) //Why not >= ??
+					//Start storing yellow cones once past blue cones
+					if (ii > blueCount)
 					{
-						//Debug.Log("worked");
+						
+						//Store yellow cone poses in array offset by two to start at 0 in array
+						//Not using ii++ to increment to to an unknown issue
 						UDPData.yellowX[(ii-2)-(int)blueCount] = ((float) BitConverter.ToDouble(data, ii *8));
 						UDPData.yellowZ[(ii-2)-(int)blueCount] = ((float) BitConverter.ToDouble(data, (ii+1) *8));
 						UDPData.yellowY[(ii-2)-(int)blueCount] = ((float) BitConverter.ToDouble(data, (ii+2)* 8));
@@ -201,41 +163,31 @@ public class UDPReceive : MonoBehaviour {
 					}
 					else
 					{
+						//Store blue cone poses in array offset by two to start at 0 in array
 						UDPData.blueX[ii-2] = ((float) BitConverter.ToDouble(data, ii *8));
 						UDPData.blueZ[ii-2] = ((float) BitConverter.ToDouble(data, (ii+1) *8));
 						UDPData.blueY[ii-2] = ((float) BitConverter.ToDouble(data, (ii+2)* 8));
 					}
 					
 				}
-
+				
+				//Set readyToRun flag once has run and stored cone vlaues
 				UDPData.readyToRun = true;
-				string text = Encoding.UTF8.GetString(data);
-
-
-
-				lastReceivedUDPPacket = text;
-				allReceivedUDPPackets=allReceivedUDPPackets+text;
-
 				
 			}
+			//Handle errors
 			catch (Exception err)
 			{
 				print(err.ToString());
 			}
-
+			
+			// Stop thread, only needs to run once
 			coneRecieveThread.Abort();
 
 		}
 	}
 	
-	// getLatestUDPPacket
-	// cleans up the rest
-	public string getLatestUDPPacket()
-	{
-		allReceivedUDPPackets="";
-		return lastReceivedUDPPacket;
-	}
-
+	//Shut down threads on stopping script
 	void OnDisable() 
 	{ 
 		if ( carReceiveThread!= null) 
