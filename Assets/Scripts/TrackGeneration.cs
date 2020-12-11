@@ -13,6 +13,12 @@ public class Track
     public List<List<float>> yellow { get; set; }
     public List<List<float>> orange { get; set; }
     public List<List<float>> big { get; set; }
+    public struct Car
+    {
+        public List<float> pos;
+        public float heading;
+    };
+    public Car car = new Car();
 
 }
 
@@ -20,8 +26,6 @@ public class Track
 public class ClickArgs
 {
     public string trackDir = "";
-    public GameObject blue = null;
-    public GameObject yellow = null;
     public string choice;
     public List<string> coneFiles = new List<string>();
     public List<GameObject> yellowConeObjs = new List<GameObject>();
@@ -37,10 +41,11 @@ public class TrackGeneration : MonoBehaviour
     void Start()
     {
         // Load in cone objects to duplicate
-        GameObject blue = GameObject.Find("blue");
-        GameObject yellow = GameObject.Find("yellow");
-        GameObject orange = GameObject.Find("orange");
-        GameObject big = GameObject.Find("bigorange");
+        GameObject blue = GameObject.Find("blueCone");
+        GameObject yellow = GameObject.Find("yellowCone");
+        GameObject orange = GameObject.Find("orangeCone");
+        GameObject big = GameObject.Find("bigorangeCone");
+        GameObject adsdv = GameObject.Find("ads-dv");
 
         // UI objects
         Dropdown dropOption = GameObject.Find("trackDropdown").GetComponent<Dropdown>();
@@ -48,14 +53,11 @@ public class TrackGeneration : MonoBehaviour
         // Object to hold return values from eventhandlers
         ClickArgs clickProps = new ClickArgs();
 
-        clickProps.blue = blue;
-        clickProps.yellow = yellow;
-
         // Tracks
         Dictionary<string, string> trackDirs = new Dictionary<string, string>();
 
         // Get track names
-        readCSVFolder(clickProps);
+        readJSONFolder(clickProps);
         // Fill dropdown with track names
         dropOption = fillTrackDropdown(dropOption, clickProps);
 
@@ -66,7 +68,7 @@ public class TrackGeneration : MonoBehaviour
         // Allow for selection of track using dropdown
         dropOption.onValueChanged.AddListener(delegate { updateChoice(clickProps, dropOption); });
         // Change track dir to selection on button click
-        trackButton.onClick.AddListener(() => { loadTrack(yellow, blue, big, orange, clickProps); });
+        trackButton.onClick.AddListener(() => { loadTrack(yellow, blue, big, orange, adsdv, clickProps); });
 
     }
 
@@ -76,7 +78,7 @@ public class TrackGeneration : MonoBehaviour
 
     }
 
-    public static void readCSVFolder(ClickArgs clickProps)
+    public static void readJSONFolder(ClickArgs clickProps)
     {
         // Get file names of cones
         List<string> fileNames = new List<string>();
@@ -109,10 +111,10 @@ public class TrackGeneration : MonoBehaviour
     public static void updateChoice(ClickArgs clickProps, Dropdown dropOption)
     {
         clickProps.choice = dropOption.captionText.text;
-        readCSVfiles(clickProps, clickProps.choice);
+        readJSONfiles(clickProps, clickProps.choice);
     }
 
-    public static void readCSVfiles(ClickArgs clickProps, string choice)
+    public static void readJSONfiles(ClickArgs clickProps, string choice)
     {
         // Get cone file directories
         string coneFile = $"Assets/json/{choice}";
@@ -167,13 +169,18 @@ public class TrackGeneration : MonoBehaviour
     }
 
     public static void loadTrack(GameObject yellow, GameObject blue, GameObject big, GameObject orange, 
-        ClickArgs clickProps)
+        GameObject adsdv, ClickArgs clickProps)
     {
         // Show default objects to allow for duplication
         blue.SetActive(true);
         yellow.SetActive(true);
         big.SetActive(true);
         orange.SetActive(true);
+        adsdv.SetActive(true);
+
+        // Position ads-dv
+        adsdv.transform.Translate(clickProps.track.car.pos[0], 0, clickProps.track.car.pos[1], Space.Self);
+        adsdv.transform.Rotate(0, clickProps.track.car.heading, 0, Space.Self);
 
         // Make copies of cone tracks to allow for enumeration
         var copyYellowTrack = clickProps.yellowConeObjs.ToList();
