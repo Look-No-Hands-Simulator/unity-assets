@@ -179,7 +179,7 @@ public class TrackGeneration : MonoBehaviour
         adsdv.SetActive(true);
 
         // Position ads-dv
-        adsdv.transform.Translate(clickProps.track.car.pos[0], 0, clickProps.track.car.pos[1], Space.Self);
+        adsdv.transform.position = new Vector3(clickProps.track.car.pos[0], 0, clickProps.track.car.pos[1]);
         adsdv.transform.Rotate(0, clickProps.track.car.heading, 0, Space.Self);
 
         // Make copies of cone tracks to allow for enumeration
