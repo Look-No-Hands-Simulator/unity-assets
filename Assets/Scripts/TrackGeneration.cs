@@ -182,7 +182,7 @@ public class TrackGeneration : MonoBehaviour
 
         // Position ads-dv
         adsdv.transform.position = new Vector3(clickProps.track.car.pos[0], adsRaise, clickProps.track.car.pos[1]);
-        // adsdv.transform.Rotate(0, clickProps.track.car.heading, 0, Space.Self);
+        adsdv.transform.Rotate(0, clickProps.track.car.heading, 0, Space.Self);
 
         // Make copies of cone tracks to allow for enumeration
         var copyYellowTrack = clickProps.yellowConeObjs.ToList();
