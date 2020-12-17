@@ -80,7 +80,8 @@ public class TrackGeneration : MonoBehaviour
     {
         // Get file names of cones
         List<string> fileNames = new List<string>();
-        string[] files = Directory.GetFiles("Assets/json/", "*.json");
+        string[] files = Directory.GetFiles(Application.streamingAssetsPath + "/json/", "*.json");
+        Debug.Log(files);
         foreach (string file in files)
         {
             fileNames.Add(Path.GetFileName(file));
@@ -115,7 +116,7 @@ public class TrackGeneration : MonoBehaviour
     public static void readCSVfiles(ClickArgs clickProps, string choice)
     {
         // Get cone file directories
-        string coneFile = $"Assets/json/{choice}";
+        string coneFile = Application.streamingAssetsPath + $"/json/{choice}";
 
         // Use directories to get cone coordinates
         getConeCoords(clickProps, coneFile);
