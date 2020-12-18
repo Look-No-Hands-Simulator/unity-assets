@@ -924,7 +924,7 @@ GameObject:
   m_Component:
   - component: {fileID: 655474119}
   m_Layer: 0
-  m_Name: orange
+  m_Name: orangeCone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -955,7 +955,7 @@ GameObject:
   m_Component:
   - component: {fileID: 666153490}
   m_Layer: 0
-  m_Name: bigorange
+  m_Name: bigorangeCone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1204,7 +1204,7 @@ GameObject:
   - component: {fileID: 834407853}
   - component: {fileID: 834407852}
   m_Layer: 0
-  m_Name: yellow
+  m_Name: yellowCone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1894,12 +1894,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 65fab0b4f672983048ecd8a13a263299,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2.08
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 65fab0b4f672983048ecd8a13a263299,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.625
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 65fab0b4f672983048ecd8a13a263299,
         type: 3}
@@ -1954,7 +1954,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 65fab0b4f672983048ecd8a13a263299,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65fab0b4f672983048ecd8a13a263299, type: 3}
@@ -1964,24 +1964,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1457755815}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1457755817 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 65fab0b4f672983048ecd8a13a263299,
-    type: 3}
-  m_PrefabInstance: {fileID: 1457755815}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1457755818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1457755817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba90a9ab35d812e4182e478c43318c5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1503959242
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2795,7 +2777,7 @@ GameObject:
   - component: {fileID: 1972582898}
   - component: {fileID: 1972582897}
   m_Layer: 0
-  m_Name: blue
+  m_Name: blueCone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
