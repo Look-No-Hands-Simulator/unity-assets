@@ -637,6 +637,7 @@ GameObject:
   m_Component:
   - component: {fileID: 400790176}
   - component: {fileID: 400790175}
+  - component: {fileID: 400790177}
   m_Layer: 0
   m_Name: EmptyInit
   m_TagString: Untagged
@@ -670,6 +671,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &400790177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400790174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4591965a2fce6944b0bbddf2fc7561f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &404772866
 GameObject:
   m_ObjectHideFlags: 0
@@ -925,7 +938,7 @@ GameObject:
   - component: {fileID: 655474119}
   m_Layer: 0
   m_Name: orangeCone
-  m_TagString: Untagged
+  m_TagString: Cone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -956,7 +969,7 @@ GameObject:
   - component: {fileID: 666153490}
   m_Layer: 0
   m_Name: bigorangeCone
-  m_TagString: Untagged
+  m_TagString: Cone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1205,7 +1218,7 @@ GameObject:
   - component: {fileID: 834407852}
   m_Layer: 0
   m_Name: yellowCone
-  m_TagString: Untagged
+  m_TagString: Cone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1569,9 +1582,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1243193536}
   - component: {fileID: 1243193538}
-  - component: {fileID: 1243193537}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: ads-cam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1591,14 +1603,6 @@ Transform:
   m_Father: {fileID: 1457755816}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!81 &1243193537
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1243193535}
-  m_Enabled: 1
 --- !u!20 &1243193538
 Camera:
   m_ObjectHideFlags: 0
@@ -2778,7 +2782,7 @@ GameObject:
   - component: {fileID: 1972582897}
   m_Layer: 0
   m_Name: blueCone
-  m_TagString: Untagged
+  m_TagString: Cone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

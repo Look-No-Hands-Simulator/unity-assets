@@ -6,6 +6,7 @@ using System;
 using UnityEngine.UI;
 using System.Linq;
 using Newtonsoft.Json;
+using System.Threading.Tasks;
 
 public class Track
 {
@@ -37,6 +38,19 @@ public class ClickArgs
 
 public class TrackGeneration : MonoBehaviour
 {
+    // Tracker for other scripts to check whether track has changed
+    public static bool trackChange = true;
+
+    public bool getTrackChange()
+    {
+        return trackChange;
+    }
+
+    public void setTrackChange(bool newVal)
+    {
+        trackChange = newVal;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -149,6 +163,9 @@ public class TrackGeneration : MonoBehaviour
             // Position cone to x and y
             newCone.transform.Translate(cone[0], 0, cone[1], Space.World);
 
+            // Give tag for identification
+            newCone.tag = "Cone";
+
             // Append to storage
             switch (col)
             {
@@ -169,7 +186,7 @@ public class TrackGeneration : MonoBehaviour
 
     }
 
-    public static void loadTrack(GameObject yellow, GameObject blue, GameObject big, GameObject orange, 
+    public async static void loadTrack(GameObject yellow, GameObject blue, GameObject big, GameObject orange, 
         GameObject adsdv, ClickArgs clickProps)
     {
         // Show default objects to allow for duplication
@@ -224,6 +241,9 @@ public class TrackGeneration : MonoBehaviour
         yellow.SetActive(false);
         orange.SetActive(false);
         big.SetActive(false);
+
+        // Make briefly true for detection of track change for fakePerception
+        trackChange = true;
 
 
     }
