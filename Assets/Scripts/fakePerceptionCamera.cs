@@ -11,22 +11,15 @@ public class fakePerceptionCamera : MonoBehaviour
 {
     GameObject[] cones = null;
     Camera carCam;
+    GameObject camObj;
     TrackGeneration trackGeneration;
     bool trackGen = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        // Find gameobjects in scene
-        //GameObject camera = GameObject.Find("ads-dv/ads-cam");
-        //Camera carCam = camera.GetComponent(Camera);
-        //GameObject blue = GameObject.Find("blueCone");
-        //GameObject yellow = GameObject.Find("yellowCone");
-        //GameObject orange = GameObject.Find("orangeCone");
-        //GameObject big = GameObject.Find("bigorangeCone");
-        //GameObject adsdv = GameObject.Find("ads-dv");
-
         // Get camera
+        camObj = GameObject.Find("ads-cam");
         carCam = GameObject.Find("ads-cam").GetComponent<Camera>();
 
     }
@@ -35,11 +28,11 @@ public class fakePerceptionCamera : MonoBehaviour
     void Update()
     {
         // Check if track updated from trackGen script
-        GameObject empty = GameObject.Find("EmptyInit");
-        trackGeneration = empty.GetComponent<TrackGeneration>();
+        //GameObject empty = GameObject.Find("EmptyInit");
+        //trackGeneration = empty.GetComponent<TrackGeneration>();
 
         // Check for updated track
-        trackGen = trackGeneration.getTrackChange();
+        //trackGen = trackGeneration.getTrackChange();
 
         if (cones != null)
         {
@@ -73,6 +66,7 @@ public class fakePerceptionCamera : MonoBehaviour
     {
         string[] colours = { "orange", "blue", "yellow", "big" };
         string currentCol = "error";
+
         // identify cones
         foreach (var cone in cones)
         {
@@ -85,16 +79,48 @@ public class fakePerceptionCamera : MonoBehaviour
                         currentCol = col;
                     }
                 }
+                // get distance of cone from camera
+                // get object heading vector
+                var coneHeading = cone.transform.position - carCam.transform.position;
+                // get dot product of heading with camera's forward vector
+                var distance = Vector3.Dot(coneHeading, carCam.transform.forward);
 
-                Debug.Log(currentCol + " cone detected");
+                // get position of cone (ground truth)
+                var conePos = cone.transform.position;
+
+                // get angle with euler angles
+                // https://forum.unity.com/threads/angle-between-camera-and-object.97028/
+                var angle = Mathf.Atan2(cone.transform.position.z - carCam.transform.position.z, 
+                    cone.transform.position.x - carCam.transform.position.x)*Mathf.Rad2Deg;
+
+                // store cone information
+                // problem is this will keep growing infinitely when you want to post values to ros node
+                // as they come along so use a single array
+                string[] globalConeInfo = { currentCol, cone.transform.position.x.ToString(), cone.transform.position.z.ToString(), 
+                    distance.ToString(), angle.ToString() };
+
+                //foreach (var item in globalConeInfo)
+                //{
+                //    Debug.Log(item);
+                //}
+
+                Vector3 relativePose = (carCam.transform).InverseTransformPoint(cone.transform.position);
+
+                string[] relativeConeInfo = { currentCol, relativePose.x.ToString(), relativePose.z.ToString(),
+                distance.ToString(), angle.ToString() };
+
+                Debug.Log(relativePose.x);
+
+                // Debug.Log(coneInfo);
+                // Debug.Log("Distance" + distance);
+                // Debug.Log(currentCol + " cone detected");
             }
         }
 
-        // get distance of cones from camera
+    }
 
-        // get position of cones (ground truth)
-
-        // store positions
+    void storeInfo()
+    {
 
     }
 
@@ -105,7 +131,7 @@ public class fakePerceptionCamera : MonoBehaviour
 
     //}
 
-    //void publishPosition()
+    //void publishPositionRos()
     //{
 
     //}

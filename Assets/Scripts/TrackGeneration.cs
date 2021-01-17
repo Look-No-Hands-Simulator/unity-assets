@@ -6,7 +6,6 @@ using System;
 using UnityEngine.UI;
 using System.Linq;
 using Newtonsoft.Json;
-using System.Threading.Tasks;
 
 public class Track
 {
@@ -186,7 +185,7 @@ public class TrackGeneration : MonoBehaviour
 
     }
 
-    public async static void loadTrack(GameObject yellow, GameObject blue, GameObject big, GameObject orange, 
+    public static void loadTrack(GameObject yellow, GameObject blue, GameObject big, GameObject orange, 
         GameObject adsdv, ClickArgs clickProps)
     {
         // Show default objects to allow for duplication
