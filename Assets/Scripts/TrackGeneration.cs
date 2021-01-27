@@ -179,7 +179,7 @@ public class TrackGeneration : MonoBehaviour
         orange.SetActive(true);
         adsdv.SetActive(true);
 
-        float adsRaise = 0.25f;
+        float adsRaise = 0.29f;
 
         // Position ads-dv
         adsdv.transform.position = new Vector3(clickProps.track.car.pos[0], adsRaise, clickProps.track.car.pos[1]);
