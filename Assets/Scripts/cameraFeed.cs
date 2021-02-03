@@ -78,7 +78,7 @@ public class cameraFeed : MonoBehaviour
     void Start()
     {
         StaticHold.carCam = GameObject.Find("ads-cam").GetComponent<Camera>();
-        StaticHold.camScript = new CameraCaller(camScript,carCam);
+        StaticHold.camScript = new CameraCaller();
         
     }
 
