@@ -17,6 +17,7 @@ public class Track
     {
         public List<float> pos;
         public float heading;
+
     };
     public Car car = new Car();
 
@@ -37,6 +38,9 @@ public class ClickArgs
 
 public class TrackGeneration : MonoBehaviour
 {
+    
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -45,7 +49,11 @@ public class TrackGeneration : MonoBehaviour
         GameObject yellow = GameObject.Find("yellowCone");
         GameObject orange = GameObject.Find("orangeCone");
         GameObject big = GameObject.Find("bigorangeCone");
-        GameObject adsdv = GameObject.Find("ads-dv");
+        
+
+
+
+
 
         // UI objects
         Dropdown dropOption = GameObject.Find("trackDropdown").GetComponent<Dropdown>();
@@ -67,15 +75,16 @@ public class TrackGeneration : MonoBehaviour
 
         // Allow for selection of track using dropdown
         dropOption.onValueChanged.AddListener(delegate { updateChoice(clickProps, dropOption); });
+
         // Change track dir to selection on button click
-        trackButton.onClick.AddListener(() => { loadTrack(yellow, blue, big, orange, adsdv, clickProps); });
+        trackButton.onClick.AddListener(() => { loadTrack(yellow, blue, big, orange, clickProps); });
 
     }
 
     // Update is called once per frame
     void Update()
     {
-
+ 
     }
 
     public static void readJSONFolder(ClickArgs clickProps)
@@ -168,22 +177,42 @@ public class TrackGeneration : MonoBehaviour
         }
 
     }
-
-    public static void loadTrack(GameObject yellow, GameObject blue, GameObject big, GameObject orange, 
-        GameObject adsdv, ClickArgs clickProps)
+    public static GameObject GetCarObject()
     {
+        GameObject carObject = GameObject.Find("carSelect");
+        CarSelector carSelect = carObject.GetComponent<CarSelector>();
+        List<GameObject> cars = new List<GameObject>();
+        int carChoice = carSelect.CarChoice;
+        Debug.Log(carChoice);
+        for (int i = 0; i < carObject.transform.childCount; i++)
+        {
+            if (i != carChoice)
+            {
+                Destroy(carObject.transform.GetChild(i).gameObject);
+            }
+        }
+        
+        GameObject car = carObject.transform.GetChild(0).gameObject;
+        carSelect.enabled = false;
+
+        return car;
+    }
+
+    public static void loadTrack(GameObject yellow, GameObject blue, GameObject big, GameObject orange, ClickArgs clickProps)
+    {
+        GameObject car = GetCarObject();
         // Show default objects to allow for duplication
         blue.SetActive(true);
         yellow.SetActive(true);
         big.SetActive(true);
         orange.SetActive(true);
-        adsdv.SetActive(true);
+        car.SetActive(true);
 
         float adsRaise = 0.29f;
 
         // Position ads-dv
-        adsdv.transform.position = new Vector3(clickProps.track.car.pos[0], adsRaise, clickProps.track.car.pos[1]);
-        adsdv.transform.Rotate(0, clickProps.track.car.heading, 0, Space.Self);
+        car.transform.position = new Vector3(clickProps.track.car.pos[0], adsRaise, clickProps.track.car.pos[1]);
+        car.transform.Rotate(0, clickProps.track.car.heading, 0, Space.Self);
 
         // Make copies of cone tracks to allow for enumeration
         var copyYellowTrack = clickProps.yellowConeObjs.ToList();
