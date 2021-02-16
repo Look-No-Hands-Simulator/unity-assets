@@ -49,10 +49,6 @@ public class TrackGeneration : MonoBehaviour
         GameObject yellow = GameObject.Find("yellowCone");
         GameObject orange = GameObject.Find("orangeCone");
         GameObject big = GameObject.Find("bigorangeCone");
-        
-
-
-
 
 
         // UI objects
@@ -193,6 +189,8 @@ public class TrackGeneration : MonoBehaviour
         }
         
         GameObject car = carObject.transform.GetChild(0).gameObject;
+        Vector3 carScale = new Vector3(1.0f, 1.0f, 1.0f);
+        car.transform.localScale -= carScale;
         carSelect.enabled = false;
 
         return car;
@@ -200,7 +198,9 @@ public class TrackGeneration : MonoBehaviour
 
     public static void loadTrack(GameObject yellow, GameObject blue, GameObject big, GameObject orange, ClickArgs clickProps)
     {
-        GameObject car = GetCarObject();
+        GameObject sceneCar = GetCarObject();
+        GameObject car = Instantiate(sceneCar);
+        Destroy(sceneCar);
         // Show default objects to allow for duplication
         blue.SetActive(true);
         yellow.SetActive(true);
@@ -211,6 +211,7 @@ public class TrackGeneration : MonoBehaviour
         float adsRaise = 0.29f;
 
         // Position ads-dv
+        Debug.Log("Car pos x: " + clickProps.track.car.pos[0] + " y: " + clickProps.track.car.pos[1] + " heading: " + clickProps.track.car.heading);
         car.transform.position = new Vector3(clickProps.track.car.pos[0], adsRaise, clickProps.track.car.pos[1]);
         car.transform.Rotate(0, clickProps.track.car.heading, 0, Space.Self);
 
