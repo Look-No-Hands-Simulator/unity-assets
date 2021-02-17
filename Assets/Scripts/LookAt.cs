@@ -5,20 +5,23 @@ using UnityEngine;
 public class LookAt : MonoBehaviour
 {
     public Transform target;
+    private GameObject player;
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.Find("player");
     }
 
     // Update is called once per frame
+
     void Update()
     {
-        
-        if(target != null)
+        if(player.transform.childCount > 0)
         {
-            Debug.Log(target);
+            target = player.transform.GetChild(0);
             transform.LookAt(target);
         }
+
     }
+
 }

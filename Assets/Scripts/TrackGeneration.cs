@@ -20,6 +20,7 @@ public class Track
 
     };
     public Car car = new Car();
+ 
 
 }
 
@@ -88,7 +89,7 @@ public class TrackGeneration : MonoBehaviour
         // Get file names of cones
         List<string> fileNames = new List<string>();
         string[] files = Directory.GetFiles(Application.streamingAssetsPath + "/json/", "*.json");
-        Debug.Log(files);
+        //Debug.Log(files);
         foreach (string file in files)
         {
             fileNames.Add(Path.GetFileName(file));
@@ -173,48 +174,57 @@ public class TrackGeneration : MonoBehaviour
         }
 
     }
-    public static GameObject GetCarObject()
+    public static void GetCarObject(ClickArgs clickProps)
     {
         GameObject carObject = GameObject.Find("carSelect");
-        CarSelector carSelect = carObject.GetComponent<CarSelector>();
-        List<GameObject> cars = new List<GameObject>();
+        CarSelector carSelect = carObject.GetComponent<CarSelector>();        
         int carChoice = carSelect.CarChoice;
-        Debug.Log(carChoice);
         for (int i = 0; i < carObject.transform.childCount; i++)
         {
-            if (i != carChoice)
-            {
-                Destroy(carObject.transform.GetChild(i).gameObject);
-            }
+            //Destroy(carObject.transform.GetChild(i).gameObject);
+            carObject.transform.GetChild(i).gameObject.SetActive(false);
+            
         }
+        GameObject car = carObject.transform.GetChild(carChoice).gameObject;
+        car.transform.rotation = new Quaternion(car.transform.rotation.x, 0.0f, car.transform.rotation.z, car.transform.rotation.w);
+        car.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+        car.SetActive(true);
+        //disable parent object to allow for correct x, y, z positioning
+        car.transform.parent = null;
+        car.transform.SetParent(GameObject.Find("player").transform);
+        // Position car
+        float adsRaise = 0.29f;
+        car.transform.position = new Vector3(clickProps.track.car.pos[0], adsRaise, clickProps.track.car.pos[1]);
+        Debug.Log("JSON CAR X: " + clickProps.track.car.pos[0] + " Z: " + clickProps.track.car.pos[1]);
+        Debug.Log("UNITY CAR X: " + car.transform.position.x + " Z: " + car.transform.position.z);
+        Debug.Log("JSON car heading: " + clickProps.track.car.heading);
         
-        GameObject car = carObject.transform.GetChild(0).gameObject;
-        Vector3 carScale = new Vector3(1.0f, 1.0f, 1.0f);
-        car.transform.localScale -= carScale;
-        carSelect.enabled = false;
+        
+        car.transform.Rotate(0, clickProps.track.car.heading, 0, Space.Self);
+        float heading = car.transform.rotation.eulerAngles.y - 360;
+        
+        Debug.Log("UNITY heading euler y: " + car.transform.rotation.eulerAngles.y);
+        Debug.Log("UNITY heading euler y - 360: " + heading);
 
-        return car;
+        
+
+        //disable carselect script
+        carSelect.enabled = false;
     }
 
     public static void loadTrack(GameObject yellow, GameObject blue, GameObject big, GameObject orange, ClickArgs clickProps)
     {
-        GameObject sceneCar = GetCarObject();
-        GameObject car = Instantiate(sceneCar);
-        Destroy(sceneCar);
+        
         // Show default objects to allow for duplication
         blue.SetActive(true);
         yellow.SetActive(true);
         big.SetActive(true);
         orange.SetActive(true);
-        car.SetActive(true);
 
-        float adsRaise = 0.29f;
-
-        // Position ads-dv
-        Debug.Log("Car pos x: " + clickProps.track.car.pos[0] + " y: " + clickProps.track.car.pos[1] + " heading: " + clickProps.track.car.heading);
-        car.transform.position = new Vector3(clickProps.track.car.pos[0], adsRaise, clickProps.track.car.pos[1]);
-        car.transform.Rotate(0, clickProps.track.car.heading, 0, Space.Self);
-
+        //set select car and position in track
+        GetCarObject(clickProps);
+        
+        
         // Make copies of cone tracks to allow for enumeration
         var copyYellowTrack = clickProps.yellowConeObjs.ToList();
         var copyBlueTrack = clickProps.blueConeObjs.ToList();
