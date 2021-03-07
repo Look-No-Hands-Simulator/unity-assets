@@ -17,8 +17,10 @@ public class Track
     {
         public List<float> pos;
         public float heading;
+
     };
     public Car car = new Car();
+ 
 
 }
 
@@ -37,6 +39,9 @@ public class ClickArgs
 
 public class TrackGeneration : MonoBehaviour
 {
+    
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -45,7 +50,7 @@ public class TrackGeneration : MonoBehaviour
         GameObject yellow = GameObject.Find("yellowCone");
         GameObject orange = GameObject.Find("orangeCone");
         GameObject big = GameObject.Find("bigorangeCone");
-        GameObject adsdv = GameObject.Find("ads-dv");
+
 
         // UI objects
         Dropdown dropOption = GameObject.Find("trackDropdown").GetComponent<Dropdown>();
@@ -67,15 +72,16 @@ public class TrackGeneration : MonoBehaviour
 
         // Allow for selection of track using dropdown
         dropOption.onValueChanged.AddListener(delegate { updateChoice(clickProps, dropOption); });
+
         // Change track dir to selection on button click
-        trackButton.onClick.AddListener(() => { loadTrack(yellow, blue, big, orange, adsdv, clickProps); });
+        trackButton.onClick.AddListener(() => { loadTrack(yellow, blue, big, orange, clickProps); });
 
     }
 
     // Update is called once per frame
     void Update()
     {
-
+ 
     }
 
     public static void readJSONFolder(ClickArgs clickProps)
@@ -83,7 +89,7 @@ public class TrackGeneration : MonoBehaviour
         // Get file names of cones
         List<string> fileNames = new List<string>();
         string[] files = Directory.GetFiles(Application.streamingAssetsPath + "/json/", "*.json");
-        Debug.Log(files);
+        //Debug.Log(files);
         foreach (string file in files)
         {
             fileNames.Add(Path.GetFileName(file));
@@ -168,23 +174,57 @@ public class TrackGeneration : MonoBehaviour
         }
 
     }
-
-    public static void loadTrack(GameObject yellow, GameObject blue, GameObject big, GameObject orange, 
-        GameObject adsdv, ClickArgs clickProps)
+    public static void GetCarObject(ClickArgs clickProps)
     {
+        GameObject carObject = GameObject.Find("carSelect");
+        CarSelector carSelect = carObject.GetComponent<CarSelector>();        
+        int carChoice = carSelect.CarChoice;
+        for (int i = 0; i < carObject.transform.childCount; i++)
+        {
+            //Destroy(carObject.transform.GetChild(i).gameObject);
+            carObject.transform.GetChild(i).gameObject.SetActive(false);
+            
+        }
+        GameObject car = carObject.transform.GetChild(carChoice).gameObject;
+        car.transform.rotation = new Quaternion(car.transform.rotation.x, 0.0f, car.transform.rotation.z, car.transform.rotation.w);
+        car.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+        car.SetActive(true);
+        //disable parent object to allow for correct x, y, z positioning
+        car.transform.parent = null;
+        car.transform.SetParent(GameObject.Find("player").transform);
+        // Position car
+        float adsRaise = 0.29f;
+        car.transform.position = new Vector3(clickProps.track.car.pos[0], adsRaise, clickProps.track.car.pos[1]);
+        Debug.Log("JSON CAR X: " + clickProps.track.car.pos[0] + " Z: " + clickProps.track.car.pos[1]);
+        Debug.Log("UNITY CAR X: " + car.transform.position.x + " Z: " + car.transform.position.z);
+        Debug.Log("JSON car heading: " + clickProps.track.car.heading);
+        
+        
+        car.transform.Rotate(0, clickProps.track.car.heading, 0, Space.Self);
+        float heading = car.transform.rotation.eulerAngles.y - 360;
+        
+        Debug.Log("UNITY heading euler y: " + car.transform.rotation.eulerAngles.y);
+        Debug.Log("UNITY heading euler y - 360: " + heading);
+
+        
+
+        //disable carselect script
+        carSelect.enabled = false;
+    }
+
+    public static void loadTrack(GameObject yellow, GameObject blue, GameObject big, GameObject orange, ClickArgs clickProps)
+    {
+        
         // Show default objects to allow for duplication
         blue.SetActive(true);
         yellow.SetActive(true);
         big.SetActive(true);
         orange.SetActive(true);
-        adsdv.SetActive(true);
 
-        float adsRaise = 0.29f;
-
-        // Position ads-dv
-        adsdv.transform.position = new Vector3(clickProps.track.car.pos[0], adsRaise, clickProps.track.car.pos[1]);
-        adsdv.transform.Rotate(0, clickProps.track.car.heading, 0, Space.Self);
-
+        //set select car and position in track
+        GetCarObject(clickProps);
+        
+        
         // Make copies of cone tracks to allow for enumeration
         var copyYellowTrack = clickProps.yellowConeObjs.ToList();
         var copyBlueTrack = clickProps.blueConeObjs.ToList();
