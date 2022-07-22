@@ -9,6 +9,7 @@ public class DisableButtons : MonoBehaviour
         
         for (int i = 0; i < transform.childCount; i++)
         {
+            // Make sure to hide the buttons as well as disable
             transform.GetChild(i).gameObject.SetActive(false);
 
         }

@@ -265,6 +265,13 @@ public class TrackGeneration : MonoBehaviour
         orange.SetActive(false);
         big.SetActive(false);
 
+        // Get Canvas reference
+        // canvas = GameObject.Find("Canvas");
+        // // Hide all buttons except respawn
+        // foreach(Transform child in canvas) {
+            
+        // }
+
 
     }
 
