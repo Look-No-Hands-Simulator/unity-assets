@@ -41,7 +41,6 @@ public class TrackGeneration : MonoBehaviour
 {
     
     
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -265,12 +264,13 @@ public class TrackGeneration : MonoBehaviour
         orange.SetActive(false);
         big.SetActive(false);
 
-        // Get Canvas reference
-        // canvas = GameObject.Find("Canvas");
-        // // Hide all buttons except respawn
-        // foreach(Transform child in canvas) {
-            
-        // }
+        // Get items obj inside Canvas
+        GameObject canvas_items = GameObject.Find("/Canvas/items");
+        // Hide all buttons except respawn
+        for(int i=0; i<canvas_items.transform.childCount; i++)
+        {
+            canvas_items.transform.GetChild(i).gameObject.SetActive(false);
+        }
 
 
     }
