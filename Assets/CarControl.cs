@@ -47,11 +47,28 @@ public class CarControl : MonoBehaviour
         tyre.transform.position = position;
         tyre.transform.rotation = rotation;
     }
+
+    void RotateTyresInitial(WheelCollider collider) {
+        // Fix bug of wheels turning 90 degrees on start and rolling in wrong dimension
+        if (collider.transform.childCount == 0) {
+            return;
+        }
+
+        Transform tyre = collider.transform.GetChild(0);
+
+        Quaternion rotation = new Quaternion(1f,0f,90f,0f);
+
+        tyre.transform.rotation = rotation;
+    }
     // // Start is called before the first frame update
-    // void Start()
-    // {
+    void Start()
+    {
+        foreach (WheelElements element in wheelData) {
+            RotateTyresInitial(element.leftWheel);
+            RotateTyresInitial(element.rightWheel);
+        }
         
-    // }
+    }
 
     // // Update is called once per frame
     // void Update()
