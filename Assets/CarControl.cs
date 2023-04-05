@@ -9,6 +9,9 @@ public class CarControl : MonoBehaviour
     public float maxTorque;
     public float maxSteerAngle = 30;
 
+    private Rigidbody rb;
+    public Transform massCenter;
+
     private void FixedUpdate() {
 
         float speed = Input.GetAxis("Vertical")*maxTorque;
@@ -67,6 +70,9 @@ public class CarControl : MonoBehaviour
             RotateTyresInitial(element.leftWheel);
             RotateTyresInitial(element.rightWheel);
         }
+
+        rb = GetComponent<Rigidbody>();
+        rb.centerOfMass = massCenter.localPosition;
         
     }
 
