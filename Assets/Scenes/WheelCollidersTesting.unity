@@ -586,17 +586,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 6a34f4c59f84617bd87a12e288c37296,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6a34f4c59f84617bd87a12e288c37296,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.70710677
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6a34f4c59f84617bd87a12e288c37296,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6a34f4c59f84617bd87a12e288c37296,
         type: 3}
@@ -606,7 +606,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 6a34f4c59f84617bd87a12e288c37296,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6a34f4c59f84617bd87a12e288c37296,
         type: 3}
@@ -835,12 +835,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 6a34f4c59f84617bd87a12e288c37296,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.7071068
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6a34f4c59f84617bd87a12e288c37296,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6a34f4c59f84617bd87a12e288c37296,
         type: 3}
@@ -850,7 +850,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 6a34f4c59f84617bd87a12e288c37296,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 270
+      value: -270
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6a34f4c59f84617bd87a12e288c37296,
         type: 3}
@@ -1232,7 +1232,7 @@ MonoBehaviour:
     addWheelTorque: 0
     shouldSteer: 0
   maxTorque: 400
-  maxSteerAngle: 30
+  maxSteerAngle: 40
   massCenter: {fileID: 1132070650}
 --- !u!65 &1816252775
 BoxCollider:
