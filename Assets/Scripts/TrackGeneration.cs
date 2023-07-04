@@ -35,6 +35,7 @@ public class ClickArgs
     public List<GameObject> bigConeObjs = new List<GameObject>();
     public List<GameObject> orangeConeObjs = new List<GameObject>();
     public Track track = new Track();
+    public GameObject car;
 }
 
 public class TrackGeneration : MonoBehaviour

@@ -14,6 +14,8 @@ public class SimpleCarController : MonoBehaviour {
     public List<AxleInfo> axleInfos; 
     public float maxMotorTorque;
     public float maxSteeringAngle;
+    public bool disabled = false;
+
      
     // finds the corresponding visual wheel
     // correctly applies the transform
@@ -37,8 +39,9 @@ public class SimpleCarController : MonoBehaviour {
     {
         float motor = maxMotorTorque * Input.GetAxis("Vertical");
         float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
-     
-        foreach (AxleInfo axleInfo in axleInfos) {
+
+        if (!disabled) {
+            foreach (AxleInfo axleInfo in axleInfos) {
             if (axleInfo.steering) {
                 axleInfo.leftWheel.steerAngle = steering;
                 axleInfo.rightWheel.steerAngle = steering;
@@ -49,6 +52,8 @@ public class SimpleCarController : MonoBehaviour {
             }
             ApplyLocalPositionToVisuals(axleInfo.leftWheel);
             ApplyLocalPositionToVisuals(axleInfo.rightWheel);
+            }
         }
+        
     }
 }
