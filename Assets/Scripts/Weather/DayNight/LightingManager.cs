@@ -16,6 +16,7 @@ public class LightingManager : MonoBehaviour
             return;
 
             if (Application.isPlaying) {
+                // deltaTime is interval in seconds from last frame to current one
                 TimeOfDay += Time.deltaTime;
                 TimeOfDay %= 24; // Clamp between 0-24
                 UpdateLighting(TimeOfDay / 24f);
