@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[ExecuteAlways]
+//[ExecuteAlways]
 public class DayAndNight : MonoBehaviour
 {
 
@@ -17,8 +17,20 @@ public class DayAndNight : MonoBehaviour
     
 
     // Update is called once per frame
-    void Update()
-    {
-        
+        private void Update() {
+        if(Preset == null) {
+            return;
+
+            if (Application.isPlaying) {
+                // deltaTime is interval in seconds from last frame to current one
+                // Time of day + 
+                TimeOfDay += Time.deltaTime;
+                // Modulus
+                TimeOfDay %= 24; // Clamp between 0-24
+                //UpdateLighting(TimeOfDay / 24f);
+            } else {
+                //UpdateLighting(TimeOfDay / 24f);
+            }
+        }
     }
 }
