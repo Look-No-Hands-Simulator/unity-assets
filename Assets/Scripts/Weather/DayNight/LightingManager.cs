@@ -11,6 +11,8 @@ public class LightingManager : MonoBehaviour
     // Variables
     [SerializeField, Range(0, 24)] private float TimeOfDay;
 
+    private int time_dampener = 20;
+
     private void Update() {
         //Debug.Log("Something is updating!");
         if (Preset == null) {
@@ -21,7 +23,8 @@ public class LightingManager : MonoBehaviour
         if (Application.isPlaying) {
             // deltaTime is interval in seconds from last frame to current one
             // This will make it change the lighting itself as time/frames go on
-            TimeOfDay += Time.deltaTime;
+            TimeOfDay += Time.deltaTime / this.time_dampener;
+            //TimeOfDay -= 24;
             // Divide by 24 so we can pass a 0 to 1 value
             TimeOfDay %= 24; // Clamp between 0-24
             UpdateLighting(TimeOfDay / 24f);
@@ -44,6 +47,7 @@ public class LightingManager : MonoBehaviour
             //Debug.Log("There is a light!");
             DirectionalLight.color = Preset.DirectionalColor.Evaluate(timePercent);
             // Could add vector to angle wish to rotate the sky/light
+
             DirectionalLight.transform.localRotation = Quaternion.Euler(new Vector3((timePercent * 360f) -90f, 170f, 0));
 
 
