@@ -12,21 +12,25 @@ public class LightingManager : MonoBehaviour
     [SerializeField, Range(0, 24)] private float TimeOfDay;
 
     private void Update() {
+        //Debug.Log("Something is updating!");
         if (Preset == null) {
+            Debug.Log("Empty preset!!!");
             return;
+        }
 
-            // Only do following if application is playing
-            if (Application.isPlaying) {
-                // deltaTime is interval in seconds from last frame to current one
-                // This will make it change the lighting itself as time/frames go on
-                TimeOfDay += Time.deltaTime;
-                // Divide by 24 so we can pass a 0 to 1 value
-                TimeOfDay %= 24; // Clamp between 0-24
-                UpdateLighting(TimeOfDay / 24f);
-            } else {
-                // Do this in the editor when slider is moved
-                UpdateLighting(TimeOfDay / 24f);
-            }
+        // Only do following if application is playing
+        if (Application.isPlaying) {
+            Debug.Log("Application is playingh?");
+            // deltaTime is interval in seconds from last frame to current one
+            // This will make it change the lighting itself as time/frames go on
+            TimeOfDay += Time.deltaTime;
+            // Divide by 24 so we can pass a 0 to 1 value
+            TimeOfDay %= 24; // Clamp between 0-24
+            UpdateLighting(TimeOfDay / 24f);
+        } else {
+            Debug.Log("Editor edit");
+            // Do this in the editor when slider is moved
+            UpdateLighting(TimeOfDay / 24f);
         }
     }
 
@@ -35,11 +39,13 @@ public class LightingManager : MonoBehaviour
     private void UpdateLighting(float timePercent) {
         // Evaluate all different gradients in preset and set to render against
         // the time of day 0-1
-        RenderSettings.ambientLight = Preset.AmbientColour.Evaluate(timePercent);
-        RenderSettings.fogColor = Preset.FogColour.Evaluate(timePercent);
+        RenderSettings.ambientLight = Preset.AmbientColor.Evaluate(timePercent);
+        RenderSettings.fogColor = Preset.FogColor.Evaluate(timePercent);
+        //Debug.Log("Entered updatelighting func");
         
         if(DirectionalLight != null) {
-            DirectionalLight.color = Preset.DirectionalColour.Evaluate(timePercent);
+            //Debug.Log("There is a light!");
+            DirectionalLight.color = Preset.DirectionalColor.Evaluate(timePercent);
             // Could add vector to angle wish to rotate the sky/light
             DirectionalLight.transform.localRotation = Quaternion.Euler(new Vector3((timePercent * 360f) -90f, 170f, 0));
 
