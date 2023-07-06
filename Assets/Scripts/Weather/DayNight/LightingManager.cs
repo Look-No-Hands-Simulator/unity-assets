@@ -14,13 +14,11 @@ public class LightingManager : MonoBehaviour
     private void Update() {
         //Debug.Log("Something is updating!");
         if (Preset == null) {
-            Debug.Log("Empty preset!!!");
             return;
         }
 
         // Only do following if application is playing
         if (Application.isPlaying) {
-            Debug.Log("Application is playingh?");
             // deltaTime is interval in seconds from last frame to current one
             // This will make it change the lighting itself as time/frames go on
             TimeOfDay += Time.deltaTime;
@@ -28,7 +26,6 @@ public class LightingManager : MonoBehaviour
             TimeOfDay %= 24; // Clamp between 0-24
             UpdateLighting(TimeOfDay / 24f);
         } else {
-            Debug.Log("Editor edit");
             // Do this in the editor when slider is moved
             UpdateLighting(TimeOfDay / 24f);
         }
