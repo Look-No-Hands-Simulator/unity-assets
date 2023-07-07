@@ -188,7 +188,7 @@ public class TrackGeneration : MonoBehaviour
         }
         GameObject car = carObject.transform.GetChild(carChoice).gameObject;
         //car.transform.rotation = new Quaternion(car.transform.rotation.x, 0.0f, car.transform.rotation.z, car.transform.rotation.w);
-        //car.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+        car.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
         car.SetActive(true);
         //disable parent object to allow for correct x, y, z positioning
         car.transform.parent = null;
