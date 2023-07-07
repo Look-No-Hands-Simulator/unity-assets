@@ -11,6 +11,8 @@ public class LightingManager : MonoBehaviour
     // Variables
     [SerializeField, Range(0, 24)] private float TimeOfDay;
 
+    private float previousStaticTimeOfDay = 0;
+
     private int time_dampener = 20;
 
     private void Update() {
@@ -29,8 +31,13 @@ public class LightingManager : MonoBehaviour
             TimeOfDay %= 24; // Clamp between 0-24
             UpdateLighting(TimeOfDay / 24f);
         } else {
-            // Do this in the editor when slider is moved
-            UpdateLighting(TimeOfDay / 24f);
+            // TODO: Be wary if the previousStaticTimeOfDay may cause bugs
+            if (TimeOfDay != this.previousStaticTimeOfDay) {
+                // Do this in the editor when slider is moved
+                // Debug.Log("Checkinggg");
+                UpdateLighting(TimeOfDay / 24f);
+                previousStaticTimeOfDay = TimeOfDay;
+            }
         }
     }
 
