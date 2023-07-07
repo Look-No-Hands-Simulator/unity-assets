@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 [ExecuteAlways]
 public class LightingManager : MonoBehaviour
@@ -30,14 +31,21 @@ public class LightingManager : MonoBehaviour
             // Divide by 24 so we can pass a 0 to 1 value
             TimeOfDay %= 24; // Clamp between 0-24
             UpdateLighting(TimeOfDay / 24f);
+
+            // TODO: Add handler to change time of day with slider when
+            // game is paused
+        }
+        else if (!Application.isEditor) {
+            UpdateLighting(TimeOfDay / 24f);
         } else {
+            UpdateLighting(TimeOfDay / 24f);
             // TODO: Be wary if the previousStaticTimeOfDay may cause bugs
-            if (TimeOfDay != this.previousStaticTimeOfDay) {
-                // Do this in the editor when slider is moved
-                // Debug.Log("Checkinggg");
-                UpdateLighting(TimeOfDay / 24f);
-                previousStaticTimeOfDay = TimeOfDay;
-            }
+            // if (TimeOfDay != this.previousStaticTimeOfDay) {
+            //     // Do this in the editor when slider is moved
+            //     // Debug.Log("Checkinggg");
+            //     UpdateLighting(TimeOfDay / 24f);
+            //     previousStaticTimeOfDay = TimeOfDay;
+            // }
         }
     }
 
