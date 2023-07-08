@@ -35,9 +35,10 @@ public class LightingManager : MonoBehaviour
             // TODO: Add handler to change time of day with slider when
             // game is paused
         }
-        else if (!Application.isEditor) {
-            UpdateLighting(TimeOfDay / 24f);
-        } else {
+        // else if (!Application.isEditor) {
+        //     UpdateLighting(TimeOfDay / 24f);
+        //} 
+        else {
             UpdateLighting(TimeOfDay / 24f);
             // TODO: Be wary if the previousStaticTimeOfDay may cause bugs
             // if (TimeOfDay != this.previousStaticTimeOfDay) {
