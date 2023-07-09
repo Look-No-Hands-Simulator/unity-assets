@@ -187,7 +187,7 @@ public class TrackGeneration : MonoBehaviour
             
         }
         GameObject car = carObject.transform.GetChild(carChoice).gameObject;
-        car.transform.rotation = new Quaternion(car.transform.rotation.x, 0.0f, car.transform.rotation.z, car.transform.rotation.w);
+        //car.transform.rotation = new Quaternion(car.transform.rotation.x, 0.0f, car.transform.rotation.z, car.transform.rotation.w);
         car.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
         car.SetActive(true);
         //disable parent object to allow for correct x, y, z positioning
@@ -195,17 +195,18 @@ public class TrackGeneration : MonoBehaviour
         car.transform.SetParent(GameObject.Find("player").transform);
         // Position car
         float adsRaise = 0.29f;
-        car.transform.position = new Vector3(clickProps.track.car.pos[0], adsRaise, clickProps.track.car.pos[1]);
-        Debug.Log("JSON CAR X: " + clickProps.track.car.pos[0] + " Z: " + clickProps.track.car.pos[1]);
-        Debug.Log("UNITY CAR X: " + car.transform.position.x + " Z: " + car.transform.position.z);
-        Debug.Log("JSON car heading: " + clickProps.track.car.heading);
+        // TODO: The line below causes a bug (car flips). I am not sure how the car is transformed otherwise however, it must be from elsewhere as it works.
+        //car.transform.position = new Vector3(clickProps.track.car.pos[0], adsRaise, clickProps.track.car.pos[1]);
+        //Debug.Log("JSON CAR X: " + clickProps.track.car.pos[0] + " Z: " + clickProps.track.car.pos[1]);
+        //Debug.Log("UNITY CAR X: " + car.transform.position.x + " Z: " + car.transform.position.z);
+        //Debug.Log("JSON car heading: " + clickProps.track.car.heading);
         
         
-        car.transform.Rotate(0, clickProps.track.car.heading, 0, Space.Self);
-        float heading = car.transform.rotation.eulerAngles.y - 360;
+        //car.transform.Rotate(0, clickProps.track.car.heading, 0, Space.Self);
+        //float heading = car.transform.rotation.eulerAngles.y - 360;
         
-        Debug.Log("UNITY heading euler y: " + car.transform.rotation.eulerAngles.y);
-        Debug.Log("UNITY heading euler y - 360: " + heading);
+        //Debug.Log("UNITY heading euler y: " + car.transform.rotation.eulerAngles.y);
+        //Debug.Log("UNITY heading euler y - 360: " + heading);
 
         
 

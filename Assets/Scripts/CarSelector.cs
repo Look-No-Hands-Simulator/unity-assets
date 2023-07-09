@@ -28,7 +28,7 @@ public class CarSelector : MonoBehaviour
         //set default car choice
         carChoice = 0;
         setCars();
-        cars[0].transform.localScale += scaleChange;
+        //cars[0].transform.localScale += scaleChange;
     }
     private void Update()
     {
@@ -57,7 +57,7 @@ public class CarSelector : MonoBehaviour
         for (int i = 0; i < transform.childCount; i++)
         {
             cars.Add(transform.GetChild(i).gameObject);            
-            float theta = i * 2 * Mathf.PI / numObjects;
+            float theta = i * 2f * Mathf.PI / numObjects;
             float x = Mathf.Sin(theta +4.72f) * radius;
             float z = Mathf.Cos(theta +4.72f) * radius;            
             cars[i].transform.position = new Vector3(x, 1, z);
@@ -67,7 +67,7 @@ public class CarSelector : MonoBehaviour
     public void changeCar(int select)
     {        
 
-        cars[carChoice].transform.localScale -= scaleChange;
+        //cars[carChoice].transform.localScale -= scaleChange;
         carChoice += select;
         //select car based on button input : right button +1, left button -1
         //allow for constant car selection in either left or right direction with modulus operator
@@ -82,7 +82,7 @@ public class CarSelector : MonoBehaviour
             rotateCarsLeft();
         }
         //increase size of selected car object for further differentiation between currently selected objects
-        cars[carChoice].transform.localScale += scaleChange;
+        //cars[carChoice].transform.localScale += scaleChange;
         target = carChoice;
         
     }

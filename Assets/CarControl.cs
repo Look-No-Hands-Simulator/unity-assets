@@ -12,6 +12,10 @@ public class CarControl : MonoBehaviour
     private Rigidbody rb;
     public Transform massCenter;
 
+    [SerializeField] private float force = 10;
+    [SerializeField] private float speed = 5;
+
+
     private void FixedUpdate() {
 
         float speed = Input.GetAxis("Vertical")*maxTorque;
@@ -74,6 +78,13 @@ public class CarControl : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.centerOfMass = massCenter.localPosition;
         
+    }
+
+    void OnControllerColliderHit(ControllerColliderHit hit) {
+        Rigidbody rbo = hit.collider.attachedRigidbody;
+        if (rbo == null || rbo.isKinematic) return;
+        // rb should be the Object or character controller of the car and wheels
+        rbo.AddForceAtPosition(force * this.rb.velocity.normalized, hit.point);
     }
 
     // // Update is called once per frame
