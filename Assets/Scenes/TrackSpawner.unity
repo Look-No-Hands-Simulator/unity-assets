@@ -994,17 +994,17 @@ GameObject:
   - component: {fileID: 335182539}
   - component: {fileID: 335182538}
   - component: {fileID: 335182537}
-  - component: {fileID: 335182536}
   - component: {fileID: 335182540}
+  - component: {fileID: 335182536}
   m_Layer: 0
   m_Name: Asphalt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!64 &335182536
-MeshCollider:
+  m_IsActive: 1
+--- !u!65 &335182536
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1013,10 +1013,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &335182537
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1078,7 +1077,7 @@ Transform:
   m_LocalScale: {x: 20, y: 1, z: 20}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &335182540
 Rigidbody:
@@ -6348,7 +6347,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 5f748de405bbbd7228423e82b5514575,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5f748de405bbbd7228423e82b5514575,
         type: 3}
@@ -6404,6 +6403,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: sulverstone_pit_straight
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5f748de405bbbd7228423e82b5514575,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1151388028547126963, guid: 5f748de405bbbd7228423e82b5514575,
         type: 3}
@@ -12251,7 +12255,7 @@ PrefabInstance:
     - target: {fileID: 1007411829980817800, guid: 696dee6e40cad9eab9c51e05cfd58661,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1007411829980817800, guid: 696dee6e40cad9eab9c51e05cfd58661,
         type: 3}
@@ -12321,7 +12325,7 @@ PrefabInstance:
     - target: {fileID: 2645175964732226852, guid: 272d5bdaec735ee2b9f1f46dce4801d6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2645175964732226852, guid: 272d5bdaec735ee2b9f1f46dce4801d6,
         type: 3}
@@ -12390,7 +12394,7 @@ PrefabInstance:
     - target: {fileID: 3727125245349611657, guid: a9cbd2d5a28d3565982aace1957baa42,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3727125245349611657, guid: a9cbd2d5a28d3565982aace1957baa42,
         type: 3}
@@ -12540,7 +12544,7 @@ PrefabInstance:
     - target: {fileID: 9016806485411785239, guid: 4dfd4439a537eb49db4998f8b7637f6d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9016806485411785239, guid: 4dfd4439a537eb49db4998f8b7637f6d,
         type: 3}
