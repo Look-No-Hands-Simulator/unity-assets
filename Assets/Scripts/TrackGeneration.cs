@@ -198,7 +198,7 @@ public class TrackGeneration : MonoBehaviour
         car.transform.SetParent(GameObject.Find("player").transform);
         //newCone.transform.Translate(cone[0], 0, cone[1], Space.World);
         // Position car
-        float adsRaise = 0.29f;
+        // float adsRaise = 0.29f;
         // TODO: The line below causes a bug (car flips). I am not sure how the car is transformed otherwise however, it must be from elsewhere as it works.
         car.transform.position = new Vector3(clickProps.track.car.pos[0], car.transform.position.y, clickProps.track.car.pos[1]);
         //car.transform.rotation = new Quaternion(car.transform.rotation.x, clickProps.track.car.heading, car.transform.rotation.z + 0);

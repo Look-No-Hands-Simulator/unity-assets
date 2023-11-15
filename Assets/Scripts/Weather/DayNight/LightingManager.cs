@@ -12,7 +12,7 @@ public class LightingManager : MonoBehaviour
     // Variables
     [SerializeField, Range(0, 24)] private float TimeOfDay;
 
-    private float previousStaticTimeOfDay = 0;
+    // private float previousStaticTimeOfDay = 0;
 
     private int time_dampener = 20;
 
