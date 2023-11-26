@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using System.Collections.Generic;
 
+using System;
+
 using RosMessageTypes.Geometry;
 using RosMessageTypes.Sensor;
 using RosMessageTypes.Std;
@@ -18,6 +20,8 @@ public class CarPosPublisher : MonoBehaviour
 
     public string poseStampedTopic = "/car_pose_unity";
 
+    private int seqNumber = 0;
+
     ROSConnection ros;
 
 
@@ -28,12 +32,22 @@ public class CarPosPublisher : MonoBehaviour
     }
 
     void Update() {
+        
+        // Get time now and convert to DateTimeOffset, use that object to get seconds and nanoseconds
+        DateTime timestamp = DateTime.UtcNow;
 
         PoseStampedMsg poseStampedMsg = new PoseStampedMsg
         {
             pose = new PoseMsg{
                             position = new PointMsg(carObject.transform.position.x, carObject.transform.position.y, carObject.transform.position.z),
                             orientation = new QuaternionMsg(carObject.transform.rotation.x, carObject.transform.rotation.y, carObject.transform.rotation.z, carObject.transform.rotation.w)
+            },
+            header = new HeaderMsg{
+                stamp = new TimeMsg{
+                    sec = (int)((DateTimeOffset)timestamp).ToUnixTimeSeconds(),
+                    nanosec = (uint)(timestamp.Millisecond*1000000)
+                },
+                frame_id = "map"
             }
 
         };
