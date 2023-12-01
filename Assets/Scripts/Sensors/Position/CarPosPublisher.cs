@@ -20,7 +20,7 @@ public class CarPosPublisher : MonoBehaviour
 
     public string poseStampedTopic = "/car_pose_unity";
 
-    private int seqNumber = 0;
+    public double longitude, latitude, altitude;
 
     ROSConnection ros;
 

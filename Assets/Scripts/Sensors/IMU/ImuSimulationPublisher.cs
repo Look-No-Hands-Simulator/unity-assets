@@ -25,7 +25,7 @@ public class ImuSimulationPublisher : MonoBehaviour
         ros = ROSConnection.GetOrCreateInstance();
         ros.RegisterPublisher<ImuMsg>(imu_topic);
 
-        imu_simulation = new ImuSimulation();
+        imu_simulation = new ImuSimulation(imu_sensor_link);
 
     }
 

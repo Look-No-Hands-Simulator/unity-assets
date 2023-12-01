@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Serialization;
 using System.Collections.Generic;
+using System;
 
 using RosMessageTypes.Geometry;
 using RosMessageTypes.Sensor;
@@ -12,18 +13,21 @@ public class ImuSimulation : MonoBehaviour
 {
     GameObject imu_sensor_link;
 
-    TimeStamp last_msg_timestamp;
+    Rigidbody imu_physical;
+
+    DateTime last_msg_timestamp;
 
     Vector3 last_velocity;
 
-    ImuSimulation(GameObject imu_sensor_link) {
-        imu_sensor_link = imu_sensor_link;
-        last_msg_timestamp = new TimeStamp(Clock.time);
+    public ImuSimulation(GameObject imu_sensor_link_object) {
+        imu_sensor_link = imu_sensor_link_object;
+        imu_physical = imu_sensor_link.GetComponent<Rigidbody>();
+        last_msg_timestamp = DateTime.Now;
         last_velocity = new Vector3
             {
-                x = imu_sensor_link.velocity.x,
-                y = imu_sensor_link.velocity.y,
-                z = imu_sensor_link.velocity.z
+                x = imu_physical.velocity.x,
+                y = imu_physical.velocity.y,
+                z = imu_physical.velocity.z
             }; 
         
 
@@ -31,21 +35,23 @@ public class ImuSimulation : MonoBehaviour
 
     public ImuMsg get_imu_msg() {
 
-        var timestamp_now = new TimeStamp(Clock.time);
+        DateTime timestamp_now = DateTime.Now;
 
         Vector3 velocity_now = new Vector3 
         {
-            x = imu_sensor_link.velocity.x,
-            y = imu_sensor_link.velocity.y,
-            z = imu_sensor_link.velocity.z
-        } 
+            x = imu_physical.velocity.x,
+            y = imu_physical.velocity.y,
+            z = imu_physical.velocity.z
+        };
         // Change in meters per second per second (change of a change in speed)
-        Vector3 acceleration = (velocity_now - last_velocity) / (timestamp_now.Subtract(last_msg_timestamp).Seconds);
+        Vector3 acceleration = (velocity_now - last_velocity) / (float)(timestamp_now - last_msg_timestamp).TotalSeconds;
 
         // Update time and velocity changes for next time
         last_msg_timestamp = timestamp_now;
         last_velocity = velocity_now;
         
+        // Get Unix time, how long since Jan 1st 1970?
+        TimeStamp msg_timestamp = new TimeStamp(Clock.time);
         // Prepare msg
         var msg = new ImuMsg
         {
@@ -54,22 +60,22 @@ public class ImuSimulation : MonoBehaviour
                 frame_id = imu_sensor_link.name,
                 stamp = new TimeMsg
                 {
-                    sec = timestamp_now.Seconds,
-                    nanosec = timestamp_now.NanoSeconds,
+                    sec = msg_timestamp.Seconds,
+                    nanosec = msg_timestamp.NanoSeconds,
                 }
             },
             orientation = new QuaternionMsg
             {
-                x = imu_sensor_link.rotation.x,
-                y = imu_sensor_link.rotation.y,
-                z = imu_sensor_link.rotation.z,
-                w = imu_sensor_link.rotation.w
+                x = imu_physical.rotation.x,
+                y = imu_physical.rotation.y,
+                z = imu_physical.rotation.z,
+                w = imu_physical.rotation.w
             },
             angular_velocity = new Vector3Msg 
             {
-                x = imu_sensor_link.angular_velocity.x,
-                y = imu_sensor_link.angular_velocity.y,
-                z = imu_sensor_link.angular_velocity.z
+                x = imu_physical.angularVelocity.x,
+                y = imu_physical.angularVelocity.y,
+                z = imu_physical.angularVelocity.z
             },
             linear_acceleration = new Vector3Msg
             {
