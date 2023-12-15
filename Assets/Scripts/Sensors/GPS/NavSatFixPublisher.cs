@@ -15,10 +15,9 @@ public class NavSatFixPublisher : MonoBehaviour
     public string gps_topic = "/gps_unity";
 
     public float noise; 
-
-    public int utm_zone;
     public float lon_origin;
     public float lat_origin; 
+    public float alt_origin;
 
     ROSConnection ros;
     GpsSimulation gps_simulation;
@@ -26,14 +25,14 @@ public class NavSatFixPublisher : MonoBehaviour
         ros = ROSConnection.GetOrCreateInstance();
         ros.RegisterPublisher<NavSatFixMsg>(gps_topic);
 
-        gps_simulation = new GpsSimulation(gps_sensor_link,utm_zone,lon_origin,lat_origin);
+        gps_simulation = new GpsSimulation(gps_sensor_link,lon_origin,lat_origin,alt_origin);
 
     }
 
     void Update() {
-        //NavSatFix gps_msg = gps_simulation.get_navsatfix_msg();
-        gps_simulation.get_navsatfix_msg();
+        NavSatFixMsg gps_msg = gps_simulation.get_navsatfix_msg();
+        //gps_simulation.get_navsatfix_msg();
 
-        //ros.Publish(gps_topic, gps_msg);
+        ros.Publish(gps_topic, gps_msg);
     }
 }

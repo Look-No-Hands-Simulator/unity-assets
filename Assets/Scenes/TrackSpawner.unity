@@ -7883,6 +7883,7 @@ GameObject:
   - component: {fileID: 1562825516}
   - component: {fileID: 1562825518}
   - component: {fileID: 1562825519}
+  - component: {fileID: 1562825520}
   m_Layer: 0
   m_Name: ROS Publishers
   m_TagString: Untagged
@@ -7974,9 +7975,27 @@ MonoBehaviour:
   gps_sensor_link: {fileID: 232217343}
   gps_topic: /gps_unity
   noise: 0
-  utm_zone: 30
   lon_origin: -1.0183
   lat_origin: 52.0719
+  alt_origin: 119
+--- !u!114 &1562825520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562825514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d93a91d7c76aadda88df40f0284fb617, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fl_wheel: {fileID: 793466061}
+  fr_wheel: {fileID: 1510723490}
+  bl_wheel: {fileID: 619927977}
+  br_wheel: {fileID: 603915463}
+  wheelspeeds_topic: /wheelspeeds_unity
+  noise: 0
 --- !u!1 &1638270769
 GameObject:
   m_ObjectHideFlags: 0

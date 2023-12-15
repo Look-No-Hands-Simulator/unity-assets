@@ -14,31 +14,23 @@ using Unity.Robotics.Core;
 public class GpsSimulation : MonoBehaviour
 {
     GameObject gps_sensor_link;
-    int utm_zone;
     float lon_origin;
     float lat_origin;
+    float alt_origin; 
 
     // Radian version
     double lat_origin_rad;
     double lon_origin_rad;
 
-
-    string cs2cs_path;
-    string cs2cs_args; 
-
     const double R = 6371000; // Earth radius in meters
 
 
-    public GpsSimulation(GameObject gps_sensor_link_param, int utm_zone_param, float lon_origin_param, float lat_origin_param) {
+    public GpsSimulation(GameObject gps_sensor_link_param, float lon_origin_param, float lat_origin_param, float alt_origin_param) {
+
         gps_sensor_link = gps_sensor_link_param;
-        utm_zone = utm_zone_param;
         lon_origin = lon_origin_param;
         lat_origin = lat_origin_param;
-        // Assuming cs2cs is in the system PATH
-        cs2cs_path = "cs2cs";
-        // Replace with the appropriate projection and origin parameters
-        cs2cs_args = $"+proj=utm +datum=WGS84 +lat_0={lat_origin} +lon_0={lon_origin} +units=m +to +proj=latlong +zone={utm_zone} +datum=WGS84 -f %.12f";
-
+        alt_origin = alt_origin_param;
 
         // lattitude & longitude convert to radians
         lat_origin_rad = lat_origin * (Math.PI / 180.0);
@@ -46,7 +38,7 @@ public class GpsSimulation : MonoBehaviour
 
     }
 
-    public void get_navsatfix_msg() {
+    public NavSatFixMsg get_navsatfix_msg() {
 
         // calculate new lat & long in radians around earthR
         // fraction of the Earth's circumference * radius conversion
@@ -54,55 +46,46 @@ public class GpsSimulation : MonoBehaviour
         double lon_position_rad = lon_origin_rad +  (gps_sensor_link.transform.position.x / (R * Math.Cos(lat_origin_rad))) ; // * (Math.PI / 180.0);
 
 
-        // convert back to degrees
+        // convert back to degrees around the earth
         double lat = lat_position_rad * (180.0 / Math.PI);
         double lon = lon_position_rad * (180.0 / Math.PI);
+        // y is meters above or below ground and the origin is the GPS location in meters above sea level
+        double alt = alt_origin + gps_sensor_link.transform.position.y;
 
-        UnityEngine.Debug.Log("Transformed Coordinates, latlon: " + "lat: " + lat + "lon: " + lon);
+        // UnityEngine.Debug.Log("Transformed Coordinates, latlon: " + "lat: " + lat + "lon: " + lon);
+        
+        // Get Unix time, how long since Jan 1st 1970?
+        TimeStamp msg_timestamp = new TimeStamp(Clock.time);
+        // Prepare msg
+        var msg = new NavSatFixMsg
+        {
+            header = new HeaderMsg
+            {
+                frame_id = gps_sensor_link.name,
+                stamp = new TimeMsg
+                {
+                    sec = msg_timestamp.Seconds,
+                    nanosec = msg_timestamp.NanoSeconds,
+                }
+            },
+            status = new NavSatStatusMsg
+            {
+                // Unable to fix position = -1, unaugmented fix = 0, satellite-based augmentation = 1, ground-based augmentation = 2
+                status = 0,
+                // GPS = 1, GLONASS = 2, COMPASS = 4, GALILEO = 8   (Bitwise & to check which service we using, check which bit is filled in)
+                service = 1
+                
+            },
+            latitude = lat,
+            longitude = lon,
+            altitude = alt,
+            // Diagonals are 0,4,8   or use 1.0e-5, accurate to nearest cm 0.01
+            position_covariance = new double[]{0.00001,0.0,0.0,0.0,0.00001,0.0,0.0,0.0,0.01},
+            // 0 = unknown, 1 = approximated, 2 = diagonal known, 3 = known
+            position_covariance_type = 1
+        };
 
-
-        // // cs2cs +proj=utm +zone=30 +datum=WGS84 +lat_0=52.073273 +lon_0=-1.014818 +units=m +to +proj=latlong +datum=WGS84
-
-        // //assume x axis (pos) points eastward
-        // //       z axis (pos) points northwards
-
-        // // Create a string containing the input coordinates
-        // string inputCoordinates = $"{gps_sensor_link.transform.position.x} {gps_sensor_link.transform.position.z}";  //input coords come from unity
-
-        // // Print things and return strings
-        // //////////////////////////////////////////////////
-        // /// return void
-        // /// convert unity coords into gps global coords relative to utm zone
-        // /// public properties of utm zone and origin lat and long
-        // /// 
-        // // Start the cs2cs process
-        // Process process = new Process();
-        // process.StartInfo.FileName = cs2cs_path;
-        // process.StartInfo.Arguments = cs2cs_args;
-        // process.StartInfo.RedirectStandardInput = true;
-        // process.StartInfo.RedirectStandardOutput = true;
-        // process.StartInfo.UseShellExecute = false;
-        // process.StartInfo.CreateNoWindow = true;
-
-        // // Start the process
-        // process.Start();
-
-        // // Write the input coordinates to the cs2cs process
-        // StreamWriter writer = process.StandardInput;
-        // writer.WriteLine(inputCoordinates);
-        // writer.Close();
-
-        // // Read the output from the cs2cs process
-        // // 3 floats string format (or double)
-        // string output = process.StandardOutput.ReadToEnd();
-
-        // // Close the cs2cs process
-        // process.WaitForExit();
-        // process.Close();
-
-        // // Process the output as needed (e.g., parse UTM coordinates)
-        // UnityEngine.Debug.Log("Transformed Coordinates: " + output);
-
+        return msg;
 
         
     }
