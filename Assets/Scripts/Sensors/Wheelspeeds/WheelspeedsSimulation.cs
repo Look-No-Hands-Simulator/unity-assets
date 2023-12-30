@@ -1,11 +1,10 @@
 using UnityEngine;
-// Custom namespace msgs
-using RosMessageTypes.AdsDv;
-
-using UnityEngine;
 using UnityEngine.Serialization;
 using System.Collections.Generic;
 using System;
+
+// Custom namespace msgs
+using RosMessageTypes.AdsDv;
 
 using RosMessageTypes.Geometry;
 using RosMessageTypes.Sensor;

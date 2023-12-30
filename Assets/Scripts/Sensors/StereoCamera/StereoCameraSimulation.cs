@@ -1,11 +1,10 @@
 using UnityEngine;
-// Custom namespace msgs
-using RosMessageTypes.AdsDv;
-
-using UnityEngine;
 using UnityEngine.Serialization;
 using System.Collections.Generic;
 using System;
+
+// Custom namespace msgs
+using RosMessageTypes.AdsDv;
 
 using RosMessageTypes.Geometry;
 using RosMessageTypes.Sensor;
@@ -21,10 +20,10 @@ public class StereoCameraSimulation : MonoBehaviour
 
     int resolution;
 
-    public enum WhichCamera {
-        Left,
-        Right
-    }
+    // public enum WhichCamera {
+    //     Left,
+    //     Right
+    // }
 
     public StereoCameraSimulation(Camera left_camera_param, Camera right_camera_param) {
         left_camera = left_camera_param;
@@ -32,35 +31,41 @@ public class StereoCameraSimulation : MonoBehaviour
         
     }
 
-    public ImageMsg get_image_msg(WhichCamera camera_choice) {
-        Camera chosen_camera;
-        if (camera_choice == WhichCamera.Left) {
-            chosen_camera = left_camera;
-        } else {
-            chosen_camera = right_camera;
-        }
+    public ImageMsg get_image_msg(Camera chosen_camera) {
+        // Camera chosen_camera;
+        // if (camera_choice == left_camera) {
+        //     chosen_camera = left_camera;
+        // } else {
+        //     chosen_camera = right_camera;
+        // }
 
         // Get Unix time, how long since Jan 1st 1970?
         TimeStamp msg_timestamp = new TimeStamp(Clock.time);
 
-        RenderTexture texture = chosen_camera.activeTexture;
-        Texture2D captured_texture = new Texture2D(chosen_camera.width, chosen_camera.height);
-        RenderTexture.active = texture;
+        RenderTexture current_texture = RenderTexture.active;
+        Texture2D captured_texture = new Texture2D(chosen_camera.targetTexture.width, chosen_camera.targetTexture.height);
+        RenderTexture.active = chosen_camera.targetTexture;
         chosen_camera.Render();
-        captured_texture.readPixels(new Rect(0,0,texture.width,texture.height),0,0);
+        captured_texture.ReadPixels(new Rect(0,0,chosen_camera.targetTexture.width, chosen_camera.targetTexture.height),0,0);
         captured_texture.Apply();
-        RenderTexture.Active = null;
+        RenderTexture.active = current_texture;
 
-        // ALl colours and pixels (rgb) in image texture
+        // All colours and pixels (rgb) in image texture
+        // Create array of pixels (Color objects, rgb, 0-1 values) from captured texture
         Color[] pixels = captured_texture.GetPixels();
         byte[] image_data = new byte[pixels.Length*3];
+        int img_size = pixels.Length*3;
 
         // Iterate through pixels and record each 3 bytes
         // create a byte for each r,g,b in each pixel
-        for (i = 0; i < pixels.Length; i++) {
-            byte[i*3] = pixels[i].b * 255;
-            byte[i*3+1] = pixels[i].g * 255;
-            byte[i*3+2] = pixels[i].r * 255;
+        for (int i = 0; i < pixels.Length; i++) {
+            // bytes? ########### TODO
+            // By * 0-1 by 255 we get a colour value between 0-255
+            // Work from end of array to prevent upside down image
+            /// TODO: Flip this left to right
+            image_data[img_size - i*3 - 3] = (byte)(pixels[i].b * 255);
+            image_data[img_size - i*3 - 2] = (byte)(pixels[i].g * 255);
+            image_data[img_size - i*3 - 1] = (byte)(pixels[i].r * 255);
 
         }
 
@@ -74,11 +79,12 @@ public class StereoCameraSimulation : MonoBehaviour
                     nanosec = msg_timestamp.NanoSeconds,
                 }
             },
-            height = chosen_camera.pixelHeight,
-            width = chosen_camera.pixelWidth,
+            height = (uint)chosen_camera.pixelHeight,
+            width = (uint)chosen_camera.pixelWidth,
             encoding = "bgr8",
             is_bigendian = 0,
             // Check this later, width of image in bytes
+            // step, how many bits to look at before starting next row.
             step = (uint)((chosen_camera.pixelWidth)*3),
             data = image_data
 
