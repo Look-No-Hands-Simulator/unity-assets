@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Serialization;
 using System.Collections.Generic;
+using System;
 
 using RosMessageTypes.Geometry;
 using RosMessageTypes.Sensor;
@@ -17,7 +18,7 @@ public class ImuSimulationPublisher : MonoBehaviour
 
     public int axis = 3;
 
-    public float noise; 
+    public bool noise_activation = true; 
 
     ROSConnection ros;
     ImuSimulation imu_simulation;
@@ -25,7 +26,7 @@ public class ImuSimulationPublisher : MonoBehaviour
         ros = ROSConnection.GetOrCreateInstance();
         ros.RegisterPublisher<ImuMsg>(imu_topic);
 
-        imu_simulation = new ImuSimulation(imu_sensor_link);
+        imu_simulation = new ImuSimulation(imu_sensor_link, noise_activation);
 
     }
 

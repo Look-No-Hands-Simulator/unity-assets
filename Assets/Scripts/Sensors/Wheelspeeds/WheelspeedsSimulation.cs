@@ -28,7 +28,7 @@ public class WheelspeedsSimulation : MonoBehaviour
     }
 
     public VCU2AIWheelspeedsMsg get_vcu2aiwheelspeeds_msg() {
-
+        // Add or don't add noise
         return new VCU2AIWheelspeedsMsg {
             fl_wheel_speed_rpm = Convert.ToUInt16(Math.Abs(fl_wheel_collider.rpm)),
             fr_wheel_speed_rpm = Convert.ToUInt16(Math.Abs(fr_wheel_collider.rpm)),

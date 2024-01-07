@@ -8272,7 +8272,7 @@ MonoBehaviour:
   imu_sensor_link: {fileID: 232217343}
   imu_topic: /imu_unity
   axis: 3
-  noise: 0
+  noise_activation: 1
 --- !u!114 &1562825519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8344,7 +8344,10 @@ MonoBehaviour:
   camera: {fileID: 899705656}
   depthcamera_topic: /unity/stereo_camera/depth/image
   min_publishing_time: 0.5
+  time_elapsed: 0
   noise: 0
+  ros: {fileID: 0}
+  depth_mapping_simulation: {fileID: 0}
 --- !u!1 &1638270769
 GameObject:
   m_ObjectHideFlags: 0
