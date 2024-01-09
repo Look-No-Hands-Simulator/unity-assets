@@ -8291,6 +8291,7 @@ MonoBehaviour:
   lon_origin: -1.0183
   lat_origin: 52.0719
   alt_origin: 119
+  noise_activation: 0
 --- !u!114 &1562825520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8308,7 +8309,7 @@ MonoBehaviour:
   bl_wheel: {fileID: 619927977}
   br_wheel: {fileID: 603915463}
   wheelspeeds_topic: /wheelspeeds_unity
-  noise: 0
+  noise_activation: 1
 --- !u!114 &1562825521
 MonoBehaviour:
   m_ObjectHideFlags: 0

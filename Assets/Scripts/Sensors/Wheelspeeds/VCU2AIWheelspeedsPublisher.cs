@@ -21,8 +21,9 @@ public class VCU2AIWheelspeedsPublisher : MonoBehaviour
     public GameObject bl_wheel;
     public GameObject br_wheel;
     public string wheelspeeds_topic = "/wheelspeeds_unity";
-
-    public float noise; 
+    public bool noise_activation;
+    // TODO: Define how much noise there is
+    //public float noise; 
 
     ROSConnection ros;
     WheelspeedsSimulation wheelspeeds_simulation;
@@ -30,7 +31,7 @@ public class VCU2AIWheelspeedsPublisher : MonoBehaviour
         ros = ROSConnection.GetOrCreateInstance();
         ros.RegisterPublisher<VCU2AIWheelspeedsMsg>(wheelspeeds_topic);
 
-        wheelspeeds_simulation = new WheelspeedsSimulation(fl_wheel, fr_wheel, bl_wheel, br_wheel);
+        wheelspeeds_simulation = new WheelspeedsSimulation(fl_wheel, fr_wheel, bl_wheel, br_wheel, noise_activation);
 
     }
 

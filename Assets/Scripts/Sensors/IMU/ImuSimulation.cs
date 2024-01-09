@@ -23,6 +23,9 @@ public class ImuSimulation : MonoBehaviour
 
     bool noise_activation;
 
+    // 1% standard deviation for covariance observations
+    const double INS_STANDARD_DEVIATION = 0.01;
+
     public ImuSimulation(GameObject imu_sensor_link_object, bool noise_activation_param) {
         imu_sensor_link = imu_sensor_link_object;
         noise_activation = noise_activation_param;
@@ -35,8 +38,8 @@ public class ImuSimulation : MonoBehaviour
                 z = imu_physical.velocity.z
             }; 
         // Numbers between 0 and 0.03, 1% standard deviation
-        gaussian_generator = new GaussianGenerator(0, 0.01);
-        
+        // To get std of measurement we need to multiply measurement by the assumed std of 1% then square it to get covariance of independent variable
+        gaussian_generator = new GaussianGenerator(0, INS_STANDARD_DEVIATION);
 
     }
 
@@ -64,10 +67,19 @@ public class ImuSimulation : MonoBehaviour
         Quaternion orientation = imu_physical.rotation;
 
         if (noise_activation == true) {
-            angular_velocity = gaussian_generator.add_noise(angular_velocity);
-            orientation = gaussian_generator.add_noise(orientation);
-            acceleration = gaussian_generator.add_noise(acceleration);
+            angular_velocity = gaussian_generator.add_noise_scale(angular_velocity);
+            orientation = gaussian_generator.add_noise_scale(orientation);
+            acceleration = gaussian_generator.add_noise_scale(acceleration);
         }
+
+        double[] orientation_covariance_calc = new double[]{Math.Pow((orientation.x*INS_STANDARD_DEVIATION),2),0.0,0.0,0.0,
+        Math.Pow((orientation.y*INS_STANDARD_DEVIATION),2),0.0,0.0,0.0,Math.Pow((orientation.z*INS_STANDARD_DEVIATION),2)};
+
+        double[] angular_velocity_covariance_calc = new double[]{Math.Pow((angular_velocity.x*INS_STANDARD_DEVIATION),2),0.0,0.0,0.0,
+        Math.Pow((angular_velocity.y*INS_STANDARD_DEVIATION),2),0.0,0.0,0.0,Math.Pow((angular_velocity.z*INS_STANDARD_DEVIATION),2)};
+
+        double[] linear_acceleration_covariance_calc = new double[]{Math.Pow((acceleration.x*INS_STANDARD_DEVIATION),2),0.0,0.0,0.0,
+        Math.Pow((acceleration.y*INS_STANDARD_DEVIATION),2),0.0,0.0,0.0,Math.Pow((acceleration.z*INS_STANDARD_DEVIATION),2)};
 
         // Prepare msg
         var msg = new ImuMsg
@@ -88,18 +100,21 @@ public class ImuSimulation : MonoBehaviour
                 z = orientation.z,
                 w = orientation.w
             },
+            orientation_covariance = orientation_covariance_calc,
             angular_velocity = new Vector3Msg
             {
                 x = angular_velocity.x,
                 y = angular_velocity.y,
                 z = angular_velocity.z
             } ,
+            angular_velocity_covariance = angular_velocity_covariance_calc,
             linear_acceleration = new Vector3Msg
             {
                 x = acceleration.x,
                 y = acceleration.y,
                 z = acceleration.z
-            }
+            },
+            linear_acceleration_covariance = linear_acceleration_covariance_calc
         };
 
         return msg;

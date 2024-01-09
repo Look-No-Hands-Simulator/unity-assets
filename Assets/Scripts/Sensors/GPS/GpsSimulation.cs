@@ -22,10 +22,22 @@ public class GpsSimulation : MonoBehaviour
     double lat_origin_rad;
     double lon_origin_rad;
 
-    const double R = 6371000; // Earth radius in meters
+    // Earth radius in meters
+    const double R = 6371000; 
+    // Degrees around the world
+    const double GPS_STANDARD_DEVIATION = 0.000003;
+    // Meters
+    const double ALTITUDE_STANDARD_DEVIATION = 0.322;
+
+    bool noise_activation;
+
+    GaussianGenerator gaussian_generator;
+
+    double[] covariance_matrix;
 
 
-    public GpsSimulation(GameObject gps_sensor_link_param, float lon_origin_param, float lat_origin_param, float alt_origin_param) {
+    public GpsSimulation(GameObject gps_sensor_link_param, float lon_origin_param, float lat_origin_param, float alt_origin_param, 
+        bool noise_activation_param) {
 
         gps_sensor_link = gps_sensor_link_param;
         lon_origin = lon_origin_param;
@@ -35,6 +47,17 @@ public class GpsSimulation : MonoBehaviour
         // lattitude & longitude convert to radians
         lat_origin_rad = lat_origin * (Math.PI / 180.0);
         lon_origin_rad = lon_origin * (Math.PI / 180.0);
+
+        noise_activation = noise_activation_param;
+
+        // Numbers between 0 and 0.03, 1% standard deviation
+        // Error at equator would be 0 with a normal scale so it is adjusted
+        // accuracy: https://www.gps.gov/systems/gps/performance/accuracy/#how-accurate
+        gaussian_generator = new GaussianGenerator(0, GPS_STANDARD_DEVIATION);
+
+        // Covariance 
+        covariance_matrix = new double[]{Math.Pow(GPS_STANDARD_DEVIATION,2),0.0,0.0,0.0,Math.Pow(GPS_STANDARD_DEVIATION,2),0.0,0.0,0.0,
+        Math.Pow(ALTITUDE_STANDARD_DEVIATION,2)};
 
     }
 
@@ -56,6 +79,18 @@ public class GpsSimulation : MonoBehaviour
         
         // Get Unix time, how long since Jan 1st 1970?
         TimeStamp msg_timestamp = new TimeStamp(Clock.time);
+
+
+        if (noise_activation == true) {
+            // degrees around the world
+            lat = gaussian_generator.add_noise(lat);
+            // degrees around the world
+            lon = gaussian_generator.add_noise(lon);
+            // meters, gives a standard deviation of 32cm 
+            alt = alt + gaussian_generator.next(0, ALTITUDE_STANDARD_DEVIATION);
+        }
+
+
         // Prepare msg
         var msg = new NavSatFixMsg
         {
@@ -80,7 +115,7 @@ public class GpsSimulation : MonoBehaviour
             longitude = lon,
             altitude = alt,
             // Diagonals are 0,4,8   or use 1.0e-5, accurate to nearest cm 0.01
-            position_covariance = new double[]{0.00001,0.0,0.0,0.0,0.00001,0.0,0.0,0.0,0.01},
+            position_covariance = covariance_matrix,
             // 0 = unknown, 1 = approximated, 2 = diagonal known, 3 = known
             position_covariance_type = 1
         };

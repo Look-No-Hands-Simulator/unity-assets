@@ -18,6 +18,7 @@ public class NavSatFixPublisher : MonoBehaviour
     public float lon_origin;
     public float lat_origin; 
     public float alt_origin;
+    public bool noise_activation;
 
     ROSConnection ros;
     GpsSimulation gps_simulation;
@@ -25,7 +26,7 @@ public class NavSatFixPublisher : MonoBehaviour
         ros = ROSConnection.GetOrCreateInstance();
         ros.RegisterPublisher<NavSatFixMsg>(gps_topic);
 
-        gps_simulation = new GpsSimulation(gps_sensor_link,lon_origin,lat_origin,alt_origin);
+        gps_simulation = new GpsSimulation(gps_sensor_link,lon_origin,lat_origin,alt_origin,noise_activation);
 
     }
 
