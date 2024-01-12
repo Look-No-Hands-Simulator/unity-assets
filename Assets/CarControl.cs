@@ -7,10 +7,15 @@ public class CarControl : MonoBehaviour
     public List<WheelElements> wheelData;
 
     public float maxTorque;
-    public float maxSteerAngle = 30;
+    public float maxSteerAngle = 28;
+
+    public float maxInnerSteeringAngle = 28F;
+    public float maxOuterSteeringAngle = 24.6F;
 
     private Rigidbody rb;
     public Transform massCenter;
+
+    private int counter; // Every fixed update counter 50 then we can log data
 
     [SerializeField] private float force = 10;
     [SerializeField] private float speed = 5;
@@ -21,11 +26,27 @@ public class CarControl : MonoBehaviour
         float speed = Input.GetAxis("Vertical")*maxTorque;
         float steer = Input.GetAxis("Horizontal")*maxSteerAngle;
 
+        float leftSteer;
+        float rightSteer;
+
+        if (Input.GetAxis("Horizontal") < 0) {
+            leftSteer = Input.GetAxis("Horizontal")*maxInnerSteeringAngle;
+            rightSteer = Input.GetAxis("Horizontal")*maxOuterSteeringAngle;
+        } else {
+            rightSteer = Input.GetAxis("Horizontal")*maxInnerSteeringAngle;
+            leftSteer = Input.GetAxis("Horizontal")*maxOuterSteeringAngle;
+        }
+
+        // if (++counter%50 == 0) {
+        //     Debug.Log("Horizontal: " + Input.GetAxis("Horizontal"));
+        //     counter = 0;
+        // }
+
         foreach (WheelElements element in wheelData) {
 
             if (element.shouldSteer == true) {
-                element.leftWheel.steerAngle = steer;
-                element.rightWheel.steerAngle = steer;
+                element.leftWheel.steerAngle = leftSteer;
+                element.rightWheel.steerAngle = rightSteer;
             }
             if (element.addWheelTorque == true) {
                 element.leftWheel.motorTorque = speed;
