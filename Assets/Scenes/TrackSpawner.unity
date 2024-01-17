@@ -8450,14 +8450,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1da4cbca9799fe11d9ec5b7cbf500253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera_link: {fileID: 899705653}
-  camera: {fileID: 899705656}
-  depthcamera_topic: /unity/stereo_camera/depth/image
-  min_publishing_time: 0.5
-  time_elapsed: 0
-  noise: 0
-  ros: {fileID: 0}
-  depth_mapping_simulation: {fileID: 0}
 --- !u!1 &1638270769
 GameObject:
   m_ObjectHideFlags: 0
@@ -10314,13 +10306,15 @@ MonoBehaviour:
     rightWheel: {fileID: 603915464}
     addWheelTorque: 0
     shouldSteer: 0
-  maxTorque: 400
+  maxTorque: 195
+  maxRPM: 400
   maxSteerAngle: 28
   maxInnerSteeringAngle: 28
   maxOuterSteeringAngle: 24.6
   massCenter: {fileID: 574231064}
   force: 10
-  speed: 5
+  ai2vcuSteerTopic: /AI2VCUSteer
+  ai2vcuDriveFTopic: /AI2VCUDriveF
 --- !u!65 &2077238219
 BoxCollider:
   m_ObjectHideFlags: 0

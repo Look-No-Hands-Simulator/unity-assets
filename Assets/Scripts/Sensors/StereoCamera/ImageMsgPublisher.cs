@@ -10,6 +10,12 @@ using RosMessageTypes.BuiltinInterfaces;
 
 using Unity.Robotics.Core;
 using Unity.Robotics.ROSTCPConnector;
+
+
+// Publishes ADS-DV msgs from key commands, the keys publish onto topics and then these topics are subscribed to and the vehicle is controlled through these values that
+// are being sent to through the keys.
+// We can enable or disable this... maybe... maybe disable the direct key control without the publishing
+
 public class ImageMsgPublisher : MonoBehaviour
 {
     public GameObject camera_link;
@@ -39,6 +45,8 @@ public class ImageMsgPublisher : MonoBehaviour
         stereo_camera_simulation = new StereoCameraSimulation(left_camera, right_camera);
 
     }
+
+
 
     void Update() {
         time_elapsed += Time.deltaTime;
