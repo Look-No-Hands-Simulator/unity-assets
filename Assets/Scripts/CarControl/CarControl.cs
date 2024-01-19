@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 using Unity.Robotics.ROSTCPConnector;
 // Custom namespace msgs
 using RosMessageTypes.AdsDv;
@@ -29,6 +30,7 @@ public class CarControl : MonoBehaviour
     // Publisher info
     public string ai2vcuSteerTopic = "/AI2VCUSteer";
     public string ai2vcuDriveFTopic = "/AI2VCUDriveF";
+    public string ai2vcuBrakeTopic = "/AI2VCUBrake";
 
     AI2VCUPublisher ai2vcuPublisherNode;
 
@@ -36,6 +38,8 @@ public class CarControl : MonoBehaviour
     float actuateRightSteer;
 
     ushort actuateThrottleFrontForce;
+
+    byte brakingPercent;
 
 
     // // Start is called before the first frame update
@@ -50,11 +54,12 @@ public class CarControl : MonoBehaviour
         rb.centerOfMass = massCenter.localPosition;
 
         // Create all of the publishers by creating an object to do this
-        ai2vcuPublisherNode = new AI2VCUPublisher(ai2vcuSteerTopic,ai2vcuDriveFTopic);
+        ai2vcuPublisherNode = new AI2VCUPublisher(ai2vcuSteerTopic,ai2vcuDriveFTopic,ai2vcuBrakeTopic);
 
         // Subscribe to publishers that publish actuation commands
         ROSConnection.GetOrCreateInstance().Subscribe<AI2VCUSteerMsg>(ai2vcuSteerTopic, ActuateSteering);
         ROSConnection.GetOrCreateInstance().Subscribe<AI2VCUDriveFMsg>(ai2vcuDriveFTopic, ActuateThrottle);
+        ROSConnection.GetOrCreateInstance().Subscribe<AI2VCUBrakeMsg>(ai2vcuBrakeTopic, ActuateBraking);
 
     }
 
@@ -74,13 +79,18 @@ public class CarControl : MonoBehaviour
 
     void ActuateThrottle(AI2VCUDriveFMsg driveFMsg) {
         this.actuateThrottleFrontForce = driveFMsg.front_axle_trq_request_nm;
+        this.brakingPercent = 0;
     }
 
 
     private void FixedUpdate() {
 
+        // Fraction of how much torque you could be applying because Input.GetAxis is between 0-1
         ushort speed = (ushort)(Input.GetAxis("Vertical")*maxTorque);
         float steer = Input.GetAxis("Horizontal")*maxSteerAngle;
+        float brake = Input.GetAxis("Brake");
+
+        //Debug.Log("Check input space key:" + brake);
 
         float leftSteer;
         float rightSteer;
@@ -104,7 +114,15 @@ public class CarControl : MonoBehaviour
         middleSteer = (leftSteer + rightSteer) / 2;
         
         ai2vcuPublisherNode.PublishAI2VCUSteerMsg((short)(middleSteer));
-        ai2vcuPublisherNode.PublishAI2VCUDriveFMsg((speed), this.maxRPM);
+        // 
+        if (Input.GetAxis("Vertical") >= 0 && brake <= 0) {
+            //Debug.Log("Throttle: " + speed);
+            ai2vcuPublisherNode.PublishAI2VCUDriveFMsg((speed), this.maxRPM);
+        } else {
+            // Implement this 
+            //Debug.Log("Braking: " + Input.GetAxis("Vertical"));
+            ai2vcuPublisherNode.PublishAI2VCUBrakeMsg((byte)(Input.GetAxis("Vertical")*-100));
+        } 
 
         foreach (WheelElements element in wheelData) {
 
@@ -112,15 +130,73 @@ public class CarControl : MonoBehaviour
                 element.leftWheel.steerAngle = this.actuateLeftSteer;
                 element.rightWheel.steerAngle = this.actuateRightSteer;
             }
-            if (element.addWheelTorque == true) {
+            // Only apply throttle if there is no braking so we can't accelerate and brake at the same time
+            if (Input.GetAxis("Vertical") > 0 && element.addWheelTorque == true) {
                 element.leftWheel.motorTorque = this.actuateThrottleFrontForce;
                 element.rightWheel.motorTorque = this.actuateThrottleFrontForce;
+                element.leftWheel.brakeTorque = 0;
+                element.rightWheel.brakeTorque = 0;
+            } else {
+                element.leftWheel.motorTorque = 0;
+                element.rightWheel.motorTorque = 0;
             }
 
+            // Debug.Log("Motor torque left wheel: " + element.leftWheel.motorTorque);
+            // Debug.Log("Motor torque right wheel: " + element.rightWheel.motorTorque);
             // Move tyres
             DoTyres(element.leftWheel);
             DoTyres(element.rightWheel);
         }
+    }
+
+    void ActuateBraking(AI2VCUBrakeMsg brakeMsg) {
+        byte brakingPercentRequest = brakeMsg.hyd_pressure_request_pct;
+        float maxBrakingTorque = maxTorque * 4;
+        this.brakingPercent = brakingPercentRequest;
+        float brakingTorque;
+
+        if (brakingPercentRequest > 0) {
+            foreach (WheelElements element in wheelData) {
+
+                Debug.Log("Brakes fast: " + (maxBrakingTorque * brakingPercentRequest / 100));
+                element.leftWheel.brakeTorque = maxBrakingTorque * brakingPercentRequest / 100;
+                element.rightWheel.brakeTorque = maxBrakingTorque * brakingPercentRequest / 100;
+
+                // Left wheel
+                // Adjust this so the car cannot go backwards when braking at high force because we use a reverse force rather than a braking plate
+                // / rpm by 60 to get rps
+                // // 0.2 is a fifth of a second
+                // if (element.leftWheel.rpm / 60 > 0.2) {
+                //     // More than 4.5 mph
+                //     // Apply max braking
+                //     // Get percentage of torque and make it negative because it's a negative force against the wheel
+
+                // } else {
+                //     // Apply partial braking when brake has nearly stopped, this is to prevent vehicle going backwards
+                //     // Multiply braking torque by number of spins per second of wheel, makes braking force smaller as wheel has nearly stopped
+                //     element.leftWheel.brakeTorque = (maxBrakingTorque * (brakingPercentRequest / 100)) * Math.Max(element.leftWheel.rpm / 60, 0) * 5;
+
+                //     Debug.Log("Brakes slow: " + (maxBrakingTorque * brakingPercentRequest / 100) * Math.Max(element.leftWheel.rpm / 60, 0) * 5);
+                // }
+                // // Right wheel
+                // if (element.rightWheel.rpm / 60 > 0.2) {
+                //     // More than 4.5 mph
+                //     // Apply max braking
+                    
+
+                // } else {
+                //     // Apply partial braking
+                //     element.rightWheel.brakeTorque = (maxBrakingTorque * (brakingPercentRequest / 100)) * (element.rightWheel.rpm / 60) * 5;
+
+                // }
+
+                // Move tyres
+                DoTyres(element.leftWheel);
+                DoTyres(element.rightWheel);
+            }
+        }
+
+
     }
 
 

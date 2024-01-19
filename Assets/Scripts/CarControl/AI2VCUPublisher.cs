@@ -15,15 +15,18 @@ public class AI2VCUPublisher : MonoBehaviour
 {
     string ai2vcuSteerTopic;
     string ai2vcuDriveFTopic;
+    string ai2vcuBrakeTopic;
     ROSConnection ros;
 
-    public AI2VCUPublisher(string steerTopicName, string ai2vcuDriveFTopicName) {
+    public AI2VCUPublisher(string steerTopicName, string ai2vcuDriveFTopicName, string ai2vcuBrakeTopicName) {
         ai2vcuSteerTopic = steerTopicName;
         ai2vcuDriveFTopic = ai2vcuDriveFTopicName;
+        ai2vcuBrakeTopic = ai2vcuBrakeTopicName;
         ros = ROSConnection.GetOrCreateInstance();
         // Register publisher names
         ros.RegisterPublisher<AI2VCUSteerMsg>(ai2vcuSteerTopic);
         ros.RegisterPublisher<AI2VCUDriveFMsg>(ai2vcuDriveFTopic);
+        ros.RegisterPublisher<AI2VCUBrakeMsg>(ai2vcuBrakeTopic);
     }
 
     public void PublishAI2VCUSteerMsg(short steerDegrees) {
@@ -40,6 +43,13 @@ public class AI2VCUPublisher : MonoBehaviour
         ros.Publish(ai2vcuDriveFTopic, new AI2VCUDriveFMsg {
             front_axle_trq_request_nm = torqueNm,
             front_motor_speed_max_rpm = maxMotorRPM
+            }
+        );
+    }
+
+    public void PublishAI2VCUBrakeMsg(byte brakePercent) {
+        ros.Publish(ai2vcuBrakeTopic, new AI2VCUBrakeMsg {
+            hyd_pressure_request_pct = brakePercent
             }
         );
     }
