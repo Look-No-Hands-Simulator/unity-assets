@@ -44,6 +44,8 @@ public class CarControl : MonoBehaviour
 
     bool reverse;
 
+    public bool reverseOn;
+
 
     // // Start is called before the first frame update
     void Start()
@@ -167,7 +169,7 @@ public class CarControl : MonoBehaviour
                 element.leftWheel.brakeTorque = 0;
                 element.rightWheel.brakeTorque = 0;
 
-            } else if (this.reverse == true && this.brakingPercent == 0 && element.addWheelTorque == true) {
+            } else if (this.reverse == true && this.brakingPercent == 0 && element.addWheelTorque == true && this.reverseOn == true) {
                 element.leftWheel.motorTorque = ((float)(this.actuateThrottleFrontForce)) * -1;
                 element.rightWheel.motorTorque = ((float)(this.actuateThrottleFrontForce)) * -1;
                 element.leftWheel.brakeTorque = 0;

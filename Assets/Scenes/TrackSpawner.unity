@@ -10408,7 +10408,9 @@ MonoBehaviour:
   force: 10
   ai2vcuSteerTopic: /AI2VCUSteer
   ai2vcuDriveFTopic: /AI2VCUDriveF
+  ai2vcuDriveFReverseTopic: /AI2VCUDriveFReverse
   ai2vcuBrakeTopic: /AI2VCUBrake
+  reverseOn: 1
 --- !u!65 &2077238219
 BoxCollider:
   m_ObjectHideFlags: 0
