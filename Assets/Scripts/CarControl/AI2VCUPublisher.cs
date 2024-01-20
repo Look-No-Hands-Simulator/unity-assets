@@ -16,16 +16,19 @@ public class AI2VCUPublisher : MonoBehaviour
     string ai2vcuSteerTopic;
     string ai2vcuDriveFTopic;
     string ai2vcuBrakeTopic;
+    string ai2vcuDriveFReverseTopic;
     ROSConnection ros;
 
-    public AI2VCUPublisher(string steerTopicName, string ai2vcuDriveFTopicName, string ai2vcuBrakeTopicName) {
+    public AI2VCUPublisher(string steerTopicName, string ai2vcuDriveFTopicName, string ai2vcuBrakeTopicName, string ai2vcuDriveFReverseTopicName) {
         ai2vcuSteerTopic = steerTopicName;
         ai2vcuDriveFTopic = ai2vcuDriveFTopicName;
         ai2vcuBrakeTopic = ai2vcuBrakeTopicName;
+        ai2vcuDriveFReverseTopic = ai2vcuDriveFReverseTopicName;
         ros = ROSConnection.GetOrCreateInstance();
         // Register publisher names
         ros.RegisterPublisher<AI2VCUSteerMsg>(ai2vcuSteerTopic);
         ros.RegisterPublisher<AI2VCUDriveFMsg>(ai2vcuDriveFTopic);
+        ros.RegisterPublisher<AI2VCUDriveFMsg>(ai2vcuDriveFReverseTopic);
         ros.RegisterPublisher<AI2VCUBrakeMsg>(ai2vcuBrakeTopic);
     }
 
@@ -47,12 +50,22 @@ public class AI2VCUPublisher : MonoBehaviour
         );
     }
 
+    public void PublishAI2VCUDriveFMsgReverse(ushort torqueNm, ushort maxMotorRPM) {
+
+        ros.Publish(ai2vcuDriveFReverseTopic, new AI2VCUDriveFMsg {
+            front_axle_trq_request_nm = torqueNm,
+            front_motor_speed_max_rpm = maxMotorRPM
+            }
+        );
+    }
+
     public void PublishAI2VCUBrakeMsg(byte brakePercent) {
         ros.Publish(ai2vcuBrakeTopic, new AI2VCUBrakeMsg {
             hyd_pressure_request_pct = brakePercent
             }
         );
     }
+    
 
     // void Update() {
     //     time_elapsed += Time.deltaTime;

@@ -30,6 +30,7 @@ public class CarControl : MonoBehaviour
     // Publisher info
     public string ai2vcuSteerTopic = "/AI2VCUSteer";
     public string ai2vcuDriveFTopic = "/AI2VCUDriveF";
+    public string ai2vcuDriveFReverseTopic = "/AI2VCUDriveFReverse";
     public string ai2vcuBrakeTopic = "/AI2VCUBrake";
 
     AI2VCUPublisher ai2vcuPublisherNode;
@@ -39,7 +40,9 @@ public class CarControl : MonoBehaviour
 
     ushort actuateThrottleFrontForce;
 
-    byte brakingPercent;
+    ushort brakingPercent;
+
+    bool reverse;
 
 
     // // Start is called before the first frame update
@@ -53,13 +56,16 @@ public class CarControl : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.centerOfMass = massCenter.localPosition;
 
-        // Create all of the publishers by creating an object to do this
-        ai2vcuPublisherNode = new AI2VCUPublisher(ai2vcuSteerTopic,ai2vcuDriveFTopic,ai2vcuBrakeTopic);
+        // Create all of the publishers by creating an object to do this, these publishers can publish the keyboard control outputs
+        ai2vcuPublisherNode = new AI2VCUPublisher(ai2vcuSteerTopic,ai2vcuDriveFTopic,ai2vcuBrakeTopic,ai2vcuDriveFReverseTopic);
 
         // Subscribe to publishers that publish actuation commands
         ROSConnection.GetOrCreateInstance().Subscribe<AI2VCUSteerMsg>(ai2vcuSteerTopic, ActuateSteering);
         ROSConnection.GetOrCreateInstance().Subscribe<AI2VCUDriveFMsg>(ai2vcuDriveFTopic, ActuateThrottle);
+        ROSConnection.GetOrCreateInstance().Subscribe<AI2VCUDriveFMsg>(ai2vcuDriveFReverseTopic, ActuateThrottleReverse);
         ROSConnection.GetOrCreateInstance().Subscribe<AI2VCUBrakeMsg>(ai2vcuBrakeTopic, ActuateBraking);
+
+        this.reverse = false;
 
     }
 
@@ -78,15 +84,29 @@ public class CarControl : MonoBehaviour
     }
 
     void ActuateThrottle(AI2VCUDriveFMsg driveFMsg) {
+        this.reverse = false;
         this.actuateThrottleFrontForce = driveFMsg.front_axle_trq_request_nm;
         this.brakingPercent = 0;
+        // if (this.reverse == true) {
+        //     this.reverse = false;
+        // }
+    }
+
+    void ActuateThrottleReverse(AI2VCUDriveFMsg driveFMsg) {
+        this.reverse = true;
+        this.actuateThrottleFrontForce = driveFMsg.front_axle_trq_request_nm;
+        this.brakingPercent = 0;
+        // if (this.reverse == false) {
+        //     this.reverse = true;
+        // }
     }
 
 
     private void FixedUpdate() {
 
         // Fraction of how much torque you could be applying because Input.GetAxis is between 0-1
-        ushort speed = (ushort)(Input.GetAxis("Vertical")*maxTorque);
+        /// This is the problem -> vertical is a ushort so it gets converted to unsigned meaning it is never negative
+        float speed = (Input.GetAxis("Vertical")*maxTorque);
         float steer = Input.GetAxis("Horizontal")*maxSteerAngle;
         float brake = Input.GetAxis("Brake");
 
@@ -96,7 +116,8 @@ public class CarControl : MonoBehaviour
         float rightSteer;
         float middleSteer;
         //float steerFraction;
-
+        
+        // Steering keyboard control
         if (Input.GetAxis("Horizontal") < 0) {
             leftSteer = Input.GetAxis("Horizontal")*maxInnerSteeringAngle;
             rightSteer = Input.GetAxis("Horizontal")*maxOuterSteeringAngle;
@@ -114,15 +135,23 @@ public class CarControl : MonoBehaviour
         middleSteer = (leftSteer + rightSteer) / 2;
         
         ai2vcuPublisherNode.PublishAI2VCUSteerMsg((short)(middleSteer));
-        // 
-        if (Input.GetAxis("Vertical") >= 0 && brake <= 0) {
+
+        // Throttle keyboard control
+        if (Input.GetAxis("Vertical") > 0 && brake <= 0) {
+            // Forwards
             //Debug.Log("Throttle: " + speed);
-            ai2vcuPublisherNode.PublishAI2VCUDriveFMsg((speed), this.maxRPM);
-        } else {
-            // Implement this 
-            //Debug.Log("Braking: " + Input.GetAxis("Vertical"));
-            ai2vcuPublisherNode.PublishAI2VCUBrakeMsg((byte)(Input.GetAxis("Vertical")*-100));
-        } 
+            ai2vcuPublisherNode.PublishAI2VCUDriveFMsg((ushort)(speed), this.maxRPM);
+        } else if (Input.GetAxis("Vertical") < 0 && brake <= 0) {
+            // Reversing
+            // Publish msg but the motorTorque will have to be negative when the wheel colliders are actuated in Unity and
+            // therefore not be actuated from the topic since it can't publish negative, unless the topic was reverse
+            ai2vcuPublisherNode.PublishAI2VCUDriveFMsgReverse((ushort)(Math.Abs(speed)), this.maxRPM);
+
+        }
+        // Implement this 
+        //Debug.Log("Braking: " + Input.GetAxis("Vertical"));
+        ai2vcuPublisherNode.PublishAI2VCUBrakeMsg((byte)(brake*100));
+
 
         foreach (WheelElements element in wheelData) {
 
@@ -131,12 +160,21 @@ public class CarControl : MonoBehaviour
                 element.rightWheel.steerAngle = this.actuateRightSteer;
             }
             // Only apply throttle if there is no braking so we can't accelerate and brake at the same time
-            if (Input.GetAxis("Vertical") > 0 && element.addWheelTorque == true) {
+            // The problem is if we accelerate really hard then press the brakes the brakes won't reset back to 0 so this won't run through
+            if (this.brakingPercent == 0 && element.addWheelTorque == true && this.reverse == false) {
                 element.leftWheel.motorTorque = this.actuateThrottleFrontForce;
                 element.rightWheel.motorTorque = this.actuateThrottleFrontForce;
                 element.leftWheel.brakeTorque = 0;
                 element.rightWheel.brakeTorque = 0;
+
+            } else if (this.reverse == true && this.brakingPercent == 0 && element.addWheelTorque == true) {
+                element.leftWheel.motorTorque = ((float)(this.actuateThrottleFrontForce)) * -1;
+                element.rightWheel.motorTorque = ((float)(this.actuateThrottleFrontForce)) * -1;
+                element.leftWheel.brakeTorque = 0;
+                element.rightWheel.brakeTorque = 0;
+
             } else {
+                // Brakes on
                 element.leftWheel.motorTorque = 0;
                 element.rightWheel.motorTorque = 0;
             }
@@ -152,7 +190,7 @@ public class CarControl : MonoBehaviour
     void ActuateBraking(AI2VCUBrakeMsg brakeMsg) {
         byte brakingPercentRequest = brakeMsg.hyd_pressure_request_pct;
         float maxBrakingTorque = maxTorque * 4;
-        this.brakingPercent = brakingPercentRequest;
+        this.brakingPercent = (ushort)brakingPercentRequest;
         float brakingTorque;
 
         if (brakingPercentRequest > 0) {
@@ -201,6 +239,7 @@ public class CarControl : MonoBehaviour
 
 
     void DoTyres(WheelCollider collider) {
+        // This moves the tyre 3D models along with the wheel colliders
 
         if (collider.transform.childCount == 0) {
             return;
