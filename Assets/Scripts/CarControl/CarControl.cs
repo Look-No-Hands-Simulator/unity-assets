@@ -166,20 +166,33 @@ public class CarControl : MonoBehaviour
             if (this.brakingPercent == 0 && element.addWheelTorque == true && this.reverse == false) {
                 element.leftWheel.motorTorque = this.actuateThrottleFrontForce;
                 element.rightWheel.motorTorque = this.actuateThrottleFrontForce;
+                // When the brakes are applied they don't automatically set the brakeTorque back to 0 so we need to make sure we do that
                 element.leftWheel.brakeTorque = 0;
                 element.rightWheel.brakeTorque = 0;
 
-            } else if (this.reverse == true && this.brakingPercent == 0 && element.addWheelTorque == true && this.reverseOn == true) {
+            } 
+            else if (this.reverse == true && this.brakingPercent == 0 && element.addWheelTorque == true && this.reverseOn == true) {
                 element.leftWheel.motorTorque = ((float)(this.actuateThrottleFrontForce)) * -1;
                 element.rightWheel.motorTorque = ((float)(this.actuateThrottleFrontForce)) * -1;
                 element.leftWheel.brakeTorque = 0;
                 element.rightWheel.brakeTorque = 0;
 
-            } else {
+            } 
+            // else if (this.brakingPercent == 0 && element.leftWheel.brakeTorque != 0) {
+            //     element.leftWheel.brakeTorque = 0;
+            //     element.rightWheel.brakeTorque = 0;
+            //     element.leftWheel.motorTorque = 0;
+            //     element.rightWheel.motorTorque = 0;
+            //     element.leftWheel.motorTorque = 0;
+            //     element.rightWheel.motorTorque = 0;
+            // }
+            else {
                 // Brakes on
                 element.leftWheel.motorTorque = 0;
                 element.rightWheel.motorTorque = 0;
             }
+
+            // If we release the brakes then accelpercent = 0 but brakepercent also = 0 so...
 
             // Debug.Log("Motor torque left wheel: " + element.leftWheel.motorTorque);
             // Debug.Log("Motor torque right wheel: " + element.rightWheel.motorTorque);
@@ -195,10 +208,14 @@ public class CarControl : MonoBehaviour
         this.brakingPercent = (ushort)brakingPercentRequest;
         float brakingTorque;
 
+        Debug.Log("Braking Percent: " + this.brakingPercent);
+
         if (brakingPercentRequest > 0) {
+            // Stops car from moving forwards after braking bug, but check if car was rolling since the brake needs a release button for safety
+            this.actuateThrottleFrontForce = 0;
             foreach (WheelElements element in wheelData) {
 
-                Debug.Log("Brakes fast: " + (maxBrakingTorque * brakingPercentRequest / 100));
+                //Debug.Log("Brakes fast: " + (maxBrakingTorque * brakingPercentRequest / 100));
                 element.leftWheel.brakeTorque = maxBrakingTorque * brakingPercentRequest / 100;
                 element.rightWheel.brakeTorque = maxBrakingTorque * brakingPercentRequest / 100;
 
@@ -235,6 +252,17 @@ public class CarControl : MonoBehaviour
                 DoTyres(element.rightWheel);
             }
         }
+
+        // This is not necessary
+        if (brakingPercentRequest == 0) {
+            foreach (WheelElements element in wheelData) {
+                element.leftWheel.brakeTorque = 0;
+                element.rightWheel.brakeTorque = 0;
+                element.leftWheel.motorTorque = 0;
+                element.rightWheel.motorTorque = 0;
+            }
+        }
+        
 
 
     }
