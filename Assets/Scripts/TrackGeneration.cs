@@ -7,6 +7,7 @@ using UnityEngine.UI;
 using System.Linq;
 using Newtonsoft.Json;
 
+// Data
 public class Track
 {
     public List<List<float>> blue { get; set; }
@@ -25,6 +26,7 @@ public class Track
 }
 
 // Class to hold values to pass through functions and events
+// Actual game objects
 public class ClickArgs
 {
     public string trackDir = "";
@@ -187,22 +189,28 @@ public class TrackGeneration : MonoBehaviour
             
         }
         GameObject car = carObject.transform.GetChild(carChoice).gameObject;
+        clickProps.car = car;
         //car.transform.rotation = new Quaternion(car.transform.rotation.x, 0.0f, car.transform.rotation.z, car.transform.rotation.w);
         car.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
         car.SetActive(true);
         //disable parent object to allow for correct x, y, z positioning
         car.transform.parent = null;
         car.transform.SetParent(GameObject.Find("player").transform);
+        //newCone.transform.Translate(cone[0], 0, cone[1], Space.World);
         // Position car
-        float adsRaise = 0.29f;
+        // float adsRaise = 0.29f;
         // TODO: The line below causes a bug (car flips). I am not sure how the car is transformed otherwise however, it must be from elsewhere as it works.
-        //car.transform.position = new Vector3(clickProps.track.car.pos[0], adsRaise, clickProps.track.car.pos[1]);
-        //Debug.Log("JSON CAR X: " + clickProps.track.car.pos[0] + " Z: " + clickProps.track.car.pos[1]);
-        //Debug.Log("UNITY CAR X: " + car.transform.position.x + " Z: " + car.transform.position.z);
-        //Debug.Log("JSON car heading: " + clickProps.track.car.heading);
+        car.transform.position = new Vector3(clickProps.track.car.pos[0], car.transform.position.y, clickProps.track.car.pos[1]);
+        //car.transform.rotation = new Quaternion(car.transform.rotation.x, clickProps.track.car.heading, car.transform.rotation.z + 0);
+        car.transform.Rotate(0.0f, clickProps.track.car.heading - car.transform.rotation.y, 0.0f);
+        
+        Debug.Log("JSON CAR X: " + clickProps.track.car.pos[0] + " Z: " + clickProps.track.car.pos[1]);
+        Debug.Log("UNITY CAR X: " + car.transform.position.x + " Y:" + car.transform.position.y + " Z: " + car.transform.position.z);
+        Debug.Log("JSON car heading: " + clickProps.track.car.heading);
+        Debug.Log("UNITY actual car heading: " + car.transform.rotation.y);
         
         
-        //car.transform.Rotate(0, clickProps.track.car.heading, 0, Space.Self);
+
         //float heading = car.transform.rotation.eulerAngles.y - 360;
         
         //Debug.Log("UNITY heading euler y: " + car.transform.rotation.eulerAngles.y);
@@ -260,6 +268,7 @@ public class TrackGeneration : MonoBehaviour
         createConeObjects(blue, clickProps, "b", clickProps.track.blue);
         createConeObjects(big, clickProps, "bo", clickProps.track.big);
         createConeObjects(orange, clickProps, "o", clickProps.track.orange);
+        //configureCarObject(clickProps.car, clickProps.track.car);
 
         // Hide default objects
         blue.SetActive(false);
@@ -267,6 +276,14 @@ public class TrackGeneration : MonoBehaviour
         orange.SetActive(false);
         big.SetActive(false);
 
+
+    }
+
+    public static void configureCarObject(GameObject car, Track.Car carInfo) {
+        car.transform.position = new Vector3(carInfo.pos[0],0,carInfo.pos[1]);
+        car.transform.eulerAngles = new Vector3(0,carInfo.heading,0);
+        Debug.Log("The pos [0] is: " + carInfo.pos[0] + " and the pos [1] is" + carInfo.pos[1]);
+        Debug.Log("The rotation is: " + carInfo.heading);
 
     }
 

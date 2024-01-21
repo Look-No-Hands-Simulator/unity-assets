@@ -12,7 +12,7 @@ public class LightingManager : MonoBehaviour
     // Variables
     [SerializeField, Range(0, 24)] private float TimeOfDay;
 
-    private float previousStaticTimeOfDay = 0;
+    // private float previousStaticTimeOfDay = 0;
 
     private int time_dampener = 20;
 
@@ -39,6 +39,7 @@ public class LightingManager : MonoBehaviour
         //     UpdateLighting(TimeOfDay / 24f);
         //} 
         else {
+            //Debug.Log("Time of day: " + TimeOfDay + "Time of day / 24f: " + TimeOfDay / 24f);
             UpdateLighting(TimeOfDay / 24f);
             // TODO: Be wary if the previousStaticTimeOfDay may cause bugs
             // if (TimeOfDay != this.previousStaticTimeOfDay) {
@@ -55,6 +56,7 @@ public class LightingManager : MonoBehaviour
     private void UpdateLighting(float timePercent) {
         // Evaluate all different gradients in preset and set to render against
         // the time of day 0-1
+
         RenderSettings.ambientLight = Preset.AmbientColor.Evaluate(timePercent);
         RenderSettings.fogColor = Preset.FogColor.Evaluate(timePercent);
         //Debug.Log("Entered updatelighting func");

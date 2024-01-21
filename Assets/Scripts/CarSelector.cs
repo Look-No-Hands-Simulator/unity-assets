@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class CarSelector : MonoBehaviour
 {
     [SerializeField]private Button nextCar;
     [SerializeField]private Button previousCar;    
     List<GameObject> cars = new List<GameObject>();
+
     private int carChoice;
     public int CarChoice
     {
@@ -33,7 +35,7 @@ public class CarSelector : MonoBehaviour
     private void Update()
     {
         //constantly rotate selected car
-        cars[target].transform.RotateAround(cars[target].transform.position, Vector3.up, 40 * Time.deltaTime);
+        //cars[target].transform.RotateAround(cars[target].transform.position, Vector3.up, 40 * Time.deltaTime);
     }
 
     private void rotateCarsLeft()
