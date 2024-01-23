@@ -3,7 +3,7 @@
 
 Shader "Hidden/UberReplacement" {
 Properties {
-    _MainTex ("", 2D) = "white" {}
+    _MainTex ("", 2D) = "black" {}
     _Cutoff ("", Float) = 0.5
     _Color ("", Color) = (1,1,1,1)
 
@@ -37,6 +37,8 @@ float4 Output(float depth01, float3 normal)
         Normals				= 4
     };*/
 
+    //float invertedDepth01 = 1 - depth01;
+
     if (_OutputMode == 0) // ObjectId
     {
         return _ObjectColor;
@@ -47,9 +49,18 @@ float4 Output(float depth01, float3 normal)
     }
     else if (_OutputMode == 2) // DepthCompressed
     {
-        float linearZFromNear = Linear01FromEyeToLinear01FromNear(depth01); 
-        float k = 0.25; // compression factor
-        return pow(linearZFromNear, k);
+        // original 
+        // float linearZFromNear = Linear01FromEyeToLinear01FromNear(depth01); 
+        // float k = 0.25; // compression factor
+        // return pow(linearZFromNear, k);
+        
+        // As it approaches 0 it becomes black, as it approaches 1 it becomes white
+        // Have to get a number out between 0 (black) and 1 (white), the further away the depth we want a lower number for zed cam colours. 
+        // Take depth value and subtract from a maximum in this case 1.0. 
+        float linearZFromNear = 1.0 - Linear01FromEyeToLinear01FromNear(depth01) * 5; 
+        float k = 1.8; // compression factor
+        //return linearZFromNear * 0.25;
+        return pow(linearZFromNear * 0.5, k);
     }
     else if (_OutputMode == 3) // DepthMultichannel
     {
