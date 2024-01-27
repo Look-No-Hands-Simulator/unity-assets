@@ -208,7 +208,7 @@ public class CarControl : MonoBehaviour
         this.brakingPercent = (ushort)brakingPercentRequest;
         float brakingTorque;
 
-        Debug.Log("Braking Percent: " + this.brakingPercent);
+        //Debug.Log("Braking Percent: " + this.brakingPercent);
 
         if (brakingPercentRequest > 0) {
             // Stops car from moving forwards after braking bug, but check if car was rolling since the brake needs a release button for safety
