@@ -33,6 +33,8 @@ public class ImageSynthesis : MonoBehaviour
     public string filepath = "..\\Captures";
     public string filename = "test.png";
 
+    private byte[] depthImageData;
+
     // pass configuration
     private CapturePass[] capturePasses = new CapturePass[] {
         new CapturePass() { name = "_img" },
@@ -76,6 +78,105 @@ public class ImageSynthesis : MonoBehaviour
         OnSceneChange();
     }
 
+    Camera GetDepthCamera() {
+
+        return null;
+    }
+
+    byte[] GetDepthImage() {
+        // Return a copy, shallow copy
+        return (byte[])this.depthImageData.Clone();
+    }
+
+    /// <summary>
+    /// /////// Get and store bytes from image
+    /// </summary>
+    void CacheDepthImage() {
+        // Get hold of camera for depth image 
+        // Extract the image data as bytes
+        // Store the bytes into local attribute
+        // 
+        Camera mainCamera = GetComponent<Camera>();
+        Camera camera = mainCamera;
+        bool cameraFound = false; 
+        bool supportsAntialiasing = false;
+        bool needsRescale = false;
+        foreach (var pass in capturePasses)
+        {
+            if (pass.name == "_depth") {
+                camera = pass.camera;
+                supportsAntialiasing = pass.supportsAntialiasing;
+                needsRescale = pass.needsRescale;
+                cameraFound = true;
+            }            
+    
+        }
+        if (!cameraFound) {
+            return;
+        }
+
+        
+        var depth = 24;
+        var width = 672;
+        var height = 376;
+        var format = RenderTextureFormat.Default;
+        var readWrite = RenderTextureReadWrite.Default;
+        var antiAliasing = (supportsAntialiasing) ? Mathf.Max(1, QualitySettings.antiAliasing) : 1;
+
+        var finalRT =
+            RenderTexture.GetTemporary(width, height, depth, format, readWrite, antiAliasing);
+        var renderRT = (!needsRescale) ? finalRT :
+            RenderTexture.GetTemporary(mainCamera.pixelWidth, mainCamera.pixelHeight, depth, format, readWrite, antiAliasing);
+        var tex = new Texture2D(width, height, TextureFormat.RGB24, false);
+
+        var prevActiveRT = RenderTexture.active;
+        var prevCameraRT = camera.targetTexture;
+
+        // render to offscreen texture (readonly from CPU side)
+        RenderTexture.active = renderRT;
+        camera.targetTexture = renderRT;
+
+        camera.Render();
+
+        if (needsRescale)
+        {
+            // blit to rescale (see issue with Motion Vectors in @KNOWN ISSUES)
+            RenderTexture.active = finalRT;
+            Graphics.Blit(renderRT, finalRT);
+            RenderTexture.ReleaseTemporary(renderRT);
+        }
+
+        // read offsreen texture contents into the CPU readable texture
+        tex.ReadPixels(new Rect(0, 0, tex.width, tex.height), 0, 0);
+        tex.Apply();
+
+        // encode texture into PNG
+        var bytes = tex.EncodeToPNG();
+
+        Color[] pixels = tex.GetPixels();
+
+        byte[] image_data = new byte[pixels.Length*3];
+        int img_size = pixels.Length*3;
+
+        // Iterate through pixels and record each 3 bytes
+        // create a byte for each r,g,b in each pixel
+        for (int i = 0; i < pixels.Length; i++) {
+            // bytes? ########### TODO
+            // By * 0-1 by 255 we get a colour value between 0-255
+            // Work from end of array to prevent upside down image
+            Color pixel = pixels[pixels.Length - (width * (1 + i / width)) + (i % width)];
+            image_data[i*3] = (byte)(pixel.b * 255);
+            image_data[i*3 + 1] = (byte)(pixel.g * 255);
+            image_data[i*3 + 2] = (byte)(pixel.r * 255);
+        }
+
+        this.depthImageData = (byte[])image_data.Clone();
+
+
+
+
+    }
+
     void LateUpdate()
     {
 #if UNITY_EDITOR
@@ -85,6 +186,8 @@ public class ImageSynthesis : MonoBehaviour
 
         // @TODO: detect if camera properties actually changed
         OnCameraChange();
+        ///
+        CacheDepthImage();
     }
 
     private Camera CreateHiddenCamera(string name)
