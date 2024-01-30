@@ -5405,7 +5405,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
+  m_TargetTexture: {fileID: 8400000, guid: c15d785d5ceff41a2bd5a575a358cedd, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -8133,7 +8133,7 @@ GameObject:
   - component: {fileID: 1562825519}
   - component: {fileID: 1562825520}
   - component: {fileID: 1562825521}
-  - component: {fileID: 1562825522}
+  - component: {fileID: 1562825523}
   m_Layer: 0
   m_Name: ROS Publishers
   m_TagString: Untagged
@@ -8266,7 +8266,7 @@ MonoBehaviour:
   leftcamera_topic: /unity/stereo_camera/right/image
   min_publishing_time: 0.5
   noise: 0
---- !u!114 &1562825522
+--- !u!114 &1562825523
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8275,9 +8275,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1562825514}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1da4cbca9799fe11d9ec5b7cbf500253, type: 3}
+  m_Script: {fileID: 11500000, guid: e7f5be3367b6338828d1ddaa9fa7c452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camera: {fileID: 972502133}
+  depth_camera_topic: /unity/stereo_camera/depth/image
+  min_publishing_time: 0.5
+  noise: 0
 --- !u!1 &1626133035
 GameObject:
   m_ObjectHideFlags: 0

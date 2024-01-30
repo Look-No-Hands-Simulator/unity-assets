@@ -83,7 +83,7 @@ public class ImageSynthesis : MonoBehaviour
         return null;
     }
 
-    byte[] GetDepthImage() {
+    public byte[] GetDepthImage() {
         // Return a copy, shallow copy
         return (byte[])this.depthImageData.Clone();
     }
@@ -153,24 +153,24 @@ public class ImageSynthesis : MonoBehaviour
         // encode texture into PNG
         var bytes = tex.EncodeToPNG();
 
-        Color[] pixels = tex.GetPixels();
+        // Color[] pixels = tex.GetPixels();
 
-        byte[] image_data = new byte[pixels.Length*3];
-        int img_size = pixels.Length*3;
+        // byte[] image_data = new byte[pixels.Length*3];
+        // int img_size = pixels.Length*3;
 
-        // Iterate through pixels and record each 3 bytes
-        // create a byte for each r,g,b in each pixel
-        for (int i = 0; i < pixels.Length; i++) {
-            // bytes? ########### TODO
-            // By * 0-1 by 255 we get a colour value between 0-255
-            // Work from end of array to prevent upside down image
-            Color pixel = pixels[pixels.Length - (width * (1 + i / width)) + (i % width)];
-            image_data[i*3] = (byte)(pixel.b * 255);
-            image_data[i*3 + 1] = (byte)(pixel.g * 255);
-            image_data[i*3 + 2] = (byte)(pixel.r * 255);
-        }
+        // // Iterate through pixels and record each 3 bytes
+        // // create a byte for each r,g,b in each pixel
+        // for (int i = 0; i < pixels.Length; i++) {
+        //     // bytes? ########### TODO
+        //     // By * 0-1 by 255 we get a colour value between 0-255
+        //     // Work from end of array to prevent upside down image
+        //     Color pixel = pixels[pixels.Length - (width * (1 + i / width)) + (i % width)];
+        //     image_data[i*3] = (byte)(pixel.b * 255);
+        //     image_data[i*3 + 1] = (byte)(pixel.g * 255);
+        //     image_data[i*3 + 2] = (byte)(pixel.r * 255);
+        // }
 
-        this.depthImageData = (byte[])image_data.Clone();
+        this.depthImageData = (byte[])bytes.Clone();
 
 
 
