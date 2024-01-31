@@ -5348,7 +5348,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &972502132
 Transform:
   m_ObjectHideFlags: 0
@@ -8133,7 +8133,7 @@ GameObject:
   - component: {fileID: 1562825519}
   - component: {fileID: 1562825520}
   - component: {fileID: 1562825521}
-  - component: {fileID: 1562825523}
+  - component: {fileID: 1562825522}
   m_Layer: 0
   m_Name: ROS Publishers
   m_TagString: Untagged
@@ -8209,7 +8209,7 @@ MonoBehaviour:
   imu_sensor_link: {fileID: 232217343}
   imu_topic: /imu_unity
   axis: 3
-  noise_activation: 1
+  noise_activation: 0
 --- !u!114 &1562825519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8246,7 +8246,7 @@ MonoBehaviour:
   bl_wheel: {fileID: 619927977}
   br_wheel: {fileID: 603915463}
   wheelspeeds_topic: /wheelspeeds_unity
-  noise_activation: 1
+  noise_activation: 0
 --- !u!114 &1562825521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8254,7 +8254,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1562825514}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0bfe100eb22b0d2686133e94d0e08d2, type: 3}
   m_Name: 
@@ -8266,14 +8266,14 @@ MonoBehaviour:
   leftcamera_topic: /unity/stereo_camera/right/image
   min_publishing_time: 0.5
   noise: 0
---- !u!114 &1562825523
+--- !u!114 &1562825522
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1562825514}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e7f5be3367b6338828d1ddaa9fa7c452, type: 3}
   m_Name: 
