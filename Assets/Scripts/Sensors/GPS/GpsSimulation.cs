@@ -44,7 +44,7 @@ public class GpsSimulation : MonoBehaviour
         lat_origin = lat_origin_param;
         alt_origin = alt_origin_param;
 
-        // lattitude & longitude convert to radians
+        // lattitude & longitude degrees convert to radians
         lat_origin_rad = lat_origin * (Math.PI / 180.0);
         lon_origin_rad = lon_origin * (Math.PI / 180.0);
 
@@ -69,7 +69,7 @@ public class GpsSimulation : MonoBehaviour
         double lon_position_rad = lon_origin_rad +  (gps_sensor_link.transform.position.x / (R * Math.Cos(lat_origin_rad))) ; // * (Math.PI / 180.0);
 
 
-        // convert back to degrees around the earth
+        // convert angle in radians back to degrees around the earth because lat and lon measured in this way
         double lat = lat_position_rad * (180.0 / Math.PI);
         double lon = lon_position_rad * (180.0 / Math.PI);
         // y is meters above or below ground and the origin is the GPS location in meters above sea level
