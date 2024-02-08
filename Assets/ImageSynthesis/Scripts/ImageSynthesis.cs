@@ -173,6 +173,10 @@ public class ImageSynthesis : MonoBehaviour
             // Get averages of rgb for a black and white value
             // Get byte array of length 4
             int j = 0;
+            // Be careful, the squaring in the grayscale, does it distort the depth calculations and algorithms using it? 
+            // 1 - depth so instead of 0 = near and 1 = far we get the opposite near = 1 and far = 0
+            // The closer to the car the less the number changes due to squaring and the further away the more the number changes
+            // Maybe this needs to be adjusted to remove the square? But then less contrast to the eye
             foreach(byte b in BitConverter.GetBytes(pixel.grayscale * pixel.grayscale)) {
                 // Each pixel takes up 4 bytes, we keep track of what pixel we are on, the j++ is which byte within the pixel
                 image_data[i*4 + j++] = b;
