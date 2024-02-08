@@ -43,11 +43,15 @@ public class ClickArgs
 public class TrackGeneration : MonoBehaviour
 {
     
-    
+    // Get instance of camera switcher viewer with its cameras
+    public GameObject cameraSwitcherGameObject;
+    //private CameraSwitcherViewer cameraSwitcherHolder;
     
     // Start is called before the first frame update
     void Start()
     {
+
+
         // Load in cone objects to duplicate
         GameObject blue = GameObject.Find("blueCone");
         GameObject yellow = GameObject.Find("yellowCone");
@@ -87,7 +91,7 @@ public class TrackGeneration : MonoBehaviour
  
     }
 
-    public static void readJSONFolder(ClickArgs clickProps)
+    public void readJSONFolder(ClickArgs clickProps)
     {
         // Get file names of cones
         List<string> fileNames = new List<string>();
@@ -104,7 +108,7 @@ public class TrackGeneration : MonoBehaviour
 
     }
 
-    public static Dropdown fillTrackDropdown(Dropdown dropOption, ClickArgs clickProps)
+    public Dropdown fillTrackDropdown(Dropdown dropOption, ClickArgs clickProps)
     {
         dropOption.ClearOptions();
         List<string> dropOptionsList = new List<String>();
@@ -118,13 +122,13 @@ public class TrackGeneration : MonoBehaviour
         return dropOption;
     }
 
-    public static void updateChoice(ClickArgs clickProps, Dropdown dropOption)
+    public void updateChoice(ClickArgs clickProps, Dropdown dropOption)
     {
         clickProps.choice = dropOption.captionText.text;
         readJSONfiles(clickProps, clickProps.choice);
     }
 
-    public static void readJSONfiles(ClickArgs clickProps, string choice)
+    public void readJSONfiles(ClickArgs clickProps, string choice)
     {
         // Get cone file directories
         string coneFile = Application.streamingAssetsPath + $"/json/{choice}";
@@ -134,7 +138,7 @@ public class TrackGeneration : MonoBehaviour
 
     }
 
-    public static void getConeCoords(ClickArgs clickProps, string file)
+    public void getConeCoords(ClickArgs clickProps, string file)
     {
         using (StreamReader fileRead = File.OpenText(file))
         {
@@ -144,7 +148,7 @@ public class TrackGeneration : MonoBehaviour
 
     }
 
-    public static void createConeObjects(
+    public void createConeObjects(
         GameObject coneColour, ClickArgs clickProps, string col,
         List<List<float>> coneCoords)
     {
@@ -177,7 +181,7 @@ public class TrackGeneration : MonoBehaviour
         }
 
     }
-    public static void GetCarObject(ClickArgs clickProps)
+    public void GetCarObject(ClickArgs clickProps)
     {
         GameObject carObject = GameObject.Find("carSelect");
         CarSelector carSelect = carObject.GetComponent<CarSelector>();        
@@ -222,7 +226,7 @@ public class TrackGeneration : MonoBehaviour
         carSelect.enabled = false;
     }
 
-    public static void loadTrack(GameObject yellow, GameObject blue, GameObject big, GameObject orange, ClickArgs clickProps)
+    public void loadTrack(GameObject yellow, GameObject blue, GameObject big, GameObject orange, ClickArgs clickProps)
     {
         
         // Show default objects to allow for duplication
@@ -276,10 +280,12 @@ public class TrackGeneration : MonoBehaviour
         orange.SetActive(false);
         big.SetActive(false);
 
+        cameraSwitcherGameObject.GetComponent<CameraSwitcherViewer>().SetHighCamActive();
+
 
     }
 
-    public static void configureCarObject(GameObject car, Track.Car carInfo) {
+    public void configureCarObject(GameObject car, Track.Car carInfo) {
         car.transform.position = new Vector3(carInfo.pos[0],0,carInfo.pos[1]);
         car.transform.eulerAngles = new Vector3(0,carInfo.heading,0);
         Debug.Log("The pos [0] is: " + carInfo.pos[0] + " and the pos [1] is" + carInfo.pos[1]);
