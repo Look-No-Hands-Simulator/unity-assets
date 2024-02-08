@@ -5434,7 +5434,7 @@ MonoBehaviour:
   saveImage: 0
   saveIdSegmentation: 0
   saveLayerSegmentation: 0
-  saveDepth: 1
+  saveDepth: 0
   saveNormals: 0
   saveOpticalFlow: 0
   filepath: ..\Captures

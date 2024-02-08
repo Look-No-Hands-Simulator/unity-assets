@@ -172,9 +172,10 @@ public class ImageSynthesis : MonoBehaviour
             Color pixel = pixels[pixels.Length - (width * (1 + i / width)) + (i % width)];
             // Get averages of rgb for a black and white value
             // Get byte array of length 4
-            int j = 3;
-            foreach(byte b in BitConverter.GetBytes((pixel.r + pixel.g + pixel.b) / 3.0f)) {
-                image_data[i*4 + j--] = b;
+            int j = 0;
+            foreach(byte b in BitConverter.GetBytes(pixel.grayscale * pixel.grayscale)) {
+                // Each pixel takes up 4 bytes, we keep track of what pixel we are on, the j++ is which byte within the pixel
+                image_data[i*4 + j++] = b;
             }
         }
 
