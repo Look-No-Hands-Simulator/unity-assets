@@ -2,6 +2,7 @@
 using UnityEngine.Rendering;
 using System.Collections;
 using System.IO;
+using System;
 
 // @TODO:
 // . support custom color wheels in optical flow via lookup textures
@@ -35,14 +36,18 @@ public class ImageSynthesis : MonoBehaviour
 
     private byte[] depthImageData;
 
+    public float min_publishing_time = 0.5f; 
+
+    private float time_elapsed = 0.0f;
+
     // pass configuration
     private CapturePass[] capturePasses = new CapturePass[] {
         new CapturePass() { name = "_img" },
-        new CapturePass() { name = "_id", supportsAntialiasing = false },
-        new CapturePass() { name = "_layer", supportsAntialiasing = false },
+        //new CapturePass() { name = "_id", supportsAntialiasing = false },
+        //new CapturePass() { name = "_layer", supportsAntialiasing = false },
         new CapturePass() { name = "_depth" },
-        new CapturePass() { name = "_normals" },
-        new CapturePass() { name = "_flow", supportsAntialiasing = false, needsRescale = true } // (see issue with Motion Vectors in @KNOWN ISSUES)
+        //new CapturePass() { name = "_normals" },
+        //new CapturePass() { name = "_flow", supportsAntialiasing = false, needsRescale = true } // (see issue with Motion Vectors in @KNOWN ISSUES)
     };
 
     struct CapturePass
@@ -85,7 +90,7 @@ public class ImageSynthesis : MonoBehaviour
 
     public byte[] GetDepthImage() {
         // Return a copy, shallow copy
-        return (byte[])this.depthImageData.Clone();
+        return (byte[])this.depthImageData;
     }
 
     /// <summary>
@@ -151,26 +156,34 @@ public class ImageSynthesis : MonoBehaviour
         tex.Apply();
 
         // encode texture into PNG
-        var bytes = tex.EncodeToPNG();
+        //var bytes = tex.EncodeToPNG();
 
-        // Color[] pixels = tex.GetPixels();
+        // Get ready to encode the colours RGB
+        Color[] pixels = tex.GetPixels();
+        // Empty array of 3* the size of original for RGB values
+        byte[] image_data = new byte[pixels.Length*4];
 
-        // byte[] image_data = new byte[pixels.Length*3];
-        // int img_size = pixels.Length*3;
+        // Iterate through pixels and record each 3 bytes
+        // create a byte for each r,g,b in each pixel
+        for (int i = 0; i < pixels.Length; i++) {
+            // bytes? ########### TODO
+            // By * 0-1 by 255 we get a colour value between 0-255
+            // Work from end of array to prevent upside down image
+            Color pixel = pixels[pixels.Length - (width * (1 + i / width)) + (i % width)];
+            // Get averages of rgb for a black and white value
+            // Get byte array of length 4
+            int j = 0;
+            // Be careful, the squaring in the grayscale, does it distort the depth calculations and algorithms using it? 
+            // 1 - depth so instead of 0 = near and 1 = far we get the opposite near = 1 and far = 0
+            // The closer to the car the less the number changes due to squaring and the further away the more the number changes
+            // Maybe this needs to be adjusted to remove the square? But then less contrast to the eye
+            foreach(byte b in BitConverter.GetBytes(pixel.grayscale * pixel.grayscale)) {
+                // Each pixel takes up 4 bytes, we keep track of what pixel we are on, the j++ is which byte within the pixel
+                image_data[i*4 + j++] = b;
+            }
+        }
 
-        // // Iterate through pixels and record each 3 bytes
-        // // create a byte for each r,g,b in each pixel
-        // for (int i = 0; i < pixels.Length; i++) {
-        //     // bytes? ########### TODO
-        //     // By * 0-1 by 255 we get a colour value between 0-255
-        //     // Work from end of array to prevent upside down image
-        //     Color pixel = pixels[pixels.Length - (width * (1 + i / width)) + (i % width)];
-        //     image_data[i*3] = (byte)(pixel.b * 255);
-        //     image_data[i*3 + 1] = (byte)(pixel.g * 255);
-        //     image_data[i*3 + 2] = (byte)(pixel.r * 255);
-        // }
-
-        this.depthImageData = (byte[])bytes.Clone();
+        this.depthImageData = (byte[])image_data.Clone();
 
 
 
@@ -184,10 +197,17 @@ public class ImageSynthesis : MonoBehaviour
             OnSceneChange();
 #endif // UNITY_EDITOR
 
-        // @TODO: detect if camera properties actually changed
-        OnCameraChange();
-        ///
-        CacheDepthImage();
+        time_elapsed += Time.deltaTime;
+        if (time_elapsed > this.min_publishing_time) {
+            // @TODO: detect if camera properties actually changed
+            //OnCameraChange();
+            ///
+            CacheDepthImage();
+
+            time_elapsed = 0.0f;
+        }
+
+        
     }
 
     private Camera CreateHiddenCamera(string name)
@@ -261,18 +281,18 @@ public class ImageSynthesis : MonoBehaviour
         opticalFlowMaterial.SetFloat("_Sensitivity", opticalFlowSensitivity);
 
         // setup command buffers and replacement shaders
-        SetupCameraWithReplacementShader(capturePasses[1].camera, uberReplacementShader, ReplacementMode.ObjectId);
-        SetupCameraWithReplacementShader(capturePasses[2].camera, uberReplacementShader, ReplacementMode.CatergoryId);
+        //SetupCameraWithReplacementShader(capturePasses[1].camera, uberReplacementShader, ReplacementMode.ObjectId);
+        //SetupCameraWithReplacementShader(capturePasses[2].camera, uberReplacementShader, ReplacementMode.CatergoryId);
         // Originally color.white
-        SetupCameraWithReplacementShader(capturePasses[3].camera, uberReplacementShader, ReplacementMode.DepthCompressed, Color.black);
-        SetupCameraWithReplacementShader(capturePasses[4].camera, uberReplacementShader, ReplacementMode.Normals);
-        SetupCameraWithPostShader(capturePasses[5].camera, opticalFlowMaterial, DepthTextureMode.Depth | DepthTextureMode.MotionVectors);
+        SetupCameraWithReplacementShader(capturePasses[1].camera, uberReplacementShader, ReplacementMode.DepthCompressed, Color.black);
+        //SetupCameraWithReplacementShader(capturePasses[4].camera, uberReplacementShader, ReplacementMode.Normals);
+        //SetupCameraWithPostShader(capturePasses[5].camera, opticalFlowMaterial, DepthTextureMode.Depth | DepthTextureMode.MotionVectors);
     }
 
 
     public void OnSceneChange()
     {
-        var renderers = Object.FindObjectsOfType<Renderer>();
+        var renderers = UnityEngine.Object.FindObjectsOfType<Renderer>();
         var mpb = new MaterialPropertyBlock();
         foreach (var r in renderers)
         {
@@ -374,7 +394,7 @@ public class ImageSynthesis : MonoBehaviour
         cam.targetTexture = prevCameraRT;
         RenderTexture.active = prevActiveRT;
 
-        Object.Destroy(tex);
+        UnityEngine.Object.Destroy(tex);
         RenderTexture.ReleaseTemporary(finalRT);
     }
 

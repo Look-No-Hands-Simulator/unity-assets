@@ -56,11 +56,13 @@ public class DepthMappingPublisher : MonoBehaviour
     }
 
     public ImageMsg PrepareImgMsg() {
-        // byte[] depth_data = imageSynthesis.GetDepthImage();
-        // if (this.counter < 4) {
-        //     File.WriteAllBytes("/home/louise/dissertation_obr_ws/unityros-ws/src/depthimage" + this.counter + ".png", depth_data);
-        //     counter++;
-        // }
+        // Save image as png
+        byte[] depth_data = imageSynthesis.GetDepthImage();
+        if (this.counter < 4 && depth_data != null) {
+            Debug.Log("Size of data: " + depth_data.Length);
+            File.WriteAllBytes("/home/louise/dissertation_obr_ws/unityros-ws/src/depthimage" + this.counter + ".png", depth_data);
+            counter++;
+        }
 
         // Get Unix time, how long since Jan 1st 1970?
         TimeStamp msg_timestamp = new TimeStamp(Clock.time);
