@@ -21,6 +21,7 @@ public class GaussianGenerator : MonoBehaviour
 
     public double next() {
         // Generates gaussian random using box muller transformation
+        // error = sd * random(0,1) * sqrt(-2 * log(random(0,1)) + mean)
         return ((standard_deviation * random.NextDouble() * Math.Sqrt(-2.0 * Math.Log(random.NextDouble()))) + mean);
     }
     public double next(double mean_param, double standard_deviation_param) {
