@@ -6,11 +6,27 @@ using System;
 
 public class ADS_DV_State {
 
+	public GameObject carObject;
+	public WheelCollider fl_wheel_collider;
+    public WheelCollider fr_wheel_collider;
+    public WheelCollider bl_wheel_collider;
+    public WheelCollider br_wheel_collider;
+
+
 	private DateTime stateChangeTimestamp;
 	private int front_axle_torque_request;
 	private int rear_axle_torque_request;
 	private short steer_angle_request;
 	private short actual_steer_angle;
+	private bool brake_plausibility_fault;
+	private bool bms_fault;
+
+	private byte assi_light;
+	private const byte assi_light_yellow_flashing;
+	private const byte assi_light_yellow_continuous;
+	private const byte assi_light_off;
+	private const byte assi_light_blue_continuous;
+	private const byte assi_light_blue_flashing;
 
 	/// VCU2AI
 
@@ -137,6 +153,11 @@ public class ADS_DV_State {
     	steer_angle_request = 0.0;
     	actual_steer_angle = 0.0;
 
+    	assi_light = assi_light_off;
+
+    	brake_plausibility_fault = false;
+    	bms_fault = false;
+
     	/// VCU2AI
     	handshake = false;
     	shutdown_request = false;
@@ -186,31 +207,81 @@ public class ADS_DV_State {
 
 
     	switch(as_state) {
+
     		case AS_STATE_AS_OFF:
+
     			if (as_switch_status == true && ts_switch_status == true && ebs_state == EBS_STATE_ARMED && mission_status == MISSION_STATUS_SELECTED) {
+
     				setAsState(AS_STATE_AS_READY);
 
     			}
+
     			break;
+
     		case AS_STATE_AS_READY:
+
     			if (as_switch_status == false) {
+
     				setAsState(AS_STATE_AS_OFF);
+
     			} else if (shutdown_request == true) {
+
     				// the SDC open
     				setASState(AS_STATE_AS_OFF);
+
     			} else if (TimeElapsedInCurrentState(5D) && front_axle_torque_request == 0 && rear_axle_torque_request == 0 && 
     			steer_angle_request == 0 && Math.Abs(actual_steer_angle) < 5 && direction_request == DIRECTION_REQUEST_NEUTRAL
     			&& go_signal == true ) {
+
     				// Check this go signal condition in manual
     				setAsState(AS_STATE_AS_DRIVING);
-
+    				// ASSI light
+    				assi_light = assi_light_yellow_flashing;
     			}
+
     			break;
-    		case AS_STATE_AS_DRIVING;
+
+    		case AS_STATE_AS_DRIVING:
+
+    			if (mission_status == MISSION_STATUS_FINISHED && fl_wheel_collider.rpm < 10D && fr_wheel_collider.rpm < 10D && bl_wheel_collider.rpm < 10D && 
+    				br_wheel_collider.rpm < 10D) {
+
+    				setAsState(AS_STATE_AS_FINISHED);
+    				assi_light = assi_light_blue_continuous;
+
+    			} else if (shutdown_request == true || as_switch_status == false || go_signal == false || mission_status_fault == true ||
+    				autonomous_braking_fault == true || brake_plausibility_fault == true || ai_estop_request == true || ai_comms_lost == true
+    				|| bms_fault == true || ebs_state == EBS_STATE_UNAVAILABLE ) {
+
+    				setAsState(AS_STATE_EMERGENCY_BRAKE);
+    				assi_light = assi_light_blue_flashing;
+    			}
+
     			break;
-    		case AS_STATE_EMERGENCY_BRAKE;
+
+    		case AS_STATE_EMERGENCY_BRAKE:
+
+    			if (TimeElapsedInCurrentState(15D) && as_switch_status == false) {
+
+    				setAsState(AS_STATE_AS_OFF);
+    				assi_light = assi_light_off;
+    			}
+
     			break;
-    		case AS_STATE_AS_FINISHED;
+
+    		case AS_STATE_AS_FINISHED:
+    			if (shutdown_request == true) {
+
+    				//SDC is open
+    				setAsState(AS_STATE_EMERGENCY_BRAKE);
+    				assi_light = assi_light_blue_flashing;
+
+    			} else if (as_switch_status == false) {
+
+    				setAsState(AS_STATE_AS_OFF);
+    				assi_light = assi_light_off;
+    			}
+
     			break;
     	}
     }
