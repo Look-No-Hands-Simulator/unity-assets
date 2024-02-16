@@ -11,7 +11,8 @@ using RosMessageTypes.Std;
 using RosMessageTypes.BuiltinInterfaces;
 
 using Unity.Robotics.Core;
-public class GpsSimulation : MonoBehaviour
+
+public class GpsSimulation
 {
     GameObject gps_sensor_link;
     float lon_origin;

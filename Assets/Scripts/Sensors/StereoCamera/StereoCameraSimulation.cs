@@ -13,7 +13,7 @@ using RosMessageTypes.BuiltinInterfaces;
 
 using Unity.Robotics.Core;
 
-public class StereoCameraSimulation : MonoBehaviour
+public class StereoCameraSimulation
 {
     Camera left_camera;
     Camera right_camera;

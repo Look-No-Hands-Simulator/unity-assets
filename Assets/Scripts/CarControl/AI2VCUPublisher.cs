@@ -11,7 +11,7 @@ using RosMessageTypes.BuiltinInterfaces;
 using Unity.Robotics.Core;
 using Unity.Robotics.ROSTCPConnector;
 
-public class AI2VCUPublisher : MonoBehaviour
+public class AI2VCUPublisher
 {
     string ai2vcuSteerTopic;
     string ai2vcuDriveFTopic;

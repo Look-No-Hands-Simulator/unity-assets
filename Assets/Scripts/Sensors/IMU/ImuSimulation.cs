@@ -9,7 +9,7 @@ using RosMessageTypes.Std;
 using RosMessageTypes.BuiltinInterfaces;
 
 using Unity.Robotics.Core;
-public class ImuSimulation : MonoBehaviour
+public class ImuSimulation
 {
     GameObject imu_sensor_link;
 
