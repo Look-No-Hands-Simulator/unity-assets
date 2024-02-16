@@ -13,7 +13,7 @@ using RosMessageTypes.BuiltinInterfaces;
 
 using Unity.Robotics.Core;
 
-public class WheelspeedsSimulation : MonoBehaviour
+public class WheelspeedsSimulation
 {
     WheelCollider fl_wheel_collider;
     WheelCollider fr_wheel_collider;

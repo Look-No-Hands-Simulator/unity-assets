@@ -59,7 +59,7 @@ public class DepthMappingPublisher : MonoBehaviour
         // Save image as png
         byte[] depth_data = imageSynthesis.GetDepthImage();
         if (this.counter < 4 && depth_data != null) {
-            Debug.Log("Size of data: " + depth_data.Length);
+            //Debug.Log("Size of data: " + depth_data.Length);
             File.WriteAllBytes("/home/louise/dissertation_obr_ws/unityros-ws/src/depthimage" + this.counter + ".png", depth_data);
             counter++;
         }

@@ -1,7 +1,7 @@
 using UnityEngine;
 using System;
 
-public class GaussianGenerator : MonoBehaviour
+public class GaussianGenerator
 {
     System.Random random;
     double mean;
