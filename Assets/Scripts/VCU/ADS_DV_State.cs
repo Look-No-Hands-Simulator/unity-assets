@@ -4,8 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using Unity.Robotics.Core;
+using TMPro;
 
 public class ADS_DV_State : MonoBehaviour {
+
+	public Button stateButton;
+	public Button ebsButton;
 
 	public GameObject carObject;
 	public WheelCollider fl_wheel_collider;
@@ -25,7 +29,7 @@ public class ADS_DV_State : MonoBehaviour {
 	private bool brake_plausibility_fault;
 	private bool bms_fault;
 
-	private byte assi_light;
+	//private byte assi_light;
 	private const byte ASSI_LIGHT_OFF = 0;
 	private const byte ASSI_LIGHT_YELLOW_FLASHING = 1;
 	private const byte ASSI_LIGHT_YELLOW_CONTINUOUS = 2;
@@ -38,6 +42,8 @@ public class ADS_DV_State : MonoBehaviour {
 	private byte ebs_state;
 	private const byte EBS_STATE_ARMED = 0;
 	private const byte EBS_STATE_UNAVAILABLE = 1;
+
+	public readonly string[] ebs_state_array = {"EBS_STATE_ARMED","EBS_STATE_UNAVAILABLE"};
 
 	//  Handshake
     private bool handshake;
@@ -61,11 +67,13 @@ public class ADS_DV_State : MonoBehaviour {
 
     //  State of the Autonomous System [0 - 7]
     private byte as_state;
-    private const byte AS_STATE_AS_OFF = 1;
-    private const byte AS_STATE_AS_READY = 2;
-    private const byte AS_STATE_AS_DRIVING = 3;
-    private const byte AS_STATE_EMERGENCY_BRAKE = 4;
-    private const byte AS_STATE_AS_FINISHED = 5;
+    private const byte AS_STATE_AS_OFF = 0;
+    private const byte AS_STATE_AS_READY = 1;
+    private const byte AS_STATE_AS_DRIVING = 2;
+    private const byte AS_STATE_EMERGENCY_BRAKE = 3;
+    private const byte AS_STATE_AS_FINISHED = 4;
+
+    private readonly string[] state_collection = {"AS_STATE_AS_OFF","AS_STATE_AS_READY","AS_STATE_AS_DRIVING","AS_STATE_EMERGENCY_BRAKE","AS_STATE_AS_FINISHED"};
 
     //  State of the Mission Indicator [0 - 7]
     private byte ami_state;
@@ -162,7 +170,8 @@ public class ADS_DV_State : MonoBehaviour {
     	steer_angle_request = (short)0.0;
     	actual_steer_angle = (short)0.0;
 
-    	assi_light = ASSI_LIGHT_OFF;
+    	//assi_light = ASSI_LIGHT_OFF;
+    	assi_manager.SetState(ASSI_LIGHT_OFF);
 
     	brake_plausibility_fault = false;
     	bms_fault = false;
@@ -206,9 +215,9 @@ public class ADS_DV_State : MonoBehaviour {
 
     	assi_manager.Start();
 
-    	as_switch_status = true;
-    	ts_switch_status = true;
-    	ebs_state = EBS_STATE_ARMED;
+    	//as_switch_status = false;
+    	//ts_switch_status = true;
+    	SetEBSState(EBS_STATE_ARMED);
     	mission_status = MISSION_STATUS_SELECTED;
 
 
@@ -224,7 +233,7 @@ public class ADS_DV_State : MonoBehaviour {
     private void SetAsState(byte newState) {
     	as_state = newState;
 
-    	assi_manager.SetState(newState);
+    	stateButton.GetComponentInChildren<TextMeshProUGUI>().text = state_collection[newState];
 
     	// Get Unix time, how long since Jan 1st 1970?
     	// start a timer upon state change
@@ -241,7 +250,7 @@ public class ADS_DV_State : MonoBehaviour {
     			if (as_switch_status == true && ts_switch_status == true && ebs_state == EBS_STATE_ARMED && mission_status == MISSION_STATUS_SELECTED) {
 
     				SetAsState(AS_STATE_AS_READY);
-    				assi_light = ASSI_LIGHT_YELLOW_CONTINUOUS;
+    				assi_manager.SetState(ASSI_LIGHT_YELLOW_CONTINUOUS);
 
     			}
 
@@ -252,13 +261,13 @@ public class ADS_DV_State : MonoBehaviour {
     			if (as_switch_status == false) {
 
     				SetAsState(AS_STATE_AS_OFF);
-    				assi_light = ASSI_LIGHT_OFF;
+    				assi_manager.SetState(ASSI_LIGHT_OFF);
 
     			} else if (shutdown_request == true) {
 
     				// the SDC open
     				SetAsState(AS_STATE_AS_OFF);
-    				assi_light = ASSI_LIGHT_OFF;
+    				assi_manager.SetState(ASSI_LIGHT_OFF);
 
     			} else if (TimeElapsedInCurrentState(5D) && front_axle_torque_request == 0 && rear_axle_torque_request == 0 && 
     			steer_angle_request == 0 && Math.Abs(actual_steer_angle) < 5 && direction_request == DIRECTION_REQUEST_NEUTRAL
@@ -267,7 +276,7 @@ public class ADS_DV_State : MonoBehaviour {
     				// Check this go signal condition in manual
     				SetAsState(AS_STATE_AS_DRIVING);
     				// ASSI light
-    				assi_light = ASSI_LIGHT_YELLOW_FLASHING;
+    				assi_manager.SetState(ASSI_LIGHT_YELLOW_FLASHING);
     			}
 
     			break;
@@ -278,14 +287,14 @@ public class ADS_DV_State : MonoBehaviour {
     				br_wheel_collider.rpm < 10D) {
 
     				SetAsState(AS_STATE_AS_FINISHED);
-    				assi_light = ASSI_LIGHT_BLUE_CONTINUOUS;
+    				assi_manager.SetState(ASSI_LIGHT_BLUE_CONTINUOUS);
 
     			} else if (shutdown_request == true || as_switch_status == false || go_signal == false || mission_status_fault == true ||
     				autonomous_braking_fault == true || brake_plausibility_fault == true || ai_estop_request == true || ai_comms_lost == true
     				|| bms_fault == true || ebs_state == EBS_STATE_UNAVAILABLE ) {
 
     				SetAsState(AS_STATE_EMERGENCY_BRAKE);
-    				assi_light = ASSI_LIGHT_BLUE_FLASHING;
+    				assi_manager.SetState(ASSI_LIGHT_BLUE_FLASHING);
     			}
 
     			break;
@@ -295,7 +304,7 @@ public class ADS_DV_State : MonoBehaviour {
     			if (TimeElapsedInCurrentState(15D) && as_switch_status == false) {
 
     				SetAsState(AS_STATE_AS_OFF);
-    				assi_light = ASSI_LIGHT_OFF;
+    				assi_manager.SetState(ASSI_LIGHT_OFF);
     			}
 
     			break;
@@ -305,12 +314,12 @@ public class ADS_DV_State : MonoBehaviour {
 
     				//SDC is open
     				SetAsState(AS_STATE_EMERGENCY_BRAKE);
-    				assi_light = ASSI_LIGHT_BLUE_FLASHING;
+    				assi_manager.SetState(ASSI_LIGHT_BLUE_FLASHING);
 
     			} else if (as_switch_status == false) {
 
     				SetAsState(AS_STATE_AS_OFF);
-    				assi_light = ASSI_LIGHT_OFF;
+    				assi_manager.SetState(ASSI_LIGHT_OFF);
     			}
 
     			break;
@@ -324,6 +333,41 @@ public class ADS_DV_State : MonoBehaviour {
 
     	return elapsed.TotalSeconds >= seconds;
 
+    }
+
+    public void SwitchASState() {
+
+    	if (as_switch_status == true) {
+    		as_switch_status = false;
+    	} else {
+    		as_switch_status = true;
+    	}
+
+    }
+
+    public void SwitchTSState() {
+    	
+    	if (ts_switch_status == true) {
+    		ts_switch_status = false;
+    	} else {
+    		ts_switch_status = true;
+    	}
+    }
+
+    public void SetEBSState(byte newEBSState) {
+
+    	ebs_state = newEBSState;
+    	ebsButton.GetComponentInChildren<TextMeshProUGUI>().text = ebs_state_array[newEBSState];
+
+    }
+
+    public void ActivateEBS() {
+
+    	if (ebs_state == EBS_STATE_ARMED) {
+    		SetEBSState(EBS_STATE_UNAVAILABLE);
+    	} else {
+    		SetEBSState(EBS_STATE_ARMED);
+    	}
     }
 
 
