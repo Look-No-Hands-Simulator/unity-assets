@@ -9,6 +9,9 @@ using RosMessageTypes.AdsDv;
 
 public class CarControl : MonoBehaviour
 {
+    public ADS_DV_State adsdvStateObject;
+
+
     public List<WheelElements> wheelData;
 
     public short maxTorque;
@@ -74,33 +77,39 @@ public class CarControl : MonoBehaviour
     void ActuateSteering(AI2VCUSteerMsg steerMsg) {
         // Code below recalculates left and right steer from a hypothetical middle wheel
         // TODO: Create subscriber to control the wheels, publish middle steer, create AI2VCUPublisher and publish middle steer in here in this script
-        short middleSteer = steerMsg.steer_request_deg;
-        float steerFraction = (middleSteer * 2) / (maxInnerSteeringAngle + maxOuterSteeringAngle);
-        if (middleSteer > 0) {
-            this.actuateRightSteer = steerFraction * maxInnerSteeringAngle;
-            this.actuateLeftSteer = steerFraction * maxOuterSteeringAngle;
-        } else {
-            this.actuateRightSteer = steerFraction * maxOuterSteeringAngle;
-            this.actuateLeftSteer = steerFraction * maxInnerSteeringAngle;
+
+        if (adsdvStateObject.GetAsState() == ADS_DV_State.AS_STATE_AS_DRIVING || adsdvStateObject.GetAsState() == ADS_DV_State.AS_STATE_AS_READY) {
+            short middleSteer = steerMsg.steer_request_deg;
+            float steerFraction = (middleSteer * 2) / (maxInnerSteeringAngle + maxOuterSteeringAngle);
+            if (middleSteer > 0) {
+                this.actuateRightSteer = steerFraction * maxInnerSteeringAngle;
+                this.actuateLeftSteer = steerFraction * maxOuterSteeringAngle;
+            } else {
+                this.actuateRightSteer = steerFraction * maxOuterSteeringAngle;
+                this.actuateLeftSteer = steerFraction * maxInnerSteeringAngle;
+            }
         }
     }
 
     void ActuateThrottle(AI2VCUDriveFMsg driveFMsg) {
-        this.reverse = false;
-        this.actuateThrottleFrontForce = driveFMsg.front_axle_trq_request_nm;
-        this.brakingPercent = 0;
-        // if (this.reverse == true) {
-        //     this.reverse = false;
-        // }
+
+        if (adsdvStateObject.GetAsState() == ADS_DV_State.AS_STATE_AS_DRIVING) {
+            this.reverse = false;
+            this.actuateThrottleFrontForce = driveFMsg.front_axle_trq_request_nm;
+            this.brakingPercent = 0;
+        }
+
+        
     }
 
     void ActuateThrottleReverse(AI2VCUDriveFMsg driveFMsg) {
-        this.reverse = true;
-        this.actuateThrottleFrontForce = driveFMsg.front_axle_trq_request_nm;
-        this.brakingPercent = 0;
-        // if (this.reverse == false) {
-        //     this.reverse = true;
-        // }
+
+        if (adsdvStateObject.GetAsState() == ADS_DV_State.AS_STATE_AS_DRIVING) {
+            this.reverse = true;
+            this.actuateThrottleFrontForce = driveFMsg.front_axle_trq_request_nm;
+            this.brakingPercent = 0;
+        }
+        
     }
 
 

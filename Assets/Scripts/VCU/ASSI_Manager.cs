@@ -29,9 +29,9 @@ public class ASSI_Manager {
 		car_materials = car.GetComponent<Renderer>().materials;
 		assi_material = car_materials[assi_material_index];
 
-		foreach (Material mat in car_materials) {
-			Debug.Log("material name: " + mat.name);
-		}
+		// foreach (Material mat in car_materials) {
+		// 	Debug.Log("material name: " + mat.name);
+		// }
 	}
 
 	public ASSI_Manager(GameObject carParam, int materialIndexParam) {
