@@ -6,6 +6,9 @@ using System;
 using Unity.Robotics.Core;
 using TMPro;
 
+// Custom namespace msgs
+using RosMessageTypes.AdsDv;
+
 public class ADS_DV_State : MonoBehaviour {
 
 	public Button stateButton;
@@ -178,7 +181,8 @@ public class ADS_DV_State : MonoBehaviour {
     	bms_fault = false;
 
     	/// VCU2AI
-    	handshake = false;
+    	// TODO: check the handshake
+    	handshake = true;
     	shutdown_request = false;
     	as_switch_status = false;
     	ts_switch_status = false;
@@ -389,6 +393,35 @@ public class ADS_DV_State : MonoBehaviour {
     public byte GetAsState() {
 
     	return as_state;
+    }
+
+    public VCU2AIStatusMsg get_vcu2aiStatus_msg() {
+
+    	VCU2AIStatusMsg vcu2ai_msg = new VCU2AIStatusMsg();
+
+    	vcu2ai_msg.handshake = this.handshake;
+        vcu2ai_msg.shutdown_request = this.shutdown_request;
+        vcu2ai_msg.as_switch_status = this.as_switch_status;
+        vcu2ai_msg.ts_switch_status = ts_switch_status;
+        vcu2ai_msg.go_signal = false;
+        vcu2ai_msg.steering_status = 0;
+        vcu2ai_msg.as_state = 0;
+        vcu2ai_msg.ami_state = 0;
+        vcu2ai_msg.fault_status = false;
+        vcu2ai_msg.warning_status = false;
+        vcu2ai_msg.warn_batt_temp_high = false;
+        vcu2ai_msg.warn_batt_soc_low = false;
+        vcu2ai_msg.ai_estop_request = false;
+        vcu2ai_msg.hvil_open_fault = false;
+        vcu2ai_msg.hvil_short_fault = false;
+        vcu2ai_msg.ebs_fault = false;
+        vcu2ai_msg.offboard_charger_fault = false;
+        vcu2ai_msg.ai_comms_lost = false;
+        vcu2ai_msg.autonomous_braking_fault = false;
+        vcu2ai_msg.mission_status_fault = false;
+        vcu2ai_msg.reserved_1 = false;
+        vcu2ai_msg.reserved_2 = false;
+
     }
 
 
