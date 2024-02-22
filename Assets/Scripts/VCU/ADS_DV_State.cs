@@ -68,11 +68,11 @@ public class ADS_DV_State : MonoBehaviour {
 
     //  State of the Autonomous System [0 - 7]
     private byte as_state;
-    private const byte AS_STATE_AS_OFF = 0;
-    private const byte AS_STATE_AS_READY = 1;
-    private const byte AS_STATE_AS_DRIVING = 2;
-    private const byte AS_STATE_EMERGENCY_BRAKE = 3;
-    private const byte AS_STATE_AS_FINISHED = 4;
+    public const byte AS_STATE_AS_OFF = 0;
+    public const byte AS_STATE_AS_READY = 1;
+    public const byte AS_STATE_AS_DRIVING = 2;
+    public const byte AS_STATE_EMERGENCY_BRAKE = 3;
+    public const byte AS_STATE_AS_FINISHED = 4;
 
     private readonly string[] state_collection = {"AS_STATE_AS_OFF","AS_STATE_AS_READY","AS_STATE_AS_DRIVING","AS_STATE_EMERGENCY_BRAKE","AS_STATE_AS_FINISHED"};
 
@@ -344,6 +344,7 @@ public class ADS_DV_State : MonoBehaviour {
     		as_switch_status = true;
     	}
 
+
     }
 
     public void SwitchTSState() {
@@ -353,6 +354,7 @@ public class ADS_DV_State : MonoBehaviour {
     	} else {
     		ts_switch_status = true;
     	}
+
     }
 
     public void SwitchGoSignal() {
@@ -364,6 +366,7 @@ public class ADS_DV_State : MonoBehaviour {
     		go_signal = true;
     		goButton.GetComponent<Image>().color = Color.green;
     	}
+
     }
 
     public void SetEBSState(byte newEBSState) {
@@ -380,6 +383,12 @@ public class ADS_DV_State : MonoBehaviour {
     	} else {
     		SetEBSState(EBS_STATE_ARMED);
     	}
+
+    }
+
+    public byte GetAsState() {
+
+    	return as_state;
     }
 
 
