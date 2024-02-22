@@ -10,6 +10,7 @@ public class ADS_DV_State : MonoBehaviour {
 
 	public Button stateButton;
 	public Button ebsButton;
+	public Button goButton;
 
 	public GameObject carObject;
 	public WheelCollider fl_wheel_collider;
@@ -351,6 +352,17 @@ public class ADS_DV_State : MonoBehaviour {
     		ts_switch_status = false;
     	} else {
     		ts_switch_status = true;
+    	}
+    }
+
+    public void SwitchGoSignal() {
+    	
+    	if (go_signal == true) {
+    		go_signal = false;
+    		goButton.GetComponent<Image>().color = Color.yellow;
+    	} else {
+    		go_signal = true;
+    		goButton.GetComponent<Image>().color = Color.green;
     	}
     }
 
