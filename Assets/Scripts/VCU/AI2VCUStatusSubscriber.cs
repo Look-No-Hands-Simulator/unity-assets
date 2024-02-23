@@ -41,15 +41,7 @@ public class AI2VCUStatusSubscriber: MonoBehaviour
     public void AI2VCUSubscriberManager(AI2VCUStatusMsg statusMsg) {
         // Get values from the msg and assign them into the ADS_DV_State 
 
-        // this.handshake = false;
-        // this.estop_request = false;
-        // this.mission_status = 0;
-        // this.direction_request = 0;
-        // this.lap_counter = 0;
-        // this.cones_count_actual = 0;
-        // this.cones_count_all = 0;
-        // this.veh_speed_actual_kmh = 0;
-        // this.veh_speed_demand_kmh = 0;
+        adsdvState.manage_ai2vcuStatus_msg(statusMsg);
 
 
     }
