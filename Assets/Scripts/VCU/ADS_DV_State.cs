@@ -6,6 +6,9 @@ using System;
 using Unity.Robotics.Core;
 using TMPro;
 
+// Custom namespace msgs
+using RosMessageTypes.AdsDv;
+
 public class ADS_DV_State : MonoBehaviour {
 
 	public Button stateButton;
@@ -178,7 +181,8 @@ public class ADS_DV_State : MonoBehaviour {
     	bms_fault = false;
 
     	/// VCU2AI
-    	handshake = false;
+    	// TODO: check the handshake
+    	handshake = true;
     	shutdown_request = false;
     	as_switch_status = false;
     	ts_switch_status = false;
@@ -389,6 +393,51 @@ public class ADS_DV_State : MonoBehaviour {
     public byte GetAsState() {
 
     	return as_state;
+    }
+
+    public VCU2AIStatusMsg get_vcu2aiStatus_msg() {
+
+    	VCU2AIStatusMsg vcu2ai_msg = new VCU2AIStatusMsg();
+
+    	vcu2ai_msg.handshake = this.handshake;
+        vcu2ai_msg.shutdown_request = this.shutdown_request;
+        vcu2ai_msg.as_switch_status = this.as_switch_status;
+        vcu2ai_msg.ts_switch_status = ts_switch_status;
+        vcu2ai_msg.go_signal = this.go_signal;
+        vcu2ai_msg.steering_status = this.steering_status;
+        vcu2ai_msg.as_state = this.as_state;
+        vcu2ai_msg.ami_state = this.ami_state;
+        vcu2ai_msg.fault_status = this.fault_status;
+        vcu2ai_msg.warning_status = this.warning_status;
+        vcu2ai_msg.warn_batt_temp_high = this.warn_batt_temp_high;
+        vcu2ai_msg.warn_batt_soc_low = this.warn_batt_soc_low;
+        vcu2ai_msg.ai_estop_request = this.ai_estop_request;
+        vcu2ai_msg.hvil_open_fault = this.hvil_open_fault;
+        vcu2ai_msg.hvil_short_fault = this.hvil_short_fault;
+        vcu2ai_msg.ebs_fault = this.ebs_fault;
+        vcu2ai_msg.offboard_charger_fault = this.offboard_charger_fault;
+        vcu2ai_msg.ai_comms_lost = this.ai_comms_lost;
+        vcu2ai_msg.autonomous_braking_fault = this.autonomous_braking_fault;
+        vcu2ai_msg.mission_status_fault = this.mission_status_fault;
+        vcu2ai_msg.reserved_1 = this.reserved_1;
+        vcu2ai_msg.reserved_2 = this.reserved_2;
+
+        return vcu2ai_msg;
+
+    }
+
+    public void manage_ai2vcuStatus_msg(AI2VCUStatusMsg status_msg) {
+
+    	this.handshake = status_msg.handshake;
+        this.estop_request = status_msg.estop_request;
+        this.mission_status = status_msg.mission_status;
+        this.direction_request = status_msg.direction_request;
+        this.lap_counter = status_msg.lap_counter;
+        this.cones_count_actual = status_msg.cones_count_actual;
+        this.cones_count_all = status_msg.cones_count_all;
+        this.veh_speed_actual_kmh = status_msg.veh_speed_actual_kmh;
+        this.veh_speed_demand_kmh = status_msg.veh_speed_demand_kmh;
+
     }
 
 
