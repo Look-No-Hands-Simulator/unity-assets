@@ -403,24 +403,26 @@ public class ADS_DV_State : MonoBehaviour {
         vcu2ai_msg.shutdown_request = this.shutdown_request;
         vcu2ai_msg.as_switch_status = this.as_switch_status;
         vcu2ai_msg.ts_switch_status = ts_switch_status;
-        vcu2ai_msg.go_signal = false;
-        vcu2ai_msg.steering_status = 0;
-        vcu2ai_msg.as_state = 0;
-        vcu2ai_msg.ami_state = 0;
-        vcu2ai_msg.fault_status = false;
-        vcu2ai_msg.warning_status = false;
-        vcu2ai_msg.warn_batt_temp_high = false;
-        vcu2ai_msg.warn_batt_soc_low = false;
-        vcu2ai_msg.ai_estop_request = false;
-        vcu2ai_msg.hvil_open_fault = false;
-        vcu2ai_msg.hvil_short_fault = false;
-        vcu2ai_msg.ebs_fault = false;
-        vcu2ai_msg.offboard_charger_fault = false;
-        vcu2ai_msg.ai_comms_lost = false;
-        vcu2ai_msg.autonomous_braking_fault = false;
-        vcu2ai_msg.mission_status_fault = false;
-        vcu2ai_msg.reserved_1 = false;
-        vcu2ai_msg.reserved_2 = false;
+        vcu2ai_msg.go_signal = this.go_signal;
+        vcu2ai_msg.steering_status = this.steering_status;
+        vcu2ai_msg.as_state = this.as_state;
+        vcu2ai_msg.ami_state = this.ami_state;
+        vcu2ai_msg.fault_status = this.fault_status;
+        vcu2ai_msg.warning_status = this.warning_status;
+        vcu2ai_msg.warn_batt_temp_high = this.warn_batt_temp_high;
+        vcu2ai_msg.warn_batt_soc_low = this.warn_batt_soc_low;
+        vcu2ai_msg.ai_estop_request = this.ai_estop_request;
+        vcu2ai_msg.hvil_open_fault = this.hvil_open_fault;
+        vcu2ai_msg.hvil_short_fault = this.hvil_short_fault;
+        vcu2ai_msg.ebs_fault = this.ebs_fault;
+        vcu2ai_msg.offboard_charger_fault = this.offboard_charger_fault;
+        vcu2ai_msg.ai_comms_lost = this.ai_comms_lost;
+        vcu2ai_msg.autonomous_braking_fault = this.autonomous_braking_fault;
+        vcu2ai_msg.mission_status_fault = this.mission_status_fault;
+        vcu2ai_msg.reserved_1 = this.reserved_1;
+        vcu2ai_msg.reserved_2 = this.reserved_2;
+
+        return vcu2ai_msg;
 
     }
 
