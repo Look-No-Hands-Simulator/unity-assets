@@ -3510,7 +3510,7 @@ GameObject:
   - component: {fileID: 611979027}
   - component: {fileID: 611979026}
   m_Layer: 0
-  m_Name: s
+  m_Name: obstacle rectangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9368,7 +9368,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1469666306}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3aa88922dd3ba81b696e96e097f15843, type: 3}
   m_Name: 
