@@ -5,15 +5,20 @@ using UnityEngine.UI;
 using System;
 using Unity.Robotics.Core;
 using TMPro;
+using System.Linq;
 
 // Custom namespace msgs
 using RosMessageTypes.AdsDv;
 
 public class ADS_DV_State : MonoBehaviour {
 
+    private float update_interval = 0.1f;
+    private float time_elapsed = 0.0f;
+
 	public Button stateButton;
 	public Button ebsButton;
 	public Button goButton;
+    public TMPro.TMP_Dropdown missionStateDropdown;
 
 	public GameObject carObject;
 	public WheelCollider fl_wheel_collider;
@@ -88,6 +93,9 @@ public class ADS_DV_State : MonoBehaviour {
     private const byte AMI_STATE_TRACK_DRIVE = 4;
     private const byte AMI_STATE_BRAKE_TEST = 5;
     private const byte AMI_STATE_INSPECTION = 6;
+
+    private readonly string[] ami_state_collection = {"AMI_STATE_NOT_SELECTED","AMI_STATE_ACCELERATION","AMI_STATE_SKIDPAD","AMI_STATE_AUTOCROSS","AMI_STATE_TRACK_DRIVE", "AMI_STATE_BRAKE_TEST",
+        "AMI_STATE_INSPECTION"};
 
     //  System fault status
     private bool fault_status;
@@ -216,6 +224,8 @@ public class ADS_DV_State : MonoBehaviour {
     	veh_speed_actual_kmh = 0;
     	veh_speed_demand_kmh = 0;
 
+        PopulateMissionStateDropdown();
+
 
 
     	assi_manager.Start();
@@ -223,9 +233,13 @@ public class ADS_DV_State : MonoBehaviour {
     	//as_switch_status = false;
     	//ts_switch_status = true;
     	SetEBSState(EBS_STATE_ARMED);
-    	mission_status = MISSION_STATUS_SELECTED;
+    	//mission_status = MISSION_STATUS_SELECTED;
 
 
+    }
+
+    private void PopulateMissionStateDropdown() {
+        missionStateDropdown.options = (new List<string>(ami_state_collection)).ConvertAll(s => new TMP_Dropdown.OptionData(s));
     }
 
     public void Update() {
@@ -247,88 +261,96 @@ public class ADS_DV_State : MonoBehaviour {
 
     public void UpdateState() {
 
+        time_elapsed += Time.deltaTime;
+        if (time_elapsed > update_interval) {
 
-    	switch(as_state) {
 
-    		case AS_STATE_AS_OFF:
 
-    			if (as_switch_status == true && ts_switch_status == true && ebs_state == EBS_STATE_ARMED && mission_status == MISSION_STATUS_SELECTED) {
+        	switch(as_state) {
 
-    				SetAsState(AS_STATE_AS_READY);
-    				assi_manager.SetState(ASSI_LIGHT_YELLOW_CONTINUOUS);
+        		case AS_STATE_AS_OFF:
 
-    			}
+        			if (as_switch_status == true && ts_switch_status == true && ebs_state == EBS_STATE_ARMED && mission_status == MISSION_STATUS_SELECTED) {
 
-    			break;
+        				SetAsState(AS_STATE_AS_READY);
+        				assi_manager.SetState(ASSI_LIGHT_YELLOW_CONTINUOUS);
 
-    		case AS_STATE_AS_READY:
+        			}
 
-    			if (as_switch_status == false) {
+        			break;
 
-    				SetAsState(AS_STATE_AS_OFF);
-    				assi_manager.SetState(ASSI_LIGHT_OFF);
+        		case AS_STATE_AS_READY:
 
-    			} else if (shutdown_request == true) {
+        			if (as_switch_status == false) {
 
-    				// the SDC open
-    				SetAsState(AS_STATE_AS_OFF);
-    				assi_manager.SetState(ASSI_LIGHT_OFF);
+        				SetAsState(AS_STATE_AS_OFF);
+        				assi_manager.SetState(ASSI_LIGHT_OFF);
 
-    			} else if (TimeElapsedInCurrentState(5D) && front_axle_torque_request == 0 && rear_axle_torque_request == 0 && 
-    			steer_angle_request == 0 && Math.Abs(actual_steer_angle) < 5 && direction_request == DIRECTION_REQUEST_NEUTRAL
-    			&& go_signal == true ) {
+        			} else if (shutdown_request == true) {
 
-    				// Check this go signal condition in manual
-    				SetAsState(AS_STATE_AS_DRIVING);
-    				// ASSI light
-    				assi_manager.SetState(ASSI_LIGHT_YELLOW_FLASHING);
-    			}
+        				// the SDC open
+        				SetAsState(AS_STATE_AS_OFF);
+        				assi_manager.SetState(ASSI_LIGHT_OFF);
 
-    			break;
+        			} else if (TimeElapsedInCurrentState(5D) && front_axle_torque_request == 0 && rear_axle_torque_request == 0 && 
+        			steer_angle_request == 0 && Math.Abs(actual_steer_angle) < 5 && direction_request == DIRECTION_REQUEST_NEUTRAL
+        			&& go_signal == true ) {
 
-    		case AS_STATE_AS_DRIVING:
+        				// Check this go signal condition in manual
+        				SetAsState(AS_STATE_AS_DRIVING);
+        				// ASSI light
+        				assi_manager.SetState(ASSI_LIGHT_YELLOW_FLASHING);
+        			}
 
-    			if (mission_status == MISSION_STATUS_FINISHED && fl_wheel_collider.rpm < 10D && fr_wheel_collider.rpm < 10D && bl_wheel_collider.rpm < 10D && 
-    				br_wheel_collider.rpm < 10D) {
+        			break;
 
-    				SetAsState(AS_STATE_AS_FINISHED);
-    				assi_manager.SetState(ASSI_LIGHT_BLUE_CONTINUOUS);
+        		case AS_STATE_AS_DRIVING:
 
-    			} else if (shutdown_request == true || as_switch_status == false || go_signal == false || mission_status_fault == true ||
-    				autonomous_braking_fault == true || brake_plausibility_fault == true || ai_estop_request == true || ai_comms_lost == true
-    				|| bms_fault == true || ebs_state == EBS_STATE_UNAVAILABLE ) {
+        			if (mission_status == MISSION_STATUS_FINISHED && fl_wheel_collider.rpm < 10D && fr_wheel_collider.rpm < 10D && bl_wheel_collider.rpm < 10D && 
+        				br_wheel_collider.rpm < 10D) {
 
-    				SetAsState(AS_STATE_EMERGENCY_BRAKE);
-    				assi_manager.SetState(ASSI_LIGHT_BLUE_FLASHING);
-    			}
+        				SetAsState(AS_STATE_AS_FINISHED);
+        				assi_manager.SetState(ASSI_LIGHT_BLUE_CONTINUOUS);
 
-    			break;
+        			} else if (shutdown_request == true || as_switch_status == false || go_signal == false || mission_status_fault == true ||
+        				autonomous_braking_fault == true || brake_plausibility_fault == true || ai_estop_request == true || ai_comms_lost == true
+        				|| bms_fault == true || ebs_state == EBS_STATE_UNAVAILABLE ) {
 
-    		case AS_STATE_EMERGENCY_BRAKE:
+        				SetAsState(AS_STATE_EMERGENCY_BRAKE);
+        				assi_manager.SetState(ASSI_LIGHT_BLUE_FLASHING);
+        			}
 
-    			if (TimeElapsedInCurrentState(15D) && as_switch_status == false) {
+        			break;
 
-    				SetAsState(AS_STATE_AS_OFF);
-    				assi_manager.SetState(ASSI_LIGHT_OFF);
-    			}
+        		case AS_STATE_EMERGENCY_BRAKE:
 
-    			break;
+        			if (TimeElapsedInCurrentState(15D) && as_switch_status == false) {
 
-    		case AS_STATE_AS_FINISHED:
-    			if (shutdown_request == true) {
+        				SetAsState(AS_STATE_AS_OFF);
+        				assi_manager.SetState(ASSI_LIGHT_OFF);
+        			}
 
-    				//SDC is open
-    				SetAsState(AS_STATE_EMERGENCY_BRAKE);
-    				assi_manager.SetState(ASSI_LIGHT_BLUE_FLASHING);
+        			break;
 
-    			} else if (as_switch_status == false) {
+        		case AS_STATE_AS_FINISHED:
+        			if (shutdown_request == true) {
 
-    				SetAsState(AS_STATE_AS_OFF);
-    				assi_manager.SetState(ASSI_LIGHT_OFF);
-    			}
+        				//SDC is open
+        				SetAsState(AS_STATE_EMERGENCY_BRAKE);
+        				assi_manager.SetState(ASSI_LIGHT_BLUE_FLASHING);
 
-    			break;
-    	}
+        			} else if (as_switch_status == false) {
+
+        				SetAsState(AS_STATE_AS_OFF);
+        				assi_manager.SetState(ASSI_LIGHT_OFF);
+        			}
+
+        			break;
+        	   }
+
+               time_elapsed = 0.0f;
+
+        }
     }
 
     private bool TimeElapsedInCurrentState(double seconds) {
@@ -437,6 +459,29 @@ public class ADS_DV_State : MonoBehaviour {
         this.cones_count_all = status_msg.cones_count_all;
         this.veh_speed_actual_kmh = status_msg.veh_speed_actual_kmh;
         this.veh_speed_demand_kmh = status_msg.veh_speed_demand_kmh;
+
+    }
+
+    public void mission_state_dropdown_action() {
+
+        if (mission_status != MISSION_STATUS_RUNNING) {
+
+            // This might be a bit unclear as the hardcoded byte values might change
+            ami_state = (byte)missionStateDropdown.value;
+
+
+            if (missionStateDropdown.value == AMI_STATE_NOT_SELECTED) {
+
+                mission_status = MISSION_STATUS_NOT_SELECTED;
+
+            } else {
+
+            mission_status = MISSION_STATUS_SELECTED;
+
+            }
+        }
+
+
 
     }
 
