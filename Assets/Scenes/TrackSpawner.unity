@@ -11206,6 +11206,7 @@ GameObject:
   - component: {fileID: 1562825520}
   - component: {fileID: 1562825521}
   - component: {fileID: 1562825522}
+  - component: {fileID: 1562825523}
   m_Layer: 0
   m_Name: ROS Publishers
   m_TagString: Untagged
@@ -11318,7 +11319,9 @@ MonoBehaviour:
   bl_wheel: {fileID: 619927977}
   br_wheel: {fileID: 603915463}
   wheelspeeds_topic: /wheelspeeds_unity
+  wheelcounts_topic: /VCU2AIWheelcounts
   noise_activation: 0
+  teeth_count: 0
 --- !u!114 &1562825521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11354,6 +11357,20 @@ MonoBehaviour:
   depth_camera_topic: /unity/stereo_camera/depth/image
   min_publishing_time: 0.5
   noise: 0
+--- !u!114 &1562825523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562825514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1767199d45e709f19621ae9f1e0a7dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  adsdv_state: {fileID: 1482414515}
+  vcu2ai_steer_topic: /VCU2AISteer
 --- !u!1 &1565161873
 GameObject:
   m_ObjectHideFlags: 0

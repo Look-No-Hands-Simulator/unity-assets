@@ -33,8 +33,12 @@ public class ADS_DV_State : MonoBehaviour {
 	private DateTime stateChangeTimestamp;
 	private int front_axle_torque_request;
 	private int rear_axle_torque_request;
-	private short steer_angle_request;
-	private short actual_steer_angle;
+
+
+
+	public short Steer_angle_request {get; set;}
+	public short Actual_steer_angle {get; set;}
+    
 	private bool brake_plausibility_fault;
 	private bool bms_fault;
 
@@ -179,8 +183,8 @@ public class ADS_DV_State : MonoBehaviour {
 
     	front_axle_torque_request = 0;
     	rear_axle_torque_request = 0;
-    	steer_angle_request = (short)0.0;
-    	actual_steer_angle = (short)0.0;
+    	Steer_angle_request = (short)0.0;
+    	Actual_steer_angle = (short)0.0;
 
     	//assi_light = ASSI_LIGHT_OFF;
     	assi_manager.SetState(ASSI_LIGHT_OFF);
@@ -293,7 +297,7 @@ public class ADS_DV_State : MonoBehaviour {
         				assi_manager.SetState(ASSI_LIGHT_OFF);
 
         			} else if (TimeElapsedInCurrentState(5D) && front_axle_torque_request == 0 && rear_axle_torque_request == 0 && 
-        			steer_angle_request == 0 && Math.Abs(actual_steer_angle) < 5 && direction_request == DIRECTION_REQUEST_NEUTRAL
+        			Steer_angle_request == 0 && Math.Abs(Actual_steer_angle) < 5 && direction_request == DIRECTION_REQUEST_NEUTRAL
         			&& go_signal == true ) {
 
         				// Check this go signal condition in manual
@@ -448,6 +452,17 @@ public class ADS_DV_State : MonoBehaviour {
 
     }
 
+    public VCU2AISteerMsg get_vcu2aisteer_msg() {
+        
+        VCU2AISteerMsg vcu2aisteer_msg = new VCU2AISteerMsg(
+            Actual_steer_angle, CarConfig.MAX_STEER, Steer_angle_request
+            );
+
+        return vcu2aisteer_msg;
+
+    }
+
+
     public void manage_ai2vcuStatus_msg(AI2VCUStatusMsg status_msg) {
 
     	this.handshake = status_msg.handshake;
@@ -461,6 +476,7 @@ public class ADS_DV_State : MonoBehaviour {
         this.veh_speed_demand_kmh = status_msg.veh_speed_demand_kmh;
 
     }
+
 
     public void mission_state_dropdown_action() {
 

@@ -89,6 +89,12 @@ public class CarControl : MonoBehaviour
                 this.actuateLeftSteer = steerFraction * maxInnerSteeringAngle;
             }
         }
+
+        // Update state
+        adsdvStateObject.Actual_steer_angle = middleSteer;
+        // Is this correct? ***
+        // TODO: could be improved by getting the actual angle of both wheels
+        adsdvStateObject.Steer_angle_request = middleSteer;
     }
 
     void ActuateThrottle(AI2VCUDriveFMsg driveFMsg) {

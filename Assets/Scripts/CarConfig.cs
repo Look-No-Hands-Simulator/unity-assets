@@ -24,6 +24,7 @@ public const int MAX_OPERATING_VOLTAGE_RANGE = 90; // V
 public const int PEAK_CURRENT_RATING = 550; // A
 public const int MAX_TORQUE = 195;
 public const float WHEELBASE = 1.2f; 
+public const ushort MAX_STEER = (ushort)27.2;
 
 
         // #Params
@@ -46,5 +47,8 @@ public const float WHEELBASE = 1.2f;
 /// Traction Battery
 
 /// Sensors
+
+/// Topics
+
 
 }
