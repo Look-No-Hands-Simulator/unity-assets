@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c444d6f85828f1b4f9b89c7c387f9ddd, type: 3}
   m_Name: msgbrowser_settings
   m_EditorClassIdentifier: 
-  inputPath: /home/louise/obr_ws/ads-ws/src/integration/ads_dv_msgs
-  relativeOutPath: Scripts/msgs/ads_dv_msgs
+  inputPath: /home/louise/dissertation_obr_ws/unityros-ws/src/obr_msgs
+  relativeOutPath: Scripts/msgs/obr_msgs
