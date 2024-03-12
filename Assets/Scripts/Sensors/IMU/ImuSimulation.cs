@@ -93,7 +93,7 @@ public class ImuSimulation
                     nanosec = msg_timestamp.NanoSeconds,
                 }
             },
-            orientation = new QuaternionMsg
+            orientation = new QuaternionMsg // radians per second
             {
                 x = orientation.x,
                 y = orientation.y,

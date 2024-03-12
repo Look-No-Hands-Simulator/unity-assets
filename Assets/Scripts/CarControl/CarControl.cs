@@ -90,8 +90,10 @@ public class CarControl : MonoBehaviour
             // wheel which can then be * by the max of inner and outer to give ackermann steering
             float steerFraction;
             if (middleSteer > 0) {
+                // Inner wheel as we turn left with positive number
                 steerFraction = middleSteer / maxInnerSteeringAngle;
             } else {
+                // Outer wheel as we turn right with negative number
                 steerFraction = middleSteer / maxOuterSteeringAngle;
             }
 
@@ -110,10 +112,11 @@ public class CarControl : MonoBehaviour
 
         // Update state
         // Get value off wheel collider or use these values
-        //adsdvStateObject.Actual_steer_angle = ;
-        // Is this correct? ***
-        // TODO: could be improved by getting the actual angle of both wheels
+        // TODO: Is this correct?
+        //////////////
+        adsdvStateObject.Actual_steer_angle = middleSteer;
         adsdvStateObject.Steer_angle_request = steerMsg.steer_request_deg;
+
         }
 
     }
