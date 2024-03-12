@@ -14,18 +14,27 @@ namespace RosMessageTypes.Obr
         public override string RosMessageName => k_RosMessageName;
 
         public ushort lap_count;
-        public ushort lap_time;
+        public double elapsed_time_since_gps_lap;
+        public double elapsed_time_since_timer_lap;
+        public double lap_progress;
+        public short gps_lap_count;
 
         public LapDataMsg()
         {
             this.lap_count = 0;
-            this.lap_time = 0;
+            this.elapsed_time_since_gps_lap = 0.0;
+            this.elapsed_time_since_timer_lap = 0.0;
+            this.lap_progress = 0.0;
+            this.gps_lap_count = 0;
         }
 
-        public LapDataMsg(ushort lap_count, ushort lap_time)
+        public LapDataMsg(ushort lap_count, double elapsed_time_since_gps_lap, double elapsed_time_since_timer_lap, double lap_progress, short gps_lap_count)
         {
             this.lap_count = lap_count;
-            this.lap_time = lap_time;
+            this.elapsed_time_since_gps_lap = elapsed_time_since_gps_lap;
+            this.elapsed_time_since_timer_lap = elapsed_time_since_timer_lap;
+            this.lap_progress = lap_progress;
+            this.gps_lap_count = gps_lap_count;
         }
 
         public static LapDataMsg Deserialize(MessageDeserializer deserializer) => new LapDataMsg(deserializer);
@@ -33,20 +42,29 @@ namespace RosMessageTypes.Obr
         private LapDataMsg(MessageDeserializer deserializer)
         {
             deserializer.Read(out this.lap_count);
-            deserializer.Read(out this.lap_time);
+            deserializer.Read(out this.elapsed_time_since_gps_lap);
+            deserializer.Read(out this.elapsed_time_since_timer_lap);
+            deserializer.Read(out this.lap_progress);
+            deserializer.Read(out this.gps_lap_count);
         }
 
         public override void SerializeTo(MessageSerializer serializer)
         {
             serializer.Write(this.lap_count);
-            serializer.Write(this.lap_time);
+            serializer.Write(this.elapsed_time_since_gps_lap);
+            serializer.Write(this.elapsed_time_since_timer_lap);
+            serializer.Write(this.lap_progress);
+            serializer.Write(this.gps_lap_count);
         }
 
         public override string ToString()
         {
             return "LapDataMsg: " +
             "\nlap_count: " + lap_count.ToString() +
-            "\nlap_time: " + lap_time.ToString();
+            "\nelapsed_time_since_gps_lap: " + elapsed_time_since_gps_lap.ToString() +
+            "\nelapsed_time_since_timer_lap: " + elapsed_time_since_timer_lap.ToString() +
+            "\nlap_progress: " + lap_progress.ToString() +
+            "\ngps_lap_count: " + gps_lap_count.ToString();
         }
 
 #if UNITY_EDITOR

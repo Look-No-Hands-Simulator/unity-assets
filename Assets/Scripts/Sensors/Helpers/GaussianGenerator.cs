@@ -19,13 +19,43 @@ public class GaussianGenerator
         standard_deviation = standard_deviation_param;
     }
 
+    // Reference: Box Muller transform for generating gaussian distributed variables
+    // https://stackoverflow.com/questions/218060/random-gaussian-variables
+
     public double next() {
         // Generates gaussian random using box muller transformation
         // error = sd * random(0,1) * sqrt(-2 * log(random(0,1)) + mean)
-        return ((standard_deviation * random.NextDouble() * Math.Sqrt(-2.0 * Math.Log(random.NextDouble()))) + mean);
+
+        //return ((standard_deviation * random.NextDouble() * Math.Sqrt(-2.0 * Math.Log(random.NextDouble()))) + mean);
+
+
+        // Box Muller Transform
+
+        //Random rand = new Random(); //reuse this if you are generating many
+        double u1 = 1.0-random.NextDouble(); //uniform(0,1] random doubles
+        double u2 = 1.0-random.NextDouble();
+
+
+        double randStdNormal = Math.Sqrt(-2.0 * Math.Log(u1)) *  Math.Sin(2.0 * Math.PI * u2); //random normal(0,1)
+        double randNormal = mean + standard_deviation * randStdNormal;
+
+        return randNormal;
+        
     }
     public double next(double mean_param, double standard_deviation_param) {
-        return ((standard_deviation_param * random.NextDouble() * Math.Sqrt(-2.0 * Math.Log(random.NextDouble()))) + mean_param);
+        //return ((standard_deviation_param * random.NextDouble() * Math.Sqrt(-2.0 * Math.Log(random.NextDouble()))) + mean_param);
+
+        // Box Muller Transform
+
+        //Random rand = new Random(); //reuse this if you are generating many
+        double u1 = 1.0-random.NextDouble(); //uniform(0,1] random doubles
+        double u2 = 1.0-random.NextDouble();
+
+
+        double randStdNormal = Math.Sqrt(-2.0 * Math.Log(u1)) *  Math.Sin(2.0 * Math.PI * u2); //random normal(0,1)
+        double randNormal = mean_param + standard_deviation_param * randStdNormal;
+
+        return randNormal;
     }
 
     public double add_noise_scale(double original_value) {

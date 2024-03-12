@@ -58,4 +58,29 @@ public class WheelspeedsSimulation
         };
 
     }
+
+    public VCU2AIWheelcountsMsg get_vcu2aiwheelcounts_msg() {
+
+        // Need diameter of wheel, how many teeth there are, wheelspeeds degrees per second
+        // each revolution has fixed no of teeth, each msg has fixed no of pulses, know when it arrived
+        
+
+        // (angular velocity / (2 * PI)) * WHEELSPEEDS_TEETH
+        ushort fl_pulse_count = (ushort)((Math.Abs(fl_wheel_collider.rotationSpeed) * CarConfig.WHEELSPEEDS_TEETH) / 360); // out of 360 degrees since rotationSpeed is measured in degrees per second
+        ushort fr_pulse_count = (ushort)((Math.Abs(fr_wheel_collider.rotationSpeed) * CarConfig.WHEELSPEEDS_TEETH) / 360);
+        ushort rl_pulse_count = (ushort)((Math.Abs(bl_wheel_collider.rotationSpeed) * CarConfig.WHEELSPEEDS_TEETH) / 360);
+        ushort rr_pulse_count = (ushort)((Math.Abs(br_wheel_collider.rotationSpeed) * CarConfig.WHEELSPEEDS_TEETH) / 360);
+
+        
+
+        return new VCU2AIWheelcountsMsg (
+            fl_pulse_count,
+            fr_pulse_count,
+            rl_pulse_count,
+            rr_pulse_count
+        );
+
+
+
+    }
 }

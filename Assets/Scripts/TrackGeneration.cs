@@ -272,7 +272,8 @@ public class TrackGeneration : MonoBehaviour
         createConeObjects(blue, clickProps, "b", clickProps.track.blue);
         createConeObjects(big, clickProps, "bo", clickProps.track.big);
         createConeObjects(orange, clickProps, "o", clickProps.track.orange);
-        //configureCarObject(clickProps.car, clickProps.track.car);
+
+        configureCarObject(clickProps.car, clickProps.track.car);
 
         // Hide default objects
         blue.SetActive(false);
@@ -286,7 +287,7 @@ public class TrackGeneration : MonoBehaviour
     }
 
     public void configureCarObject(GameObject car, Track.Car carInfo) {
-        car.transform.position = new Vector3(carInfo.pos[0],0,carInfo.pos[1]);
+        car.transform.position = new Vector3(carInfo.pos[0],car.transform.position.y,carInfo.pos[1]);
         car.transform.eulerAngles = new Vector3(0,carInfo.heading,0);
         Debug.Log("The pos [0] is: " + carInfo.pos[0] + " and the pos [1] is" + carInfo.pos[1]);
         Debug.Log("The rotation is: " + carInfo.heading);

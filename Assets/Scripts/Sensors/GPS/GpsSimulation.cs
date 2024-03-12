@@ -62,6 +62,12 @@ public class GpsSimulation
 
     }
 
+    // public ArduSimpleGpsHeading get_heading() {
+
+
+
+    // }
+
     public NavSatFixMsg get_navsatfix_msg() {
 
         // calculate new lat & long in radians around earthR

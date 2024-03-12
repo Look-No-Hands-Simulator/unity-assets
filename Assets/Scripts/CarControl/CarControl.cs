@@ -79,16 +79,43 @@ public class CarControl : MonoBehaviour
         // TODO: Create subscriber to control the wheels, publish middle steer, create AI2VCUPublisher and publish middle steer in here in this script
 
         if (adsdvStateObject.GetAsState() == ADS_DV_State.AS_STATE_AS_DRIVING || adsdvStateObject.GetAsState() == ADS_DV_State.AS_STATE_AS_READY) {
+            
             short middleSteer = steerMsg.steer_request_deg;
-            float steerFraction = (middleSteer * 2) / (maxInnerSteeringAngle + maxOuterSteeringAngle);
+
+            //float steerFraction = (middleSteer * 2) / (maxInnerSteeringAngle + maxOuterSteeringAngle);
+
+            /// Scale/normalize the steerFraction relative to the maximum steering angles of the outer
+            // and inner wheels depending on the direction of the middle steering angle
+            // the steerFraction will give the angle for a hypothetical middle
+            // wheel which can then be * by the max of inner and outer to give ackermann steering
+            float steerFraction;
             if (middleSteer > 0) {
+                steerFraction = middleSteer / maxInnerSteeringAngle;
+            } else {
+                steerFraction = middleSteer / maxOuterSteeringAngle;
+            }
+
+            /// Set the angles to the wheels
+            if (middleSteer > 0) {
+                // Positive steering angle indicates turn to the left
                 this.actuateRightSteer = steerFraction * maxInnerSteeringAngle;
                 this.actuateLeftSteer = steerFraction * maxOuterSteeringAngle;
             } else {
+                // Negative steering angle indicates turn to the right
                 this.actuateRightSteer = steerFraction * maxOuterSteeringAngle;
                 this.actuateLeftSteer = steerFraction * maxInnerSteeringAngle;
             }
+
+
+
+        // Update state
+        // Get value off wheel collider or use these values
+        //adsdvStateObject.Actual_steer_angle = ;
+        // Is this correct? ***
+        // TODO: could be improved by getting the actual angle of both wheels
+        adsdvStateObject.Steer_angle_request = steerMsg.steer_request_deg;
         }
+
     }
 
     void ActuateThrottle(AI2VCUDriveFMsg driveFMsg) {
