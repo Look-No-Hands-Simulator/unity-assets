@@ -12,7 +12,11 @@ using RosMessageTypes.AdsDv;
 
 public class ADS_DV_State : MonoBehaviour {
 
-    private float update_interval = 0.1f;
+    public bool enableLogging = false;
+    public string logFile = "logfile.txt";
+    public float loggingInterval = 0.5;
+
+    public float update_interval = 0.1f;
     private float time_elapsed = 0.0f;
 
 	public Button stateButton;
@@ -249,6 +253,8 @@ public class ADS_DV_State : MonoBehaviour {
 
     public void Update() {
 
+        // Run constantly
+
     	UpdateState();
     	assi_manager.Update();
 
@@ -328,6 +334,8 @@ public class ADS_DV_State : MonoBehaviour {
         			break;
 
         		case AS_STATE_EMERGENCY_BRAKE:
+
+
 
         			if (TimeElapsedInCurrentState(15D) && as_switch_status == false) {
 
