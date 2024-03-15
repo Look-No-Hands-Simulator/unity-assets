@@ -25,6 +25,7 @@ public const int PEAK_CURRENT_RATING = 550; // A
 public const int MAX_TORQUE = 195;
 public const float WHEELBASE = 1.2f; 
 public const ushort MAX_STEER = (ushort)27.2;
+public const double VEHICLE_LENGTH = 2.818d; // m
 
 
         // #Params

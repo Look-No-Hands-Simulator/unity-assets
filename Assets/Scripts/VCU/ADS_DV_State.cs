@@ -12,13 +12,18 @@ using RosMessageTypes.AdsDv;
 
 public class ADS_DV_State : MonoBehaviour {
 
-    private float update_interval = 0.1f;
+    public bool enableLogging = false;
+    public string logFile = "logfile.txt";
+    public float loggingInterval = 0.5;
+
+    public float update_interval = 0.1f;
     private float time_elapsed = 0.0f;
 
 	public Button stateButton;
 	public Button ebsButton;
 	public Button goButton;
     public TMPro.TMP_Dropdown missionStateDropdown;
+    public TextMeshProUGUI lapcounterText;
 
 	public GameObject carObject;
 	public WheelCollider fl_wheel_collider;
@@ -248,6 +253,8 @@ public class ADS_DV_State : MonoBehaviour {
 
     public void Update() {
 
+        // Run constantly
+
     	UpdateState();
     	assi_manager.Update();
 
@@ -327,6 +334,8 @@ public class ADS_DV_State : MonoBehaviour {
         			break;
 
         		case AS_STATE_EMERGENCY_BRAKE:
+
+
 
         			if (TimeElapsedInCurrentState(15D) && as_switch_status == false) {
 
@@ -474,6 +483,14 @@ public class ADS_DV_State : MonoBehaviour {
         this.cones_count_all = status_msg.cones_count_all;
         this.veh_speed_actual_kmh = status_msg.veh_speed_actual_kmh;
         this.veh_speed_demand_kmh = status_msg.veh_speed_demand_kmh;
+
+        set_lapcounter_text((int)lap_counter);
+
+    }
+
+    public void set_lapcounter_text(int lapcount_param) {
+
+        lapcounterText.text = lapcount_param.ToString();
 
     }
 
