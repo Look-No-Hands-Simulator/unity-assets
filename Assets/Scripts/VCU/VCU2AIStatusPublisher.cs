@@ -25,7 +25,7 @@ public class VCU2AIStatusPublisher : MonoBehaviour
 
     void Start() {
         ros = ROSConnection.GetOrCreateInstance();
-        ros.RegisterPublisher<VCU2AIWheelspeedsMsg>(vcu2ai_status_topic);
+        ros.RegisterPublisher<VCU2AIStatusMsg>(vcu2ai_status_topic);
 
     }
 

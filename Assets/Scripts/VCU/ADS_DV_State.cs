@@ -14,7 +14,7 @@ public class ADS_DV_State : MonoBehaviour {
 
     public bool enableLogging = false;
     public string logFile = "logfile.txt";
-    public float loggingInterval = 0.5;
+    public float loggingInterval = 0.5f;
 
     public float update_interval = 0.1f;
     private float time_elapsed = 0.0f;

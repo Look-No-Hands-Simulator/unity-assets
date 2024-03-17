@@ -10756,6 +10756,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dafdaf56576bfd03cac4cc2567e7c00c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableLogging: 0
+  logFile: logfile.txt
+  loggingInterval: 0.5
+  update_interval: 0.1
   stateButton: {fileID: 1951627904}
   ebsButton: {fileID: 676561253}
   goButton: {fileID: 1039829761}
@@ -11478,6 +11482,7 @@ GameObject:
   - component: {fileID: 1562825523}
   - component: {fileID: 1562825524}
   - component: {fileID: 1562825525}
+  - component: {fileID: 1562825526}
   m_Layer: 0
   m_Name: ROS Publishers
   m_TagString: Untagged
@@ -11679,6 +11684,20 @@ MonoBehaviour:
   fov_vertical: 45
   angularResolution_vertical: 1
   angularResolution_horizontal: 1
+--- !u!114 &1562825526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562825514}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: debf086d0ba82f443a9462f6d1656bcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  adsdv_state: {fileID: 1482414515}
+  vcu2ai_status_topic: /VCU2AIStatus
 --- !u!1 &1565161873
 GameObject:
   m_ObjectHideFlags: 0
@@ -14652,6 +14671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53ba120c1410dbfcda588514e167d91f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  update_interval: 0.1
   adsdvStateObject: {fileID: 1482414515}
   wheelData:
   - leftWheel: {fileID: 793466063}
@@ -14662,8 +14682,8 @@ MonoBehaviour:
     rightWheel: {fileID: 603915464}
     addWheelTorque: 1
     shouldSteer: 0
-  maxTorque: 200
-  maxRPM: 400
+  maxTorque: 4000
+  maxRPM: 150
   maxSteerAngle: 28
   maxInnerSteeringAngle: 28
   maxOuterSteeringAngle: 24.6
@@ -20164,7 +20184,7 @@ Transform:
   m_GameObject: {fileID: 6709695826316243474}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.03, y: -0.517, z: 1.97}
+  m_LocalPosition: {x: -0.03, y: -0.588, z: 1.97}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
