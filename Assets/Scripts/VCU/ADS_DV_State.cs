@@ -473,6 +473,14 @@ public class ADS_DV_State : MonoBehaviour {
 
 
     public void manage_ai2vcuStatus_msg(AI2VCUStatusMsg status_msg) {
+ 
+        if (status_msg.handshake == true) {
+
+            Debug.Log("Handshake true");
+        } else {
+
+            Debug.Log("Handshake from AI value: " + status_msg.handshake);
+        }
 
     	this.handshake = status_msg.handshake;
         this.estop_request = status_msg.estop_request;
@@ -483,6 +491,8 @@ public class ADS_DV_State : MonoBehaviour {
         this.cones_count_all = status_msg.cones_count_all;
         this.veh_speed_actual_kmh = status_msg.veh_speed_actual_kmh;
         this.veh_speed_demand_kmh = status_msg.veh_speed_demand_kmh;
+
+        Debug.Log( "This handshake: " + this.handshake);
 
         set_lapcounter_text((int)lap_counter);
 

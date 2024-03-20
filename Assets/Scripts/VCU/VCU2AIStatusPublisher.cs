@@ -19,7 +19,7 @@ public class VCU2AIStatusPublisher : MonoBehaviour
 
     public ADS_DV_State adsdv_state;
 
-    public string vcu2ai_status_topic = "/VCU2AIStatus_LNH";
+    public string vcu2ai_status_topic = "/VCU2AIStatus";
 
     ROSConnection ros;
 

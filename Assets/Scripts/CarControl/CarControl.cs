@@ -130,12 +130,18 @@ public class CarControl : MonoBehaviour
 
     void ActuateThrottle(AI2VCUDriveFMsg driveFMsg) {
 
+        // Set variables valid for front throttle and give it the
+        // value in the driveFmsg
+
         if (adsdvStateObject.GetAsState() == ADS_DV_State.AS_STATE_AS_DRIVING) {
+
+
             this.reverse = false;
             this.actuateThrottleFrontForce = driveFMsg.front_axle_trq_request_nm;
             this.maxRPM = driveFMsg.front_motor_speed_max_rpm;
             this.brakingPercent = 0;
             this.throttleRequest = true;
+
         }
 
 
@@ -146,11 +152,15 @@ public class CarControl : MonoBehaviour
     void ActuateThrottleReverse(AI2VCUDriveFMsg driveFMsg) {
 
         if (adsdvStateObject.GetAsState() == ADS_DV_State.AS_STATE_AS_DRIVING) {
+
             this.reverse = true;
             this.actuateThrottleFrontForce = driveFMsg.front_axle_trq_request_nm;
             this.maxRPM = driveFMsg.front_motor_speed_max_rpm;
             this.brakingPercent = 0;
             this.throttleRequest = true;
+
+
+
         }
         
     }
@@ -160,6 +170,9 @@ public class CarControl : MonoBehaviour
 
         foreach (WheelElements element in wheelData) {
 
+            // If the wheels are spinning at faster than maxRPM then don't apply
+            // any more throttle
+
             if (Math.Abs(element.leftWheel.rpm) >= maxRPM || Math.Abs(element.rightWheel.rpm) >= maxRPM) {
 
                 throttleRequest = false;
@@ -167,27 +180,27 @@ public class CarControl : MonoBehaviour
 
         }
 
-        bool log = false;
-        time_elapsed += Time.deltaTime;
-        if (time_elapsed > update_interval) {
+        // bool log = false;
+        // time_elapsed += Time.deltaTime;
+        // if (time_elapsed > update_interval) {
 
-            log = true;
+        //     log = true;
 
-            Debug.Log("MaxRPM: " + this.maxRPM);
-            Debug.Log("MaxTorque: " + this.maxTorque);
-            Debug.Log("actuateThrottleFrontForce: " + actuateThrottleFrontForce);
-            foreach (WheelElements element in wheelData) {
+        //     Debug.Log("MaxRPM: " + this.maxRPM);
+        //     Debug.Log("MaxTorque: " + this.maxTorque);
+        //     Debug.Log("actuateThrottleFrontForce: " + actuateThrottleFrontForce);
+        //     foreach (WheelElements element in wheelData) {
                 
-                if (element.addWheelTorque) {
+        //         if (element.addWheelTorque) {
 
-                    Debug.Log("Left wheel rpm: " + element.leftWheel.rpm);
-                    Debug.Log("Right wheel rpm: " + element.rightWheel.rpm);
-                }
-            }
+        //             Debug.Log("Left wheel rpm: " + element.leftWheel.rpm);
+        //             Debug.Log("Right wheel rpm: " + element.rightWheel.rpm);
+        //         }
+        //     }
 
 
-            time_elapsed = 0;
-        }
+        //     time_elapsed = 0;
+        // }
 
 
 
@@ -240,9 +253,10 @@ public class CarControl : MonoBehaviour
         }
         
 
-        // Change the actual wheel colliders and 3D models
+        
         foreach (WheelElements element in wheelData) {
 
+            // Change the wheel colliders and 3D models
             if (element.shouldSteer == true) {
                 element.leftWheel.steerAngle = this.actuateLeftSteer;
                 element.rightWheel.steerAngle = this.actuateRightSteer;
@@ -270,10 +284,10 @@ public class CarControl : MonoBehaviour
             //
             else if (this.brakingPercent == 0) {
                 
-                    element.leftWheel.brakeTorque = 0;
-                    element.rightWheel.brakeTorque = 0;
-                    element.leftWheel.motorTorque = 0;
-                    element.rightWheel.motorTorque = 0;
+                    // element.leftWheel.brakeTorque = 0;
+                    // element.rightWheel.brakeTorque = 0;
+                    // element.leftWheel.motorTorque = 0;
+                    // element.rightWheel.motorTorque = 0;
                 
             }
 
@@ -281,6 +295,8 @@ public class CarControl : MonoBehaviour
 
             // Only apply throttle if there is no braking so we can't accelerate and brake at the same time
             // The problem is if we accelerate really hard then press the brakes the brakes won't reset back to 0 so this won't run through
+
+            // Forwards
             if (this.brakingPercent == 0 && element.addWheelTorque == true && this.reverse == false) {
 
 
@@ -289,10 +305,10 @@ public class CarControl : MonoBehaviour
 
                 if (element.leftWheel.rpm < this.maxRPM && element.rightWheel.rpm < this.maxRPM) {
 
-                    if (log) {
+                    // if (log) {
 
-                        Debug.Log("Applying motor torque: ");
-                    }
+                    //     Debug.Log("Applying motor torque: ");
+                    // }
 
                     element.leftWheel.motorTorque = this.actuateThrottleFrontForce;
                     element.rightWheel.motorTorque = this.actuateThrottleFrontForce;
@@ -322,7 +338,7 @@ public class CarControl : MonoBehaviour
                 }
 
             } 
-            // else if (this.brakingPercent == 0 && element.leftWheel.brakeTorque != 0) {
+            // else if (this.brakingPercent == 0 && element.leftWheel.brakeTorque != 0 && element.rightWheel.brakeTorque != 0) {
             //     element.leftWheel.brakeTorque = 0;
             //     element.rightWheel.brakeTorque = 0;
             //     element.leftWheel.motorTorque = 0;
@@ -340,10 +356,10 @@ public class CarControl : MonoBehaviour
 
             if (!throttleRequest || element.leftWheel.rpm >= maxRPM || element.rightWheel.rpm  >= maxRPM) {
 
-                if (log) {
+                // if (log) {
 
-                    Debug.Log("Cancelling throttle torque");
-                }
+                //     Debug.Log("Cancelling throttle torque");
+                // }
 
                 element.leftWheel.motorTorque = 0;
                 element.rightWheel.motorTorque = 0;
