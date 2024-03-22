@@ -14,6 +14,8 @@ using RosMessageTypes.BuiltinInterfaces;
 using Unity.Robotics.Core;
 using Unity.Robotics.ROSTCPConnector;
 
+// This is not used
+
 public class AI2VCUStatusSubscriber: MonoBehaviour
 {
 
