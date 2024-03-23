@@ -14,6 +14,8 @@ using RosMessageTypes.BuiltinInterfaces;
 using Unity.Robotics.Core;
 using Unity.Robotics.ROSTCPConnector;
 
+// This is not used
+
 public class AI2VCUStatusSubscriber: MonoBehaviour
 {
 
@@ -35,6 +37,9 @@ public class AI2VCUStatusSubscriber: MonoBehaviour
     }
 
     public void AI2VCUSubscriberManager(AI2VCUStatusMsg statusMsg) {
+
+        // Debug.Log("Recieved AI2VCUStatus msg: ");
+        // Debug.Log(statusMsg.ToString());
 
         // Get values from the msg and assign them into the ADS_DV_State 
         adsdvState.manage_ai2vcuStatus_msg(statusMsg);

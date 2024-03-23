@@ -14,7 +14,7 @@ public class ADS_DV_State : MonoBehaviour {
 
     public bool enableLogging = false;
     public string logFile = "logfile.txt";
-    public float loggingInterval = 0.5;
+    public float loggingInterval = 0.5f;
 
     public float update_interval = 0.1f;
     private float time_elapsed = 0.0f;
@@ -134,7 +134,7 @@ public class ADS_DV_State : MonoBehaviour {
     private bool offboard_charger_fault;
 
     //  AI CAN communications fault
-    private bool ai_comms_lost;
+    public bool Ai_comms_lost {get; set;}
 
     //  Braking in Autonomous Driving mode fault
     private bool autonomous_braking_fault;
@@ -216,7 +216,7 @@ public class ADS_DV_State : MonoBehaviour {
     	hvil_short_fault = false;
     	ebs_fault = false;
     	offboard_charger_fault = false;
-    	ai_comms_lost = false;
+    	Ai_comms_lost = false;
     	autonomous_braking_fault = false;
     	mission_status_fault = false;
     	reserved_1 = false;
@@ -281,7 +281,11 @@ public class ADS_DV_State : MonoBehaviour {
 
         		case AS_STATE_AS_OFF:
 
+                    Debug.Log("Off status variables: " + as_switch_status + ts_switch_status + ebs_state + mission_status);
+
         			if (as_switch_status == true && ts_switch_status == true && ebs_state == EBS_STATE_ARMED && mission_status == MISSION_STATUS_SELECTED) {
+
+                        Debug.Log("Off state switching to ready");
 
         				SetAsState(AS_STATE_AS_READY);
         				assi_manager.SetState(ASSI_LIGHT_YELLOW_CONTINUOUS);
@@ -324,8 +328,13 @@ public class ADS_DV_State : MonoBehaviour {
         				assi_manager.SetState(ASSI_LIGHT_BLUE_CONTINUOUS);
 
         			} else if (shutdown_request == true || as_switch_status == false || go_signal == false || mission_status_fault == true ||
-        				autonomous_braking_fault == true || brake_plausibility_fault == true || ai_estop_request == true || ai_comms_lost == true
+        				autonomous_braking_fault == true || brake_plausibility_fault == true || ai_estop_request == true || Ai_comms_lost == true
         				|| bms_fault == true || ebs_state == EBS_STATE_UNAVAILABLE ) {
+
+                        Debug.Log("Variables for emergency state: " + "shutdown_request: " + shutdown_request + "as_switch_status: " + as_switch_status + 
+                            "go_signal" + go_signal + "mission_status_fault" + mission_status_fault + "autonomous_braking_fault" +
+                            autonomous_braking_fault + "brake_plausibility_fault" + brake_plausibility_fault + "ai_estop_request" + ai_estop_request + 
+                            "Ai_comms_lost" + Ai_comms_lost + "bms_fault" + bms_fault + "ebs_state" + ebs_state);
 
         				SetAsState(AS_STATE_EMERGENCY_BRAKE);
         				assi_manager.SetState(ASSI_LIGHT_BLUE_FLASHING);
@@ -451,7 +460,7 @@ public class ADS_DV_State : MonoBehaviour {
         vcu2ai_msg.hvil_short_fault = this.hvil_short_fault;
         vcu2ai_msg.ebs_fault = this.ebs_fault;
         vcu2ai_msg.offboard_charger_fault = this.offboard_charger_fault;
-        vcu2ai_msg.ai_comms_lost = this.ai_comms_lost;
+        vcu2ai_msg.ai_comms_lost = this.Ai_comms_lost;
         vcu2ai_msg.autonomous_braking_fault = this.autonomous_braking_fault;
         vcu2ai_msg.mission_status_fault = this.mission_status_fault;
         vcu2ai_msg.reserved_1 = this.reserved_1;
@@ -473,16 +482,35 @@ public class ADS_DV_State : MonoBehaviour {
 
 
     public void manage_ai2vcuStatus_msg(AI2VCUStatusMsg status_msg) {
+ 
+        if (status_msg.handshake == this.handshake) {
 
-    	this.handshake = status_msg.handshake;
+            Debug.Log("Handshake response matches");
+
+            this.handshake = !status_msg.handshake; 
+
+
+        } else {
+
+            Debug.Log("Invalid handshake response: " + status_msg.handshake + " Expected value: " + this.handshake);
+        }
+
+    	
         this.estop_request = status_msg.estop_request;
-        this.mission_status = status_msg.mission_status;
+
+        // Is this good?
+        if (as_state != AS_STATE_AS_OFF) {
+            this.mission_status = status_msg.mission_status;
+        }
+        
         this.direction_request = status_msg.direction_request;
         this.lap_counter = status_msg.lap_counter;
         this.cones_count_actual = status_msg.cones_count_actual;
         this.cones_count_all = status_msg.cones_count_all;
         this.veh_speed_actual_kmh = status_msg.veh_speed_actual_kmh;
         this.veh_speed_demand_kmh = status_msg.veh_speed_demand_kmh;
+
+        Debug.Log( "This handshake: " + this.handshake);
 
         set_lapcounter_text((int)lap_counter);
 
