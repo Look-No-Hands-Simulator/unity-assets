@@ -12,7 +12,7 @@ public class CarControl : MonoBehaviour
 
     private bool throttleRequest = false;
 
-    public float update_interval = 0.1f;
+    public float update_interval = 0.2f;
     private float time_elapsed = 0.0f;
 
 
@@ -85,8 +85,13 @@ public class CarControl : MonoBehaviour
         // Code below recalculates left and right steer from a hypothetical middle wheel
         // TODO: Create subscriber to control the wheels, publish middle steer, create AI2VCUPublisher and publish middle steer in here in this script
 
+
+            time_elapsed += Time.deltaTime;
+
         if (adsdvStateObject.GetAsState() == ADS_DV_State.AS_STATE_AS_DRIVING || adsdvStateObject.GetAsState() == ADS_DV_State.AS_STATE_AS_READY) {
             
+
+
             short middleSteer = steerMsg.steer_request_deg;
 
             //float steerFraction = (middleSteer * 2) / (maxInnerSteeringAngle + maxOuterSteeringAngle);
@@ -95,6 +100,8 @@ public class CarControl : MonoBehaviour
             // and inner wheels depending on the direction of the middle steering angle
             // the steerFraction will give the angle for a hypothetical middle
             // wheel which can then be * by the max of inner and outer to give ackermann steering
+
+
             float steerFraction;
             if (middleSteer > 0) {
                 // Inner wheel as we turn left with positive number
@@ -109,11 +116,34 @@ public class CarControl : MonoBehaviour
                 // Positive steering angle indicates turn to the left
                 this.actuateRightSteer = steerFraction * maxInnerSteeringAngle;
                 this.actuateLeftSteer = steerFraction * maxOuterSteeringAngle;
-            } else {
+
+                time_elapsed = 0;
+
+
+            } else if (middleSteer < 0) {
                 // Negative steering angle indicates turn to the right
                 this.actuateRightSteer = steerFraction * maxOuterSteeringAngle;
                 this.actuateLeftSteer = steerFraction * maxInnerSteeringAngle;
+
+                time_elapsed = 0;
+
+            } else {
+
+                // Timer ensures the car does a message steer action for at least 0.2 seconds before it is allowed to go straight given a 0 value
+
+                if (time_elapsed > update_interval) {
+
+                    this.actuateRightSteer = 0;
+                    this.actuateLeftSteer = 0;
+
+                }
+
+                // 0 forward value
+
+
             }
+
+            Debug.Log("Leftsteer: " + this.actuateLeftSteer + " Rightsteer: " + this.actuateRightSteer + " Steer_angle_request: " + steerMsg.steer_request_deg);
 
 
 
