@@ -11661,7 +11661,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 972502133}
-  depth_camera_topic: /zed/depth_hr
+  depth_camera_topic: /zed/depth
   min_publishing_time: 0.5
   noise: 0
 --- !u!114 &1562825523
@@ -11730,7 +11730,7 @@ MonoBehaviour:
   adsdv_state: {fileID: 1482414515}
   vcu2ai_status_topic: /VCU2AIStatus
   ai2vcuStatusTopic: /AI2VCUStatus
-  timeout_interval: 0.1
+  timeout_interval: 0.2
 --- !u!1 &1565161873
 GameObject:
   m_ObjectHideFlags: 0

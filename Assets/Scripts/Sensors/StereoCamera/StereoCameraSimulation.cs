@@ -45,7 +45,13 @@ public class StereoCameraSimulation
 
         // All colours and pixels (rgb) in image texture
         // Create array of pixels (Color objects, rgb, 0-1 values) from captured texture
-        Color[] pixels = captured_texture.GetPixels();
+
+
+        // Already in 8 bit encoding
+        Color32[] pixels = captured_texture.GetPixels32();
+
+
+
         //Color[] flipped_pixels = new Color[pixels.Length];
 
         // Populate flipped pixels to flip the pixel matrix from bottom left to top left order
@@ -56,19 +62,33 @@ public class StereoCameraSimulation
         //     pixels[i];
         // }
 
-        byte[] image_data = new byte[pixels.Length*3];
-        int img_size = pixels.Length*3;
+
+
+        // bgra
+        byte[] image_data = new byte[pixels.Length*4];
+        // first row pixels
+        int img_size = pixels.Length*4;
+
+
+
 
         // Iterate through pixels and record each 3 bytes
         // create a byte for each r,g,b in each pixel
+
+
         for (int i = 0; i < pixels.Length; i++) {
+
+
             // bytes? ########### TODO
             // By * 0-1 by 255 we get a colour value between 0-255
             // Work from end of array to prevent upside down image
-            Color pixel = pixels[pixels.Length - (width * (1 + i / width)) + (i % width)];
-            image_data[i*3] = (byte)(pixel.b * 255);
-            image_data[i*3 + 1] = (byte)(pixel.g * 255);
-            image_data[i*3 + 2] = (byte)(pixel.r * 255);
+
+
+            Color32 pixel = pixels[pixels.Length - (width * (1 + i / width)) + (i % width)];
+            image_data[i*4] = (byte)(pixel.b);
+            image_data[i*4 + 1] = (byte)(pixel.g);
+            image_data[i*4 + 2] = (byte)(pixel.r);
+            image_data[i*4 + 3] = (byte)(pixel.a);
 
         }
 
@@ -84,11 +104,11 @@ public class StereoCameraSimulation
             },
             height = (uint)height,
             width = (uint)width,
-            encoding = "bgr8",
+            encoding = "bgra8", // The encoding of ZED camera is bgra8, YOLO itself will have to remove the 8 alpha bits and make it 24 bits bgr, can use OpenCV
             is_bigendian = 0,
             // Check this later, width of image in bytes
             // step, how many bits to look at before starting next row.
-            step = (uint)((width)*3),
+            step = (uint)((width)*4),
             data = image_data
 
         };

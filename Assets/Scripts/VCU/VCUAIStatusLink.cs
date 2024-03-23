@@ -14,6 +14,8 @@ using RosMessageTypes.BuiltinInterfaces;
 using Unity.Robotics.Core;
 using Unity.Robotics.ROSTCPConnector;
 
+using System.IO;
+
 /********************************************
  * Publishes VCU2AIStatus msgs and subscribes
  * to AI2VCUStatus msgs
@@ -30,10 +32,22 @@ public class VCUAIStatusLink : MonoBehaviour
 
     ROSConnection ros;
 
-    public float timeout_interval = 0.1f;
+    public float timeout_interval = 0.2f;
     private float time_elapsed = 0.0f;
 
+    private StreamWriter logfile;
+
     void Start() {
+
+        string filePath = Application.dataPath;
+
+        Debug.Log("Log filepath: " + filePath);
+
+        string filename = "log.txt";
+
+        logfile = new StreamWriter(Path.Combine(filePath, filename));
+
+        
 
         ros = ROSConnection.GetOrCreateInstance();
         ros.RegisterPublisher<VCU2AIStatusMsg>(vcu2ai_status_topic);
@@ -56,6 +70,8 @@ public class VCUAIStatusLink : MonoBehaviour
 
         time_elapsed = 0;
 
+        LogToFile(statusMsg);
+
         // Get values from the msg and assign them into the ADS_DV_State 
         adsdv_state.manage_ai2vcuStatus_msg(statusMsg);
 
@@ -64,6 +80,16 @@ public class VCUAIStatusLink : MonoBehaviour
         ros.Publish(vcu2ai_status_topic, vcu2ai_status_msg);
 
         time_elapsed = 0;
+
+
+    }
+
+    void LogToFile(AI2VCUStatusMsg statusMsg) {
+
+        // Log AI2VCUStatusmsg
+        logfile.WriteLine(statusMsg.ToString());
+        
+
 
 
     }
