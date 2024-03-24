@@ -10794,6 +10794,8 @@ MonoBehaviour:
   stateButton: {fileID: 1951627904}
   ebsButton: {fileID: 676561253}
   goButton: {fileID: 1039829761}
+  asButton: {fileID: 1441899574}
+  tsButton: {fileID: 1147171214}
   missionStateDropdown: {fileID: 300794863}
   lapcounterText: {fileID: 424751935}
   carObject: {fileID: 1360998300}
@@ -11731,6 +11733,7 @@ MonoBehaviour:
   vcu2ai_status_topic: /VCU2AIStatus
   ai2vcuStatusTopic: /AI2VCUStatus
   timeout_interval: 0.2
+  enableLoggingFile: 0
 --- !u!1 &1565161873
 GameObject:
   m_ObjectHideFlags: 0
@@ -14704,6 +14707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53ba120c1410dbfcda588514e167d91f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  invertSteering: 1
   update_interval: 0.1
   adsdvStateObject: {fileID: 1482414515}
   wheelData:

@@ -22,6 +22,8 @@ public class ADS_DV_State : MonoBehaviour {
 	public Button stateButton;
 	public Button ebsButton;
 	public Button goButton;
+    public Button asButton;
+    public Button tsButton;
     public TMPro.TMP_Dropdown missionStateDropdown;
     public TextMeshProUGUI lapcounterText;
 
@@ -388,8 +390,10 @@ public class ADS_DV_State : MonoBehaviour {
 
     	if (as_switch_status == true) {
     		as_switch_status = false;
+            asButton.GetComponent<Image>().color = Color.white;
     	} else {
     		as_switch_status = true;
+            asButton.GetComponent<Image>().color = Color.blue;
     	}
 
 
@@ -399,8 +403,10 @@ public class ADS_DV_State : MonoBehaviour {
     	
     	if (ts_switch_status == true) {
     		ts_switch_status = false;
+            tsButton.GetComponent<Image>().color = Color.white;
     	} else {
     		ts_switch_status = true;
+            tsButton.GetComponent<Image>().color = Color.yellow;
     	}
 
     }
