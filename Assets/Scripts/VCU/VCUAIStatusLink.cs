@@ -37,15 +37,21 @@ public class VCUAIStatusLink : MonoBehaviour
 
     private StreamWriter logfile;
 
+    public bool enableLoggingFile = false;
+
     void Start() {
 
         string filePath = Application.dataPath;
 
-        Debug.Log("Log filepath: " + filePath);
+        //Debug.Log("Log filepath: " + filePath);
 
         string filename = "log.txt";
 
-        logfile = new StreamWriter(Path.Combine(filePath, filename));
+        if (enableLoggingFile == true) {
+
+            logfile = new StreamWriter(Path.Combine(filePath, filename));
+        }
+
 
         
 
@@ -70,7 +76,11 @@ public class VCUAIStatusLink : MonoBehaviour
 
         time_elapsed = 0;
 
-        LogToFile(statusMsg);
+        if (enableLoggingFile == true) {
+
+            LogToFile(statusMsg);
+
+        }
 
         // Get values from the msg and assign them into the ADS_DV_State 
         adsdv_state.manage_ai2vcuStatus_msg(statusMsg);

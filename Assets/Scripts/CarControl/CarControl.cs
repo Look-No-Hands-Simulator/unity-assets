@@ -10,6 +10,8 @@ using RosMessageTypes.AdsDv;
 public class CarControl : MonoBehaviour
 {
 
+    public bool invertSteering = true;
+
     private bool throttleRequest = false;
 
     public float update_interval = 0.2f;
@@ -90,9 +92,16 @@ public class CarControl : MonoBehaviour
 
         if (adsdvStateObject.GetAsState() == ADS_DV_State.AS_STATE_AS_DRIVING || adsdvStateObject.GetAsState() == ADS_DV_State.AS_STATE_AS_READY) {
             
+            short middleSteer = (short)(steerMsg.steer_request_deg);
 
+            if (invertSteering == true) {
 
-            short middleSteer = steerMsg.steer_request_deg;
+                // OBR stack has inverted steering
+
+                middleSteer = (short)(middleSteer * -1);
+
+            }
+
 
             //float steerFraction = (middleSteer * 2) / (maxInnerSteeringAngle + maxOuterSteeringAngle);
 
@@ -143,7 +152,7 @@ public class CarControl : MonoBehaviour
 
             }
 
-            Debug.Log("Leftsteer: " + this.actuateLeftSteer + " Rightsteer: " + this.actuateRightSteer + " Steer_angle_request: " + steerMsg.steer_request_deg);
+            //Debug.Log("Leftsteer: " + this.actuateLeftSteer + " Rightsteer: " + this.actuateRightSteer + " Steer_angle_request: " + steerMsg.steer_request_deg);
 
 
 
