@@ -1,0 +1,8104 @@
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: True
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 2
+direction_request: 1
+lap_counter: 0
+cones_count_actual: 0
+cones_count_all: 0
+veh_speed_actual_kmh: 0
+veh_speed_demand_kmh: 0
+AI2VCUStatusMsg: 
+handshake: False
+estop_request: False
+mission_status: 

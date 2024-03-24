@@ -22,6 +22,8 @@ public class ADS_DV_State : MonoBehaviour {
 	public Button stateButton;
 	public Button ebsButton;
 	public Button goButton;
+    public Button asButton;
+    public Button tsButton;
     public TMPro.TMP_Dropdown missionStateDropdown;
     public TextMeshProUGUI lapcounterText;
 
@@ -281,11 +283,11 @@ public class ADS_DV_State : MonoBehaviour {
 
         		case AS_STATE_AS_OFF:
 
-                    Debug.Log("Off status variables: " + as_switch_status + ts_switch_status + ebs_state + mission_status);
+                    //Debug.Log("Off status variables: " + as_switch_status + ts_switch_status + ebs_state + mission_status);
 
         			if (as_switch_status == true && ts_switch_status == true && ebs_state == EBS_STATE_ARMED && mission_status == MISSION_STATUS_SELECTED) {
 
-                        Debug.Log("Off state switching to ready");
+                        //Debug.Log("Off state switching to ready");
 
         				SetAsState(AS_STATE_AS_READY);
         				assi_manager.SetState(ASSI_LIGHT_YELLOW_CONTINUOUS);
@@ -331,10 +333,10 @@ public class ADS_DV_State : MonoBehaviour {
         				autonomous_braking_fault == true || brake_plausibility_fault == true || ai_estop_request == true || Ai_comms_lost == true
         				|| bms_fault == true || ebs_state == EBS_STATE_UNAVAILABLE ) {
 
-                        Debug.Log("Variables for emergency state: " + "shutdown_request: " + shutdown_request + "as_switch_status: " + as_switch_status + 
-                            "go_signal" + go_signal + "mission_status_fault" + mission_status_fault + "autonomous_braking_fault" +
-                            autonomous_braking_fault + "brake_plausibility_fault" + brake_plausibility_fault + "ai_estop_request" + ai_estop_request + 
-                            "Ai_comms_lost" + Ai_comms_lost + "bms_fault" + bms_fault + "ebs_state" + ebs_state);
+                        // Debug.Log("Variables for emergency state: " + "shutdown_request: " + shutdown_request + "as_switch_status: " + as_switch_status + 
+                        //     "go_signal" + go_signal + "mission_status_fault" + mission_status_fault + "autonomous_braking_fault" +
+                        //     autonomous_braking_fault + "brake_plausibility_fault" + brake_plausibility_fault + "ai_estop_request" + ai_estop_request + 
+                        //     "Ai_comms_lost" + Ai_comms_lost + "bms_fault" + bms_fault + "ebs_state" + ebs_state);
 
         				SetAsState(AS_STATE_EMERGENCY_BRAKE);
         				assi_manager.SetState(ASSI_LIGHT_BLUE_FLASHING);
@@ -388,8 +390,10 @@ public class ADS_DV_State : MonoBehaviour {
 
     	if (as_switch_status == true) {
     		as_switch_status = false;
+            asButton.GetComponent<Image>().color = Color.white;
     	} else {
     		as_switch_status = true;
+            asButton.GetComponent<Image>().color = Color.blue;
     	}
 
 
@@ -399,8 +403,10 @@ public class ADS_DV_State : MonoBehaviour {
     	
     	if (ts_switch_status == true) {
     		ts_switch_status = false;
+            tsButton.GetComponent<Image>().color = Color.white;
     	} else {
     		ts_switch_status = true;
+            tsButton.GetComponent<Image>().color = Color.yellow;
     	}
 
     }
@@ -485,14 +491,14 @@ public class ADS_DV_State : MonoBehaviour {
  
         if (status_msg.handshake == this.handshake) {
 
-            Debug.Log("Handshake response matches");
+            //Debug.Log("Handshake response matches");
 
             this.handshake = !status_msg.handshake; 
 
 
         } else {
 
-            Debug.Log("Invalid handshake response: " + status_msg.handshake + " Expected value: " + this.handshake);
+            //Debug.Log("Invalid handshake response: " + status_msg.handshake + " Expected value: " + this.handshake);
         }
 
     	
@@ -510,7 +516,7 @@ public class ADS_DV_State : MonoBehaviour {
         this.veh_speed_actual_kmh = status_msg.veh_speed_actual_kmh;
         this.veh_speed_demand_kmh = status_msg.veh_speed_demand_kmh;
 
-        Debug.Log( "This handshake: " + this.handshake);
+        //Debug.Log( "This handshake: " + this.handshake);
 
         set_lapcounter_text((int)lap_counter);
 
