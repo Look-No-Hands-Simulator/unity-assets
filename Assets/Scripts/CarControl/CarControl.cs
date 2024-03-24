@@ -6,9 +6,36 @@ using Unity.Robotics.ROSTCPConnector;
 // Custom namespace msgs
 using RosMessageTypes.AdsDv;
 
+public class SteeringFilter {
+
+    // Moving average filter smooths the steering values
+    // coming in from AI2VCUSteer
+    // ChatGPT help
+
+    private Queue<float> values = new Queue<float>();
+    private int windowSize = 2; // Adjust this value as needed
+    
+    public float Filter(float value) {
+        
+        values.Enqueue(value);
+        if (values.Count > windowSize) {
+            values.Dequeue();
+        }
+
+        float sum = 0;
+        foreach (float v in values) {
+            sum += v;
+        }
+
+        return sum / values.Count;
+    }
+}
+
 
 public class CarControl : MonoBehaviour
 {
+
+    public bool steeringSmoothing = true; // Switch between bang-bang and smoothed steering
 
     public bool invertSteering = true;
 
@@ -58,10 +85,16 @@ public class CarControl : MonoBehaviour
 
     public bool reverseOn;
 
+    private SteeringFilter steeringFilter;
+
 
     // // Start is called before the first frame update
     void Start()
     {
+
+        this.steeringFilter = new SteeringFilter();
+
+
         foreach (WheelElements element in wheelData) {
             RotateTyresInitial(element.leftWheel);
             RotateTyresInitial(element.rightWheel);
@@ -83,16 +116,26 @@ public class CarControl : MonoBehaviour
 
     }
 
+
     void ActuateSteering(AI2VCUSteerMsg steerMsg) {
         // Code below recalculates left and right steer from a hypothetical middle wheel
         // TODO: Create subscriber to control the wheels, publish middle steer, create AI2VCUPublisher and publish middle steer in here in this script
 
 
-            time_elapsed += Time.deltaTime;
+            //time_elapsed += Time.deltaTime;
 
         if (adsdvStateObject.GetAsState() == ADS_DV_State.AS_STATE_AS_DRIVING || adsdvStateObject.GetAsState() == ADS_DV_State.AS_STATE_AS_READY) {
             
             short middleSteer = (short)(steerMsg.steer_request_deg);
+
+
+            if (steeringSmoothing == true) {
+
+                // Smooth the steering command
+                middleSteer = (short)(steeringFilter.Filter(middleSteer));
+
+            }
+
 
             if (invertSteering == true) {
 
@@ -138,16 +181,30 @@ public class CarControl : MonoBehaviour
 
             } else {
 
-                // Timer ensures the car does a message steer action for at least 0.2 seconds before it is allowed to go straight given a 0 value
+                
+                if (steeringSmoothing == true) {
 
-                if (time_elapsed > update_interval) {
+                    // Timer ensures the car does a message steer action for at least 0.2 seconds before it is allowed to go straight given a 0 value
+
+                    if (time_elapsed > update_interval) {
 
                     this.actuateRightSteer = 0;
                     this.actuateLeftSteer = 0;
 
+                    }
+
+                } else {
+
+                    // 0 forward value
+
+                    this.actuateRightSteer = 0;
+                    this.actuateLeftSteer = 0;
+
+
                 }
 
-                // 0 forward value
+
+
 
 
             }
