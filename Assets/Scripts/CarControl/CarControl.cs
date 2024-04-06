@@ -13,7 +13,7 @@ public class SteeringFilter {
     // ChatGPT help
 
     private Queue<float> values = new Queue<float>();
-    private int windowSize = 2; // Adjust this value as needed
+    private int windowSize = 3; // Adjust this value as needed
     
     public float Filter(float value) {
         
