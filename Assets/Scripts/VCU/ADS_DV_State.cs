@@ -386,6 +386,7 @@ public class ADS_DV_State : MonoBehaviour {
 
     }
 
+
     public void SwitchASState() {
 
     	if (as_switch_status == true) {
@@ -506,6 +507,7 @@ public class ADS_DV_State : MonoBehaviour {
 
         // Is this good?
         if (as_state != AS_STATE_AS_OFF) {
+
             this.mission_status = status_msg.mission_status;
         }
         

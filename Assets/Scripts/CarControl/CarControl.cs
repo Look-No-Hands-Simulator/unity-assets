@@ -34,6 +34,7 @@ public class SteeringFilter {
 
 public class CarControl : MonoBehaviour
 {
+    //public Button invertSteeringButton;
 
     public bool steeringSmoothing = true; // Switch between bang-bang and smoothed steering
 
@@ -276,29 +277,6 @@ public class CarControl : MonoBehaviour
 
         }
 
-        // bool log = false;
-        // time_elapsed += Time.deltaTime;
-        // if (time_elapsed > update_interval) {
-
-        //     log = true;
-
-        //     Debug.Log("MaxRPM: " + this.maxRPM);
-        //     Debug.Log("MaxTorque: " + this.maxTorque);
-        //     Debug.Log("actuateThrottleFrontForce: " + actuateThrottleFrontForce);
-        //     foreach (WheelElements element in wheelData) {
-                
-        //         if (element.addWheelTorque) {
-
-        //             Debug.Log("Left wheel rpm: " + element.leftWheel.rpm);
-        //             Debug.Log("Right wheel rpm: " + element.rightWheel.rpm);
-        //         }
-        //     }
-
-
-        //     time_elapsed = 0;
-        // }
-
-
 
         // Fraction of how much torque you could be applying because Input.GetAxis is between 0-1
         /// This is the problem -> vertical is a ushort so it gets converted to unsigned meaning it is never negative
@@ -327,18 +305,24 @@ public class CarControl : MonoBehaviour
 
         // Throttle keyboard control
         if (Input.GetAxis("Vertical") > 0 && brake <= 0) {
+
             // Forwards
             //Debug.Log("Throttle: " + speed);
             ai2vcuPublisherNode.PublishAI2VCUDriveFMsg((ushort)(speed), this.maxRPM);
+
+
         } else if (Input.GetAxis("Vertical") < 0 && brake <= 0) {
+
             // Reversing
             // Publish msg but the motorTorque will have to be negative when the wheel colliders are actuated in Unity and
             // therefore not be actuated from the topic since it can't publish negative, unless the topic was reverse
             ai2vcuPublisherNode.PublishAI2VCUDriveFMsgReverse((ushort)(Math.Abs(speed)), this.maxRPM);
 
+
         }
 
         else if (Input.GetAxis("Brake") > 0) {
+
             ai2vcuPublisherNode.PublishAI2VCUBrakeMsg((byte)(brake*100));
 
         }
@@ -434,14 +418,7 @@ public class CarControl : MonoBehaviour
                 }
 
             } 
-            // else if (this.brakingPercent == 0 && element.leftWheel.brakeTorque != 0 && element.rightWheel.brakeTorque != 0) {
-            //     element.leftWheel.brakeTorque = 0;
-            //     element.rightWheel.brakeTorque = 0;
-            //     element.leftWheel.motorTorque = 0;
-            //     element.rightWheel.motorTorque = 0;
-            //     element.leftWheel.motorTorque = 0;
-            //     element.rightWheel.motorTorque = 0;
-            // }
+
             else {
                 // Brakes on
                 element.leftWheel.motorTorque = 0;
@@ -560,11 +537,17 @@ public class CarControl : MonoBehaviour
         rbo.AddForceAtPosition(force * this.rb.velocity.normalized, hit.point);
     }
 
-    // // Update is called once per frame
-    // void Update()
-    // {
-        
-    // }
+
+    public void SwitchSteerInvert() {
+
+        if (invertSteering == true) {
+            invertSteering = false;
+        } else {
+            invertSteering = true;
+        }
+
+    }
+
 }
 
 [System.Serializable]
@@ -577,3 +560,4 @@ public bool addWheelTorque;
 public bool shouldSteer;
 
 }
+
