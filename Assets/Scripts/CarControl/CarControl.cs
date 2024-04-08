@@ -119,6 +119,7 @@ public class CarControl : MonoBehaviour
 
 
     void ActuateSteering(AI2VCUSteerMsg steerMsg) {
+
         // Code below recalculates left and right steer from a hypothetical middle wheel
         // TODO: Create subscriber to control the wheels, publish middle steer, create AI2VCUPublisher and publish middle steer in here in this script
 
@@ -355,19 +356,13 @@ public class CarControl : MonoBehaviour
                     element.leftWheel.brakeTorque = maxBrakingTorque * this.brakingPercent / 100;
                     element.rightWheel.brakeTorque = maxBrakingTorque * this.brakingPercent / 100;
 
-                    // Move tyres
-                    // DoTyres(element.leftWheel);
-                    // DoTyres(element.rightWheel);
                 
             }
 
             //
             else if (this.brakingPercent == 0) {
                 
-                    // element.leftWheel.brakeTorque = 0;
-                    // element.rightWheel.brakeTorque = 0;
-                    // element.leftWheel.motorTorque = 0;
-                    // element.rightWheel.motorTorque = 0;
+
                 
             }
 
@@ -441,6 +436,7 @@ public class CarControl : MonoBehaviour
 
             // Debug.Log("Motor torque left wheel: " + element.leftWheel.motorTorque);
             // Debug.Log("Motor torque right wheel: " + element.rightWheel.motorTorque);
+
             // Move tyres
             DoTyres(element.leftWheel);
             DoTyres(element.rightWheel);
@@ -457,11 +453,13 @@ public class CarControl : MonoBehaviour
     }
 
     void ProcessBrakeMessage(AI2VCUBrakeMsg brakeMsg) {
+
         byte brakingPercentRequest = brakeMsg.hyd_pressure_request_pct;
         this.brakingPercent = (ushort)brakingPercentRequest;
     }
 
     void ActuateBraking() {
+
         // byte brakingPercentRequest = brakeMsg.hyd_pressure_request_pct;
         // this.brakingPercent = (ushort)brakingPercentRequest;
         
@@ -486,6 +484,7 @@ public class CarControl : MonoBehaviour
         // This is not necessary
         else if (this.brakingPercent == 0) {
             foreach (WheelElements element in wheelData) {
+                
                 element.leftWheel.brakeTorque = 0;
                 element.rightWheel.brakeTorque = 0;
                 element.leftWheel.motorTorque = 0;
@@ -499,6 +498,7 @@ public class CarControl : MonoBehaviour
 
 
     void DoTyres(WheelCollider collider) {
+
         // This moves the tyre 3D models along with the wheel colliders
 
         if (collider.transform.childCount == 0) {
@@ -518,6 +518,7 @@ public class CarControl : MonoBehaviour
     }
 
     void RotateTyresInitial(WheelCollider collider) {
+
         // Fix bug of wheels turning 90 degrees on start and rolling in wrong dimension
         if (collider.transform.childCount == 0) {
             return;
@@ -531,6 +532,7 @@ public class CarControl : MonoBehaviour
     }
 
     void OnControllerColliderHit(ControllerColliderHit hit) {
+
         Rigidbody rbo = hit.collider.attachedRigidbody;
         if (rbo == null || rbo.isKinematic) return;
         // rb should be the Object or character controller of the car and wheels
