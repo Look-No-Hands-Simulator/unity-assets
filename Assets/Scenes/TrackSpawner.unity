@@ -888,9 +888,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1482414515}
-        m_TargetAssemblyTypeName: ADS_DV_State, Assembly-CSharp
-        m_MethodName: SwitchAICommsButton
+      - m_Target: {fileID: 1562825526}
+        m_TargetAssemblyTypeName: VCUAIStatusLink, Assembly-CSharp
+        m_MethodName: HandshakingButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12117,7 +12117,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1562825514}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47b46c3a0a755748990b7ad5944443fe, type: 3}
   m_Name: 
@@ -12263,6 +12263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35b2a906fd8b30d4abc32ab7b1a5f809, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handshakingOnOff: 0
   adsdv_state: {fileID: 1482414515}
   vcu2ai_status_topic: /VCU2AIStatus
   ai2vcuStatusTopic: /AI2VCUStatus

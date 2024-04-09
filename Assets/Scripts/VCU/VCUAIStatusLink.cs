@@ -24,6 +24,7 @@ using System.IO;
 
 public class VCUAIStatusLink : MonoBehaviour
 {
+    public bool handshakingOnOff = false;
 
     public ADS_DV_State adsdv_state;
 
@@ -100,27 +101,43 @@ public class VCUAIStatusLink : MonoBehaviour
         logfile.WriteLine(statusMsg.ToString());
         
 
+    }
 
+    public void HandshakingButton() {
 
+        if (handshakingOnOff == false) {
+
+            handshakingOnOff = true;
+        } else {
+
+            handshakingOnOff = false;
+        }
     }
 
     void Update() {
 
-        time_elapsed += Time.deltaTime;
-        if (time_elapsed > timeout_interval) {
+        if (handshakingOnOff == true) {
+
+            time_elapsed += Time.deltaTime;
+            if (time_elapsed > timeout_interval) {
 
 
-            if (adsdv_state.GetAsState() == ADS_DV_State.AS_STATE_AS_DRIVING) {
+                if (adsdv_state.GetAsState() == ADS_DV_State.AS_STATE_AS_DRIVING) {
 
-                adsdv_state.Ai_comms_lost = true;
+                    adsdv_state.Ai_comms_lost = true;
 
-                Debug.Log("Timeout: " + time_elapsed);
+                    Debug.Log("Timeout: " + time_elapsed);
 
-            }
+                }
             
-        }   
+            }   
+
+        }  
 
     }
+
+
+
 
 
 

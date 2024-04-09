@@ -441,17 +441,17 @@ public class ADS_DV_State : MonoBehaviour {
 
     }
 
-    public void SwitchAICommsButton() {
+    // public void SwitchAICommsButton() {
 
-        if (Ai_comms_lost == true) {
+    //     if (Ai_comms_lost == true) {
 
-            Ai_comms_lost = false;
-        } else {
+    //         Ai_comms_lost = false;
+    //     } else {
 
-            Ai_comms_lost = true;
-        }
+    //         Ai_comms_lost = true;
+    //     }
 
-    }
+    // }
 
     public byte GetAsState() {
 
