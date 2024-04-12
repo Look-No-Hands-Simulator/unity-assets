@@ -72,6 +72,7 @@ public class ImuSimulation
             acceleration = gaussian_generator.add_noise_scale(acceleration);
         }
 
+        // Double[9] array
         double[] orientation_covariance_calc = new double[]{Math.Pow((orientation.x*INS_STANDARD_DEVIATION),2),0.0,0.0,0.0,
         Math.Pow((orientation.y*INS_STANDARD_DEVIATION),2),0.0,0.0,0.0,Math.Pow((orientation.z*INS_STANDARD_DEVIATION),2)};
 
