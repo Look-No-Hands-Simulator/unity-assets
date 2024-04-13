@@ -13,6 +13,8 @@ using RosMessageTypes.BuiltinInterfaces;
 
 using Unity.Robotics.Core;
 using Unity.Robotics.ROSTCPConnector;
+using UnityEngine.UI;
+using TMPro;
 
 using System.IO;
 
@@ -24,6 +26,8 @@ using System.IO;
 
 public class VCUAIStatusLink : MonoBehaviour
 {
+    public Button handshakingbutton; 
+
     public bool handshakingOnOff = false;
 
     public ADS_DV_State adsdv_state;
@@ -108,9 +112,12 @@ public class VCUAIStatusLink : MonoBehaviour
         if (handshakingOnOff == false) {
 
             handshakingOnOff = true;
+
+            handshakingbutton.GetComponent<Image>().color = Color.green;
         } else {
 
             handshakingOnOff = false;
+            handshakingbutton.GetComponent<Image>().color = Color.red;
         }
     }
 
