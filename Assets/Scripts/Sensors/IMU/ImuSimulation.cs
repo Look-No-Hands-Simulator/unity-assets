@@ -19,6 +19,10 @@ public class ImuSimulation
 
     Vector3 last_velocity;
 
+    Vector3 last_orientation;
+
+    Vector3 last_position;
+
     GaussianGenerator gaussian_generator; 
 
     bool noise_activation;
@@ -27,16 +31,31 @@ public class ImuSimulation
     const double INS_STANDARD_DEVIATION = 0.01;
 
     public ImuSimulation(GameObject imu_sensor_link_object, bool noise_activation_param) {
+
         imu_sensor_link = imu_sensor_link_object;
         noise_activation = noise_activation_param;
         imu_physical = imu_sensor_link.GetComponent<Rigidbody>();
         last_msg_timestamp = DateTime.Now;
+
+        // linear
         last_velocity = new Vector3
-            {
+        {
                 x = imu_physical.velocity.x,
                 y = imu_physical.velocity.y,
                 z = imu_physical.velocity.z
-            }; 
+        }; 
+
+        last_orientation = new Vector3 
+        {
+            x = imu_physical.rotation.x,
+            y = imu_physical.rotation.y,
+            z = imu_physical.rotation.z
+
+        };
+
+        last_position = imu_sensor_link.transform.position;
+
+
         // Numbers between 0 and 0.03, 1% standard deviation
         // To get std of measurement we need to multiply measurement by the assumed std of 1% then square it to get covariance of independent variable
         gaussian_generator = new GaussianGenerator(0, INS_STANDARD_DEVIATION);
@@ -47,24 +66,47 @@ public class ImuSimulation
 
         DateTime timestamp_now = DateTime.Now;
 
-        Vector3 velocity_now = new Vector3 
+        Vector3 position_now = imu_sensor_link.transform.position;
+
+        Vector3 velocity_now = (position_now - last_position) / (float)(timestamp_now - last_msg_timestamp).TotalSeconds; 
+        //Debug.Log("Velocity_now: " + velocity_now);
+
+        // Vector3 velocity_now = new Vector3 
+        // {
+        //     x = imu_physical.velocity.x,
+        //     y = imu_physical.velocity.y,
+        //     z = imu_physical.velocity.z
+        // };
+
+        Vector3 orientation_now = new Vector3 
         {
-            x = imu_physical.velocity.x,
-            y = imu_physical.velocity.y,
-            z = imu_physical.velocity.z
+            x = imu_physical.rotation.x,
+            y = imu_physical.rotation.y,
+            z = imu_physical.rotation.z
+
         };
+
+
         // Change in meters per second per second (change of a change in speed)
         Vector3 acceleration = (velocity_now - last_velocity) / (float)(timestamp_now - last_msg_timestamp).TotalSeconds;
+
+        Vector3 angular_velocity = (orientation_now - last_orientation) / (float)(timestamp_now - last_msg_timestamp).TotalSeconds;
 
         // Update time and velocity changes for next time
         last_msg_timestamp = timestamp_now;
         last_velocity = velocity_now;
+        last_position = position_now;
+
+        // Update orientation
+        last_orientation = orientation_now;
         
         // Get Unix time, how long since Jan 1st 1970?
         TimeStamp msg_timestamp = new TimeStamp(Clock.time);
 
-        Vector3 angular_velocity = imu_physical.angularVelocity;
+        //Vector3 angular_velocity = imu_physical.angularVelocity;
+        //Debug.Log("Angular velocity: " + angular_velocity);
         Quaternion orientation = imu_physical.rotation;
+        //Debug.Log("Orientation: " + orientation);
 
         if (noise_activation == true) {
             angular_velocity = gaussian_generator.add_noise_scale(angular_velocity);

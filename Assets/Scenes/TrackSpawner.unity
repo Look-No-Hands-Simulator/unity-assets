@@ -12123,7 +12123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47b46c3a0a755748990b7ad5944443fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imu_sensor_link: {fileID: 405272695}
+  imu_sensor_link: {fileID: 232217343}
   imu_topic: /zed/imu
   axis: 3
   noise_activation: 1
@@ -12192,7 +12192,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1562825514}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e7f5be3367b6338828d1ddaa9fa7c452, type: 3}
   m_Name: 
@@ -12264,8 +12264,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35b2a906fd8b30d4abc32ab7b1a5f809, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  replyRecieved: 0
   handshakingbutton: {fileID: 163177997}
-  handshakingOnOff: 0
+  handshakingOnOff: 1
   adsdv_state: {fileID: 1482414515}
   vcu2ai_status_topic: /VCU2AIStatus
   ai2vcuStatusTopic: /AI2VCUStatus

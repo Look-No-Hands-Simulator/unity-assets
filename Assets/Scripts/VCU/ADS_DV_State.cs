@@ -298,6 +298,10 @@ public class ADS_DV_State : MonoBehaviour {
 
         		case AS_STATE_AS_READY:
 
+                    Debug.Log(" front_axle_torque_request: " + front_axle_torque_request + " rear_axle_torque_request: " + rear_axle_torque_request + 
+                        " Steer_angle_request: " + Steer_angle_request + " actual_steer_angle: must be less than 5: " + Actual_steer_angle + " direction_request: is it neutral: " 
+                        + direction_request + " go_signal: " + go_signal);
+
         			if (as_switch_status == false) {
 
         				SetAsState(AS_STATE_AS_OFF);
@@ -522,8 +526,15 @@ public class ADS_DV_State : MonoBehaviour {
 
             this.mission_status = status_msg.mission_status;
         }
+
+        if (as_state > AS_STATE_AS_READY) {
+            /////////////// A change
+
+            this.direction_request = status_msg.direction_request;
+
+        }
         
-        this.direction_request = status_msg.direction_request;
+
         this.lap_counter = status_msg.lap_counter;
         this.cones_count_actual = status_msg.cones_count_actual;
         this.cones_count_all = status_msg.cones_count_all;

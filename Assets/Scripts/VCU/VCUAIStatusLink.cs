@@ -26,6 +26,8 @@ using System.IO;
 
 public class VCUAIStatusLink : MonoBehaviour
 {
+    public bool replyRecieved;
+
     public Button handshakingbutton; 
 
     public bool handshakingOnOff = false;
@@ -38,9 +40,9 @@ public class VCUAIStatusLink : MonoBehaviour
     ROSConnection ros;
 
     public float timeout_interval = 0.2f;
-    private float time_elapsed = 0.0f;
-
     private StreamWriter logfile;
+
+    private float time_elapsed = 0.0f;
 
     public bool enableLoggingFile = false;
 
@@ -70,6 +72,8 @@ public class VCUAIStatusLink : MonoBehaviour
 
         ros.Publish(vcu2ai_status_topic, vcu2ai_status_msg);
 
+        replyRecieved = false;
+
         time_elapsed = 0;
 
     }
@@ -81,6 +85,8 @@ public class VCUAIStatusLink : MonoBehaviour
 
         time_elapsed = 0;
 
+        replyRecieved = true;
+
         if (enableLoggingFile == true) {
 
             LogToFile(statusMsg);
@@ -90,11 +96,9 @@ public class VCUAIStatusLink : MonoBehaviour
         // Get values from the msg and assign them into the ADS_DV_State 
         adsdv_state.manage_ai2vcuStatus_msg(statusMsg);
 
-        // Send response from VCU
-        VCU2AIStatusMsg vcu2ai_status_msg = adsdv_state.get_vcu2aiStatus_msg();
-        ros.Publish(vcu2ai_status_topic, vcu2ai_status_msg);
+        
 
-        time_elapsed = 0;
+        
 
 
     }
@@ -123,9 +127,11 @@ public class VCUAIStatusLink : MonoBehaviour
 
     void Update() {
 
+        time_elapsed += Time.deltaTime;
+
         if (handshakingOnOff == true) {
 
-            time_elapsed += Time.deltaTime;
+            
             if (time_elapsed > timeout_interval) {
 
 
@@ -134,18 +140,22 @@ public class VCUAIStatusLink : MonoBehaviour
                     adsdv_state.Ai_comms_lost = true;
 
                     Debug.Log("Timeout: " + time_elapsed);
-
                 }
-            
-            }   
-
+            }  
         }  
 
+
+        if (replyRecieved) {
+
+            replyRecieved = false;
+            // Send response from VCU
+            VCU2AIStatusMsg vcu2ai_status_msg = adsdv_state.get_vcu2aiStatus_msg();
+            ros.Publish(vcu2ai_status_topic, vcu2ai_status_msg);
+
+            time_elapsed = 0;
+
+        }
+
+
     }
-
-
-
-
-
-
 }
