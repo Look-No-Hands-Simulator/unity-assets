@@ -31,7 +31,7 @@ public class SteeringFilter {
 
 public class CarControl : MonoBehaviour
 {
-    //public Button invertSteeringButton;
+    public bool zeroLimiter = true;
 
     public bool steeringSmoothing = true; // Switch between bang-bang and smoothed steering
 
@@ -201,7 +201,7 @@ public class CarControl : MonoBehaviour
             } else {
 
                 
-                if (steeringSmoothing == true) {
+                if (zeroLimiter == true) {
 
                     // Timer ensures the car does a message steer action for at least 0.2 seconds before it is allowed to go straight given a 0 value
 
@@ -370,8 +370,8 @@ public class CarControl : MonoBehaviour
                 this.actuateThrottleFrontForce = 0;
                 
 
-                    element.leftWheel.brakeTorque = maxBrakingTorque * this.brakingPercent / 100;
-                    element.rightWheel.brakeTorque = maxBrakingTorque * this.brakingPercent / 100;
+                element.leftWheel.brakeTorque = maxBrakingTorque * this.brakingPercent / 100;
+                element.rightWheel.brakeTorque = maxBrakingTorque * this.brakingPercent / 100;
 
                 
             }
