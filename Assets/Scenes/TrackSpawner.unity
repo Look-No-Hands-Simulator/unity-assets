@@ -12126,7 +12126,7 @@ MonoBehaviour:
   imu_sensor_link: {fileID: 232217343}
   imu_topic: /zed/imu
   axis: 3
-  noise_activation: 1
+  noise_activation: 0
 --- !u!114 &1562825519
 MonoBehaviour:
   m_ObjectHideFlags: 0

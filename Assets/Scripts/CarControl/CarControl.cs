@@ -8,18 +8,15 @@ using RosMessageTypes.AdsDv;
 
 public class SteeringFilter {
 
-    // Moving average filter smooths the steering values
-    // coming in from AI2VCUSteer
-    // ChatGPT help
-
     private Queue<float> values = new Queue<float>();
     private int windowSize = 3; // Adjust this value as needed
     
     public float Filter(float value) {
-        
         values.Enqueue(value);
-        if (values.Count > windowSize) {
-            values.Dequeue();
+        
+        // Ensure that the queue does not exceed the window size
+        while (values.Count > windowSize) {
+            values.Dequeue(); // Remove oldest value
         }
 
         float sum = 0;
@@ -87,6 +84,26 @@ public class CarControl : MonoBehaviour
     public bool reverseOn;
 
     private SteeringFilter steeringFilter;
+
+
+
+    private void OnDestroy()
+    {
+        // Unsubscribe from ROS topics
+        UnsubscribeFromROSTopics();
+
+
+    }
+
+    private void UnsubscribeFromROSTopics()
+    {
+        // Unsubscribe from ROS topics
+        ROSConnection.GetOrCreateInstance().Unsubscribe(ai2vcuSteerTopic);
+        ROSConnection.GetOrCreateInstance().Unsubscribe(ai2vcuDriveFTopic);
+        ROSConnection.GetOrCreateInstance().Unsubscribe(ai2vcuDriveFReverseTopic);
+        ROSConnection.GetOrCreateInstance().Unsubscribe(ai2vcuBrakeTopic);
+    }
+
 
 
     // // Start is called before the first frame update
