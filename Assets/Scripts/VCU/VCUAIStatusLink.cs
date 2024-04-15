@@ -13,6 +13,8 @@ using RosMessageTypes.BuiltinInterfaces;
 
 using Unity.Robotics.Core;
 using Unity.Robotics.ROSTCPConnector;
+using UnityEngine.UI;
+using TMPro;
 
 using System.IO;
 
@@ -24,6 +26,11 @@ using System.IO;
 
 public class VCUAIStatusLink : MonoBehaviour
 {
+    public bool replyRecieved;
+
+    public Button handshakingbutton; 
+
+    public bool handshakingOnOff = false;
 
     public ADS_DV_State adsdv_state;
 
@@ -33,9 +40,9 @@ public class VCUAIStatusLink : MonoBehaviour
     ROSConnection ros;
 
     public float timeout_interval = 0.2f;
-    private float time_elapsed = 0.0f;
-
     private StreamWriter logfile;
+
+    private float time_elapsed = 0.0f;
 
     public bool enableLoggingFile = false;
 
@@ -65,6 +72,8 @@ public class VCUAIStatusLink : MonoBehaviour
 
         ros.Publish(vcu2ai_status_topic, vcu2ai_status_msg);
 
+        replyRecieved = false;
+
         time_elapsed = 0;
 
     }
@@ -76,6 +85,8 @@ public class VCUAIStatusLink : MonoBehaviour
 
         time_elapsed = 0;
 
+        replyRecieved = true;
+
         if (enableLoggingFile == true) {
 
             LogToFile(statusMsg);
@@ -85,11 +96,9 @@ public class VCUAIStatusLink : MonoBehaviour
         // Get values from the msg and assign them into the ADS_DV_State 
         adsdv_state.manage_ai2vcuStatus_msg(statusMsg);
 
-        // Send response from VCU
-        VCU2AIStatusMsg vcu2ai_status_msg = adsdv_state.get_vcu2aiStatus_msg();
-        ros.Publish(vcu2ai_status_topic, vcu2ai_status_msg);
+        
 
-        time_elapsed = 0;
+        
 
 
     }
@@ -100,27 +109,53 @@ public class VCUAIStatusLink : MonoBehaviour
         logfile.WriteLine(statusMsg.ToString());
         
 
+    }
 
+    public void HandshakingButton() {
 
+        if (handshakingOnOff == false) {
+
+            handshakingOnOff = true;
+
+            handshakingbutton.GetComponent<Image>().color = Color.green;
+        } else {
+
+            handshakingOnOff = false;
+            handshakingbutton.GetComponent<Image>().color = Color.red;
+        }
     }
 
     void Update() {
 
         time_elapsed += Time.deltaTime;
-        if (time_elapsed > timeout_interval) {
 
+        if (handshakingOnOff == true) {
 
-            if (adsdv_state.GetAsState() == ADS_DV_State.AS_STATE_AS_DRIVING) {
-
-                adsdv_state.Ai_comms_lost = true;
-
-                Debug.Log("Timeout: " + time_elapsed);
-
-            }
             
-        }   
+            if (time_elapsed > timeout_interval) {
+
+
+                if (adsdv_state.GetAsState() == ADS_DV_State.AS_STATE_AS_DRIVING) {
+
+                    adsdv_state.Ai_comms_lost = true;
+
+                    Debug.Log("Timeout: " + time_elapsed);
+                }
+            }  
+        }  
+
+
+        if (replyRecieved) {
+
+            replyRecieved = false;
+            // Send response from VCU
+            VCU2AIStatusMsg vcu2ai_status_msg = adsdv_state.get_vcu2aiStatus_msg();
+            ros.Publish(vcu2ai_status_topic, vcu2ai_status_msg);
+
+            time_elapsed = 0;
+
+        }
+
 
     }
-
-
 }

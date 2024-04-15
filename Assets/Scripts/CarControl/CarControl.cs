@@ -8,18 +8,15 @@ using RosMessageTypes.AdsDv;
 
 public class SteeringFilter {
 
-    // Moving average filter smooths the steering values
-    // coming in from AI2VCUSteer
-    // ChatGPT help
-
     private Queue<float> values = new Queue<float>();
-    private int windowSize = 2; // Adjust this value as needed
+    private int windowSize = 3; // Adjust this value as needed
     
     public float Filter(float value) {
-        
         values.Enqueue(value);
-        if (values.Count > windowSize) {
-            values.Dequeue();
+        
+        // Ensure that the queue does not exceed the window size
+        while (values.Count > windowSize) {
+            values.Dequeue(); // Remove oldest value
         }
 
         float sum = 0;
@@ -34,6 +31,7 @@ public class SteeringFilter {
 
 public class CarControl : MonoBehaviour
 {
+    //public Button invertSteeringButton;
 
     public bool steeringSmoothing = true; // Switch between bang-bang and smoothed steering
 
@@ -88,6 +86,26 @@ public class CarControl : MonoBehaviour
     private SteeringFilter steeringFilter;
 
 
+
+    private void OnDestroy()
+    {
+        // Unsubscribe from ROS topics
+        UnsubscribeFromROSTopics();
+
+
+    }
+
+    private void UnsubscribeFromROSTopics()
+    {
+        // Unsubscribe from ROS topics
+        ROSConnection.GetOrCreateInstance().Unsubscribe(ai2vcuSteerTopic);
+        ROSConnection.GetOrCreateInstance().Unsubscribe(ai2vcuDriveFTopic);
+        ROSConnection.GetOrCreateInstance().Unsubscribe(ai2vcuDriveFReverseTopic);
+        ROSConnection.GetOrCreateInstance().Unsubscribe(ai2vcuBrakeTopic);
+    }
+
+
+
     // // Start is called before the first frame update
     void Start()
     {
@@ -118,6 +136,7 @@ public class CarControl : MonoBehaviour
 
 
     void ActuateSteering(AI2VCUSteerMsg steerMsg) {
+
         // Code below recalculates left and right steer from a hypothetical middle wheel
         // TODO: Create subscriber to control the wheels, publish middle steer, create AI2VCUPublisher and publish middle steer in here in this script
 
@@ -276,29 +295,6 @@ public class CarControl : MonoBehaviour
 
         }
 
-        // bool log = false;
-        // time_elapsed += Time.deltaTime;
-        // if (time_elapsed > update_interval) {
-
-        //     log = true;
-
-        //     Debug.Log("MaxRPM: " + this.maxRPM);
-        //     Debug.Log("MaxTorque: " + this.maxTorque);
-        //     Debug.Log("actuateThrottleFrontForce: " + actuateThrottleFrontForce);
-        //     foreach (WheelElements element in wheelData) {
-                
-        //         if (element.addWheelTorque) {
-
-        //             Debug.Log("Left wheel rpm: " + element.leftWheel.rpm);
-        //             Debug.Log("Right wheel rpm: " + element.rightWheel.rpm);
-        //         }
-        //     }
-
-
-        //     time_elapsed = 0;
-        // }
-
-
 
         // Fraction of how much torque you could be applying because Input.GetAxis is between 0-1
         /// This is the problem -> vertical is a ushort so it gets converted to unsigned meaning it is never negative
@@ -327,18 +323,24 @@ public class CarControl : MonoBehaviour
 
         // Throttle keyboard control
         if (Input.GetAxis("Vertical") > 0 && brake <= 0) {
+
             // Forwards
             //Debug.Log("Throttle: " + speed);
             ai2vcuPublisherNode.PublishAI2VCUDriveFMsg((ushort)(speed), this.maxRPM);
+
+
         } else if (Input.GetAxis("Vertical") < 0 && brake <= 0) {
+
             // Reversing
             // Publish msg but the motorTorque will have to be negative when the wheel colliders are actuated in Unity and
             // therefore not be actuated from the topic since it can't publish negative, unless the topic was reverse
             ai2vcuPublisherNode.PublishAI2VCUDriveFMsgReverse((ushort)(Math.Abs(speed)), this.maxRPM);
 
+
         }
 
         else if (Input.GetAxis("Brake") > 0) {
+
             ai2vcuPublisherNode.PublishAI2VCUBrakeMsg((byte)(brake*100));
 
         }
@@ -371,19 +373,13 @@ public class CarControl : MonoBehaviour
                     element.leftWheel.brakeTorque = maxBrakingTorque * this.brakingPercent / 100;
                     element.rightWheel.brakeTorque = maxBrakingTorque * this.brakingPercent / 100;
 
-                    // Move tyres
-                    // DoTyres(element.leftWheel);
-                    // DoTyres(element.rightWheel);
                 
             }
 
             //
             else if (this.brakingPercent == 0) {
                 
-                    // element.leftWheel.brakeTorque = 0;
-                    // element.rightWheel.brakeTorque = 0;
-                    // element.leftWheel.motorTorque = 0;
-                    // element.rightWheel.motorTorque = 0;
+
                 
             }
 
@@ -434,14 +430,7 @@ public class CarControl : MonoBehaviour
                 }
 
             } 
-            // else if (this.brakingPercent == 0 && element.leftWheel.brakeTorque != 0 && element.rightWheel.brakeTorque != 0) {
-            //     element.leftWheel.brakeTorque = 0;
-            //     element.rightWheel.brakeTorque = 0;
-            //     element.leftWheel.motorTorque = 0;
-            //     element.rightWheel.motorTorque = 0;
-            //     element.leftWheel.motorTorque = 0;
-            //     element.rightWheel.motorTorque = 0;
-            // }
+
             else {
                 // Brakes on
                 element.leftWheel.motorTorque = 0;
@@ -464,6 +453,7 @@ public class CarControl : MonoBehaviour
 
             // Debug.Log("Motor torque left wheel: " + element.leftWheel.motorTorque);
             // Debug.Log("Motor torque right wheel: " + element.rightWheel.motorTorque);
+
             // Move tyres
             DoTyres(element.leftWheel);
             DoTyres(element.rightWheel);
@@ -480,11 +470,13 @@ public class CarControl : MonoBehaviour
     }
 
     void ProcessBrakeMessage(AI2VCUBrakeMsg brakeMsg) {
+
         byte brakingPercentRequest = brakeMsg.hyd_pressure_request_pct;
         this.brakingPercent = (ushort)brakingPercentRequest;
     }
 
     void ActuateBraking() {
+
         // byte brakingPercentRequest = brakeMsg.hyd_pressure_request_pct;
         // this.brakingPercent = (ushort)brakingPercentRequest;
         
@@ -509,6 +501,7 @@ public class CarControl : MonoBehaviour
         // This is not necessary
         else if (this.brakingPercent == 0) {
             foreach (WheelElements element in wheelData) {
+                
                 element.leftWheel.brakeTorque = 0;
                 element.rightWheel.brakeTorque = 0;
                 element.leftWheel.motorTorque = 0;
@@ -522,6 +515,7 @@ public class CarControl : MonoBehaviour
 
 
     void DoTyres(WheelCollider collider) {
+
         // This moves the tyre 3D models along with the wheel colliders
 
         if (collider.transform.childCount == 0) {
@@ -541,6 +535,7 @@ public class CarControl : MonoBehaviour
     }
 
     void RotateTyresInitial(WheelCollider collider) {
+
         // Fix bug of wheels turning 90 degrees on start and rolling in wrong dimension
         if (collider.transform.childCount == 0) {
             return;
@@ -554,17 +549,24 @@ public class CarControl : MonoBehaviour
     }
 
     void OnControllerColliderHit(ControllerColliderHit hit) {
+
         Rigidbody rbo = hit.collider.attachedRigidbody;
         if (rbo == null || rbo.isKinematic) return;
         // rb should be the Object or character controller of the car and wheels
         rbo.AddForceAtPosition(force * this.rb.velocity.normalized, hit.point);
     }
 
-    // // Update is called once per frame
-    // void Update()
-    // {
-        
-    // }
+
+    public void SwitchSteerInvert() {
+
+        if (invertSteering == true) {
+            invertSteering = false;
+        } else {
+            invertSteering = true;
+        }
+
+    }
+
 }
 
 [System.Serializable]
@@ -577,3 +579,4 @@ public bool addWheelTorque;
 public bool shouldSteer;
 
 }
+
