@@ -2734,7 +2734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fba5fd74d37a6cf4284698624eb8f6aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsBaseLink: 0
+  IsBaseLink: 1
 --- !u!1 &400790174
 GameObject:
   m_ObjectHideFlags: 0
@@ -3780,6 +3780,7 @@ GameObject:
   m_Component:
   - component: {fileID: 478809524}
   - component: {fileID: 478809526}
+  - component: {fileID: 478809527}
   m_Layer: 0
   m_Name: right_camera
   m_TagString: Untagged
@@ -3853,6 +3854,19 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &478809527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478809523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fba5fd74d37a6cf4284698624eb8f6aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsBaseLink: 1
 --- !u!1 &479991023
 GameObject:
   m_ObjectHideFlags: 0
@@ -7491,6 +7505,7 @@ GameObject:
   - component: {fileID: 972502132}
   - component: {fileID: 972502133}
   - component: {fileID: 972502134}
+  - component: {fileID: 972502135}
   m_Layer: 0
   m_Name: depth_camera2
   m_TagString: Untagged
@@ -7589,6 +7604,19 @@ MonoBehaviour:
   filepath: ..\Captures
   filename: test.png
   min_publishing_time: 0.5
+--- !u!114 &972502135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972502131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fba5fd74d37a6cf4284698624eb8f6aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsBaseLink: 1
 --- !u!1001 &975530470
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8131,6 +8159,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1037539518}
   - component: {fileID: 1037539520}
+  - component: {fileID: 1037539521}
   m_Layer: 0
   m_Name: left_camera
   m_TagString: Untagged
@@ -8204,6 +8233,19 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1037539521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037539517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fba5fd74d37a6cf4284698624eb8f6aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsBaseLink: 1
 --- !u!1 &1039829759
 GameObject:
   m_ObjectHideFlags: 0
