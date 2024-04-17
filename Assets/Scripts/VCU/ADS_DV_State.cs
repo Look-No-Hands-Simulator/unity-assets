@@ -338,9 +338,9 @@ public class ADS_DV_State : MonoBehaviour {
         				|| bms_fault == true || ebs_state == EBS_STATE_UNAVAILABLE ) {
 
                         Debug.Log(" Variables for emergency state: " + " shutdown_request: " + shutdown_request + " as_switch_status: " + as_switch_status + 
-                            " go_signal" + go_signal + " mission_status_fault" + mission_status_fault + " autonomous_braking_fault" +
-                            autonomous_braking_fault + " brake_plausibility_fault" + brake_plausibility_fault + " ai_estop_request" + ai_estop_request + 
-                            " Ai_comms_lost" + Ai_comms_lost + " bms_fault" + bms_fault + "ebs_state" + ebs_state);
+                            " go_signal " + go_signal + " mission_status_fault " + mission_status_fault + " autonomous_braking_fault " +
+                            autonomous_braking_fault + " brake_plausibility_fault" + brake_plausibility_fault + " ai_estop_request " + ai_estop_request + 
+                            " Ai_comms_lost " + Ai_comms_lost + " bms_fault " + bms_fault + " ebs_state " + ebs_state);
 
         				SetAsState(AS_STATE_EMERGENCY_BRAKE);
         				assi_manager.SetState(ASSI_LIGHT_BLUE_FLASHING);

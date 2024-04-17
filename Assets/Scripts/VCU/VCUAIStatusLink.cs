@@ -39,7 +39,7 @@ public class VCUAIStatusLink : MonoBehaviour
 
     ROSConnection ros;
 
-    public float timeout_interval = 0.2f;
+    public float timeout_interval = 0.4f;
     private StreamWriter logfile;
 
     private float time_elapsed = 0.0f;

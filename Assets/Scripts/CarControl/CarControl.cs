@@ -49,7 +49,7 @@ public class CarControl : MonoBehaviour
     public List<WheelElements> wheelData;
 
     public short maxTorque = 4000;
-    public ushort maxRPM = 150;
+    public ushort maxRPM = 120;
     public float maxSteerAngle = 28;
 
     public float maxInnerSteeringAngle = 28F;
@@ -87,13 +87,13 @@ public class CarControl : MonoBehaviour
 
 
 
-    private void OnDestroy()
-    {
-        // Unsubscribe from ROS topics
-        UnsubscribeFromROSTopics();
+    // private void OnDestroy()
+    // {
+    //     // Unsubscribe from ROS topics
+    //     UnsubscribeFromROSTopics();
 
 
-    }
+    // }
 
     private void UnsubscribeFromROSTopics()
     {
