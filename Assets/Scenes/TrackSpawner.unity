@@ -819,7 +819,7 @@ GameObject:
   - component: {fileID: 163177997}
   m_Layer: 5
   m_Name: AiCommsButton
-  m_TagString: Untagged
+  m_TagString: UITopLayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1972,7 +1972,7 @@ GameObject:
   - component: {fileID: 300794863}
   m_Layer: 5
   m_Name: MissionStateDropdown
-  m_TagString: Untagged
+  m_TagString: UITopLayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5128,7 +5128,7 @@ GameObject:
   - component: {fileID: 676561253}
   m_Layer: 5
   m_Name: EBSButton
-  m_TagString: Untagged
+  m_TagString: UITopLayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6353,7 +6353,7 @@ GameObject:
   - component: {fileID: 869587770}
   m_Layer: 5
   m_Name: previousCar
-  m_TagString: Untagged
+  m_TagString: UITopLayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7370,7 +7370,7 @@ GameObject:
   - component: {fileID: 968515793}
   m_Layer: 5
   m_Name: nextCar
-  m_TagString: Untagged
+  m_TagString: UITopLayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8256,7 +8256,7 @@ GameObject:
   - component: {fileID: 1039829761}
   m_Layer: 5
   m_Name: GoButton
-  m_TagString: Untagged
+  m_TagString: UITopLayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8696,7 +8696,7 @@ GameObject:
   - component: {fileID: 1100072196}
   m_Layer: 5
   m_Name: LVButton
-  m_TagString: Untagged
+  m_TagString: UITopLayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9010,7 +9010,7 @@ GameObject:
   - component: {fileID: 1147171214}
   m_Layer: 5
   m_Name: TSButton
-  m_TagString: Untagged
+  m_TagString: UITopLayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10549,7 +10549,7 @@ GameObject:
   - component: {fileID: 1402481543}
   m_Layer: 5
   m_Name: InvertSteerButton
-  m_TagString: Untagged
+  m_TagString: UITopLayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10902,7 +10902,7 @@ GameObject:
   - component: {fileID: 1441899574}
   m_Layer: 5
   m_Name: ASButton
-  m_TagString: Untagged
+  m_TagString: UITopLayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11341,6 +11341,7 @@ GameObject:
   - component: {fileID: 1482414514}
   - component: {fileID: 1482414513}
   - component: {fileID: 1482414515}
+  - component: {fileID: 1482414516}
   m_Layer: 0
   m_Name: ScriptHolder
   m_TagString: Untagged
@@ -11408,6 +11409,18 @@ MonoBehaviour:
   bl_wheel_collider: {fileID: 619927979}
   br_wheel_collider: {fileID: 603915464}
   assi_material_index: 5
+--- !u!114 &1482414516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482414512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0bed9560fc4fd57ba146ea5e1a3bad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1503959242
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12647,7 +12660,7 @@ GameObject:
   - component: {fileID: 1638270771}
   m_Layer: 5
   m_Name: trackDropdown
-  m_TagString: Untagged
+  m_TagString: UITopLayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14165,7 +14178,7 @@ GameObject:
   - component: {fileID: 1887571168}
   m_Layer: 5
   m_Name: resetScene
-  m_TagString: Untagged
+  m_TagString: UITopLayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
