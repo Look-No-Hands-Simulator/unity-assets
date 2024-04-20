@@ -26,6 +26,8 @@ public class ADS_DV_State : MonoBehaviour {
     public Button tsButton;
     public TMPro.TMP_Dropdown missionStateDropdown;
     public TextMeshProUGUI lapcounterText;
+    public TextMeshProUGUI stateText;
+    public GameObject stateTextObject;
 
 	public GameObject carObject;
 	public WheelCollider fl_wheel_collider;
@@ -46,7 +48,7 @@ public class ADS_DV_State : MonoBehaviour {
 	public short Steer_angle_request {get; set;}
 	public short Actual_steer_angle {get; set;}
     
-	private bool brake_plausibility_fault;
+	// private bool Actual_steer_angle;
 	private bool bms_fault;
 
 	//private byte assi_light;
@@ -55,6 +57,7 @@ public class ADS_DV_State : MonoBehaviour {
 	private const byte ASSI_LIGHT_YELLOW_CONTINUOUS = 2;
 	private const byte ASSI_LIGHT_BLUE_FLASHING = 3;
 	private const byte ASSI_LIGHT_BLUE_CONTINUOUS = 4;
+    private readonly string[] assi_light_state_array = {"ASSI_LIGHT_OFF","ASSI_LIGHT_YELLOW_FLASHING","ASSI_LIGHT_YELLOW_CONTINUOUS","ASSI_LIGHT_BLUE_FLASHING","ASSI_LIGHT_BLUE_CONTINUOUS"};
 
 	/// VCU2AI
 
@@ -182,6 +185,50 @@ public class ADS_DV_State : MonoBehaviour {
     //  Demanded vehicle speed [0 - 255] km/h
     private byte veh_speed_demand_kmh;
 
+    private bool brake_plausibility_fault;
+
+    public override string ToString() {
+
+        return "ADS_DV_STATE: " +
+        "\nhandshake: " + handshake.ToString() +
+        "\nestop_request: " + estop_request.ToString() +
+        "\nmission_status: " + mission_status.ToString() +
+        "\ndirection_request: " + direction_request.ToString() +
+        "\nlap_counter: " + lap_counter.ToString() +
+        "\ncones_count_actual: " + cones_count_actual.ToString() +
+        "\ncones_count_all: " + cones_count_all.ToString() +
+        "\nveh_speed_actual_kmh: " + veh_speed_actual_kmh.ToString() +
+        "\nveh_speed_demand_kmh: " + veh_speed_demand_kmh.ToString() +
+        "\nfront_axle_torque_request: " + front_axle_torque_request.ToString() +
+        "\nrear_axle_torque_request: " + rear_axle_torque_request.ToString() +
+        "\nSteer_angle_request: " + Steer_angle_request.ToString() + 
+        "\nActual_steer_angle: " + Actual_steer_angle.ToString() + 
+        "\nbms_fault: " + bms_fault.ToString() +
+        "\nshutdown_request: " + shutdown_request.ToString() +
+        "\nassi_light_status: " + assi_light_state_array[(int)assi_manager.GetAssiLightStatus()] +
+        "\nebs_state: " + ebs_state_array[(int)ebs_state] +
+        "\nas_switch_status: " + as_switch_status +
+        "\nts_switch_status: " + ts_switch_status + 
+        "\ngo_signal: " + go_signal + 
+        "\nsteering_status: " + steering_status +
+        "\nas_state: " +  state_collection[(int)as_state] + 
+        "\nami_state: " + ami_state_collection[(int)ami_state] + 
+        "\nfault_status: " + fault_status +
+        "\nwarning_status: " + warning_status + 
+        "\nwarn_batt_temp_high: " + warn_batt_temp_high +
+        "\nwarn_batt_soc_low: " + warn_batt_soc_low + 
+        "\nai_estop_request: " + ai_estop_request +
+        "\nhvil_open_fault: " + hvil_open_fault + 
+        "\nhvil_short_fault: " + hvil_short_fault +
+        "\nebs_fault: " + ebs_fault + 
+        "\noffboard_charger_fault: " + offboard_charger_fault + 
+        "\nAi_comms_lost: " + Ai_comms_lost + 
+        "\nautonomous_braking_fault: " + autonomous_braking_fault + 
+        "\nmission_status_fault: " + mission_status_fault;
+        
+
+    }
+
 
     public void Start() {
 
@@ -246,6 +293,8 @@ public class ADS_DV_State : MonoBehaviour {
     	SetEBSState(EBS_STATE_ARMED);
     	//mission_status = MISSION_STATUS_SELECTED;
 
+        set_state_text();
+
 
     }
 
@@ -259,7 +308,24 @@ public class ADS_DV_State : MonoBehaviour {
 
     	UpdateState();
     	assi_manager.Update();
+        displayStateText();
 
+    }
+
+    public void displayStateText() {
+
+        
+
+        if (Input.GetKeyDown(KeyCode.J)) {
+
+            stateTextObject.SetActive(!stateTextObject.activeSelf);
+
+        }
+
+        if (stateTextObject.activeSelf) {
+                set_state_text();
+            }
+        
     }
 
     private void SetAsState(byte newState) {
@@ -445,18 +511,6 @@ public class ADS_DV_State : MonoBehaviour {
 
     }
 
-    // public void SwitchAICommsButton() {
-
-    //     if (Ai_comms_lost == true) {
-
-    //         Ai_comms_lost = false;
-    //     } else {
-
-    //         Ai_comms_lost = true;
-    //     }
-
-    // }
-
     public byte GetAsState() {
 
     	return as_state;
@@ -547,6 +601,11 @@ public class ADS_DV_State : MonoBehaviour {
 
     }
 
+    public void set_state_text() {
+
+        stateText.text = ToString();
+    }
+
     public void set_lapcounter_text(int lapcount_param) {
 
         lapcounterText.text = lapcount_param.ToString();
@@ -572,8 +631,6 @@ public class ADS_DV_State : MonoBehaviour {
 
             }
         }
-
-
 
     }
 
