@@ -9757,8 +9757,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1317315484}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.025, y: -0.068, z: 0.876}
+  m_LocalRotation: {x: 0.23451506, y: -0, z: -0, w: 0.9721125}
+  m_LocalPosition: {x: -0.025000006, y: -0.06800002, z: 0.876}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9767,7 +9767,7 @@ Transform:
   - {fileID: 478809524}
   - {fileID: 405272696}
   m_Father: {fileID: 394494915}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 27.126, y: 0, z: 0}
 --- !u!114 &1317315486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12106,7 +12106,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1562825514}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47b46c3a0a755748990b7ad5944443fe, type: 3}
   m_Name: 
@@ -12122,7 +12122,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1562825514}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0ddee86d42ee41e1af116eecf230e3a, type: 3}
   m_Name: 
@@ -12141,7 +12141,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1562825514}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d93a91d7c76aadda88df40f0284fb617, type: 3}
   m_Name: 
@@ -12161,7 +12161,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1562825514}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0bfe100eb22b0d2686133e94d0e08d2, type: 3}
   m_Name: 
@@ -12180,7 +12180,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1562825514}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e7f5be3367b6338828d1ddaa9fa7c452, type: 3}
   m_Name: 
@@ -12210,7 +12210,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1562825514}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 42a9a4563b2e88717855da3cdb4377fd, type: 3}
   m_Name: 
@@ -15263,7 +15263,7 @@ MonoBehaviour:
     addWheelTorque: 1
     shouldSteer: 0
   maxTorque: 4000
-  maxRPM: 120
+  maxRPM: 100
   maxSteerAngle: 28
   maxInnerSteeringAngle: 28
   maxOuterSteeringAngle: 24.6
@@ -15303,7 +15303,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2077238217}
   serializedVersion: 4
-  m_Mass: 500
+  m_Mass: 1000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}

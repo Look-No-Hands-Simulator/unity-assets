@@ -49,7 +49,7 @@ public class CarControl : MonoBehaviour
     public List<WheelElements> wheelData;
 
     public short maxTorque = 4000;
-    public ushort maxRPM = 120;
+    public ushort maxRPM = 100;
     public float maxSteerAngle = 28;
 
     public float maxInnerSteeringAngle = 28F;
@@ -418,7 +418,7 @@ public class CarControl : MonoBehaviour
             // Reverse
             else if (this.reverse == true && this.brakingPercent == 0 && element.addWheelTorque == true && this.reverseOn == true) {
 
-                Debug.Log("Leftwheel RPM: " + element.leftWheel.rpm + " MaxRPM: " + this.maxRPM + " Rightwheel RPM: " + element.rightWheel.rpm);
+                // Debug.Log("Leftwheel RPM: " + element.leftWheel.rpm + " MaxRPM: " + this.maxRPM + " Rightwheel RPM: " + element.rightWheel.rpm);
 
                 if (element.leftWheel.rpm > (this.maxRPM * -1) && element.rightWheel.rpm > (this.maxRPM * -1)) {
 
