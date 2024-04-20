@@ -13344,7 +13344,7 @@ GameObject:
   - component: {fileID: 1749666479}
   m_Layer: 5
   m_Name: StateText
-  m_TagString: StateText
+  m_TagString: UITopLayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
