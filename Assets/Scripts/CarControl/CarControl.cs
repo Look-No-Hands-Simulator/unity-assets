@@ -49,7 +49,7 @@ public class CarControl : MonoBehaviour
     public List<WheelElements> wheelData;
 
     public short maxTorque = 4000;
-    public ushort maxRPM = 150;
+    public ushort maxRPM = 100;
     public float maxSteerAngle = 28;
 
     public float maxInnerSteeringAngle = 28F;
@@ -87,13 +87,13 @@ public class CarControl : MonoBehaviour
 
 
 
-    private void OnDestroy()
-    {
-        // Unsubscribe from ROS topics
-        UnsubscribeFromROSTopics();
+    // private void OnDestroy()
+    // {
+    //     // Unsubscribe from ROS topics
+    //     UnsubscribeFromROSTopics();
 
 
-    }
+    // }
 
     private void UnsubscribeFromROSTopics()
     {
@@ -391,10 +391,6 @@ public class CarControl : MonoBehaviour
             // Forwards
             if (this.brakingPercent == 0 && element.addWheelTorque == true && this.reverse == false) {
 
-
-
-
-
                 if (element.leftWheel.rpm < this.maxRPM && element.rightWheel.rpm < this.maxRPM) {
 
                     // if (log) {
@@ -422,7 +418,10 @@ public class CarControl : MonoBehaviour
             // Reverse
             else if (this.reverse == true && this.brakingPercent == 0 && element.addWheelTorque == true && this.reverseOn == true) {
 
+                // Debug.Log("Leftwheel RPM: " + element.leftWheel.rpm + " MaxRPM: " + this.maxRPM + " Rightwheel RPM: " + element.rightWheel.rpm);
+
                 if (element.leftWheel.rpm > (this.maxRPM * -1) && element.rightWheel.rpm > (this.maxRPM * -1)) {
+
                     element.leftWheel.motorTorque = ((float)(this.actuateThrottleFrontForce)) * -1;
                     element.rightWheel.motorTorque = ((float)(this.actuateThrottleFrontForce)) * -1;
                     element.leftWheel.brakeTorque = 0;
@@ -439,7 +438,7 @@ public class CarControl : MonoBehaviour
 
             // If we release the brakes then accelpercent = 0 but brakepercent also = 0 so...
 
-            if (!throttleRequest || element.leftWheel.rpm >= maxRPM || element.rightWheel.rpm  >= maxRPM) {
+            if (!throttleRequest || Math.Abs(element.leftWheel.rpm) >= maxRPM || Math.Abs(element.rightWheel.rpm)  >= maxRPM) {
 
                 // if (log) {
 

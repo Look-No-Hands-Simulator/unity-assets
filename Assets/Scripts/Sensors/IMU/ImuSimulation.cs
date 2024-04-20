@@ -115,13 +115,13 @@ public class ImuSimulation
         }
 
         // Double[9] array
-        double[] orientation_covariance_calc = new double[]{Math.Pow((orientation.x*INS_STANDARD_DEVIATION),2),0.0,0.0,0.0,
+        double[] orientation_covariance_calc = new double[9]{Math.Pow((orientation.x*INS_STANDARD_DEVIATION),2),0.0,0.0,0.0,
         Math.Pow((orientation.y*INS_STANDARD_DEVIATION),2),0.0,0.0,0.0,Math.Pow((orientation.z*INS_STANDARD_DEVIATION),2)};
 
-        double[] angular_velocity_covariance_calc = new double[]{Math.Pow((angular_velocity.x*INS_STANDARD_DEVIATION),2),0.0,0.0,0.0,
+        double[] angular_velocity_covariance_calc = new double[9]{Math.Pow((angular_velocity.x*INS_STANDARD_DEVIATION),2),0.0,0.0,0.0,
         Math.Pow((angular_velocity.y*INS_STANDARD_DEVIATION),2),0.0,0.0,0.0,Math.Pow((angular_velocity.z*INS_STANDARD_DEVIATION),2)};
 
-        double[] linear_acceleration_covariance_calc = new double[]{Math.Pow((acceleration.x*INS_STANDARD_DEVIATION),2),0.0,0.0,0.0,
+        double[] linear_acceleration_covariance_calc = new double[9]{Math.Pow((acceleration.x*INS_STANDARD_DEVIATION),2),0.0,0.0,0.0,
         Math.Pow((acceleration.y*INS_STANDARD_DEVIATION),2),0.0,0.0,0.0,Math.Pow((acceleration.z*INS_STANDARD_DEVIATION),2)};
 
         // Prepare msg

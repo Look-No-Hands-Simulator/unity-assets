@@ -21,8 +21,8 @@ public class ImageMsgPublisher : MonoBehaviour
     public GameObject camera_link;
     public Camera left_camera;
     public Camera right_camera;
-    public string rightcamera_topic = "/unity/stereo_camera/left/image";
-    public string leftcamera_topic = "/unity/stereo_camera/right/image";
+    public string rightcamera_topic = "/zed/right/image";
+    public string leftcamera_topic = "/zed/left/image";
 
     public float min_publishing_time = 0.5f; 
 
