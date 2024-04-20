@@ -4247,7 +4247,7 @@ Transform:
   m_GameObject: {fileID: 574231063}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0.078999996}
+  m_LocalPosition: {x: 0, y: -0.494, z: 0.078999996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4294,7 +4294,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 3
+    m_Stiffness: 1
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
@@ -4501,7 +4501,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 3
+    m_Stiffness: 1
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
@@ -5660,7 +5660,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 3
+    m_Stiffness: 1
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
@@ -11309,12 +11309,14 @@ MonoBehaviour:
   lapcounterText: {fileID: 424751935}
   stateText: {fileID: 1749666479}
   stateTextObject: {fileID: 1749666477}
+  carRigidbody: {fileID: 2077238220}
   carObject: {fileID: 919132149176747366}
   fl_wheel_collider: {fileID: 793466063}
   fr_wheel_collider: {fileID: 1510723492}
   bl_wheel_collider: {fileID: 619927979}
   br_wheel_collider: {fileID: 603915464}
   assi_material_index: 5
+  front_axle_torque_request: 0
 --- !u!114 &1482414516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11464,7 +11466,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 3
+    m_Stiffness: 1
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
@@ -12070,7 +12072,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1562825514}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76110e0b8ff74966d8519833a2fb7d36, type: 3}
   m_Name: 
@@ -15440,7 +15442,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2077238217}
   serializedVersion: 4
-  m_Mass: 1000
+  m_Mass: 2000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}

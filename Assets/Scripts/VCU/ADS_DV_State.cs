@@ -29,6 +29,7 @@ public class ADS_DV_State : MonoBehaviour {
     public TextMeshProUGUI stateText;
     public GameObject stateTextObject;
 
+    public Rigidbody carRigidbody;
 	public GameObject carObject;
 	public WheelCollider fl_wheel_collider;
     public WheelCollider fr_wheel_collider;
@@ -40,7 +41,7 @@ public class ADS_DV_State : MonoBehaviour {
 
 
 	private DateTime stateChangeTimestamp;
-	private int front_axle_torque_request;
+	public int front_axle_torque_request; // Make this get/set in the future and edit in carcontrol too
 	private int rear_axle_torque_request;
 
 
@@ -225,7 +226,7 @@ public class ADS_DV_State : MonoBehaviour {
         "\nAi_comms_lost: " + Ai_comms_lost + 
         "\nautonomous_braking_fault: " + autonomous_braking_fault + 
         "\nmission_status_fault: " + mission_status_fault;
-        
+
 
     }
 
@@ -308,7 +309,15 @@ public class ADS_DV_State : MonoBehaviour {
 
     	UpdateState();
     	assi_manager.Update();
+
+
+        // Get car speed and convert to k/h
+        this.veh_speed_actual_kmh = (byte)(carRigidbody.velocity.magnitude * 3.6f);
+
+
+
         displayStateText();
+
 
     }
 

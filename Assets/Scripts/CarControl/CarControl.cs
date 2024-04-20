@@ -33,7 +33,7 @@ public class CarControl : MonoBehaviour
 {
     public bool zeroLimiter = true;
 
-    public bool steeringSmoothing = true; // Switch between bang-bang and smoothed steering
+    public bool steeringSmoothing = false; // Switch between bang-bang and smoothed steering
 
     public bool invertSteering = true;
 
@@ -198,7 +198,7 @@ public class CarControl : MonoBehaviour
 
 
             } else if (middleSteer < 0) {
-                
+
                 // Negative steering angle indicates turn to the right
                 this.actuateRightSteer = steerFraction * maxOuterSteeringAngle;
                 this.actuateLeftSteer = steerFraction * maxInnerSteeringAngle;
@@ -272,6 +272,8 @@ public class CarControl : MonoBehaviour
         // Set variables valid for front throttle and give it the
         // value in the driveFmsg
 
+
+
         if (adsdvStateObject.GetAsState() == ADS_DV_State.AS_STATE_AS_DRIVING) {
 
             if (IsWheelRPMAtLimit() == false) {
@@ -287,6 +289,8 @@ public class CarControl : MonoBehaviour
             this.maxRPM = driveFMsg.front_motor_speed_max_rpm;
             this.brakingPercent = 0;
             this.throttleRequest = true;
+
+            adsdvStateObject.front_axle_torque_request = actuateThrottleFrontForce; // Is this correct?
 
         }
 
