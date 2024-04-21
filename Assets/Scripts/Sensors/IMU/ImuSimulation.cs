@@ -109,9 +109,16 @@ public class ImuSimulation
         //Debug.Log("Orientation: " + orientation);
 
         if (noise_activation == true) {
+
+            // Debug.Log("Without noise: " + "angular_velocity: " + angular_velocity.x + "," + angular_velocity.y + angular_velocity.z + " acceleration: " + acceleration.x + "," + acceleration.y + 
+            //     acceleration.z + " orientation: " + orientation.x + "," + orientation.y + "," + orientation.z + "," + orientation.w);
+
             angular_velocity = gaussian_generator.add_noise_scale(angular_velocity);
             orientation = gaussian_generator.add_noise_scale(orientation);
             acceleration = gaussian_generator.add_noise_scale(acceleration);
+
+            // Debug.Log(" With noise: " + "angular_velocity: " + angular_velocity.x + "," + angular_velocity.y + angular_velocity.z + " acceleration: " + acceleration.x + "," + acceleration.y + 
+            //     acceleration.z + " orientation: " + orientation.x + "," + orientation.y + "," + orientation.z + "," + orientation.w);
         }
 
         // Double[9] array
