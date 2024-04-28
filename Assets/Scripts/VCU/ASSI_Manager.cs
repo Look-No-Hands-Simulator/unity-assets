@@ -45,6 +45,11 @@ public class ASSI_Manager {
 		
 	}
 
+	public byte GetAssiLightStatus() {
+
+		return assi_light;
+	}
+
 	public void SetState(byte NewState) {
 
 		assi_light = NewState;

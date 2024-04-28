@@ -33,7 +33,7 @@ public class CarControl : MonoBehaviour
 {
     public bool zeroLimiter = true;
 
-    public bool steeringSmoothing = true; // Switch between bang-bang and smoothed steering
+    public bool steeringSmoothing = false; // Switch between bang-bang and smoothed steering
 
     public bool invertSteering = true;
 
@@ -175,23 +175,30 @@ public class CarControl : MonoBehaviour
 
             float steerFraction;
             if (middleSteer > 0) {
+
                 // Inner wheel as we turn left with positive number
                 steerFraction = middleSteer / maxInnerSteeringAngle;
+
             } else {
+
                 // Outer wheel as we turn right with negative number
                 steerFraction = middleSteer / maxOuterSteeringAngle;
+
             }
 
             /// Set the angles to the wheels
             if (middleSteer > 0) {
+
                 // Positive steering angle indicates turn to the left
                 this.actuateRightSteer = steerFraction * maxInnerSteeringAngle;
                 this.actuateLeftSteer = steerFraction * maxOuterSteeringAngle;
+
 
                 time_elapsed = 0;
 
 
             } else if (middleSteer < 0) {
+
                 // Negative steering angle indicates turn to the right
                 this.actuateRightSteer = steerFraction * maxOuterSteeringAngle;
                 this.actuateLeftSteer = steerFraction * maxInnerSteeringAngle;
@@ -243,19 +250,47 @@ public class CarControl : MonoBehaviour
 
     }
 
+    private bool IsWheelRPMAtLimit() {
+
+        foreach (WheelElements element in wheelData) {
+
+                if (element.addWheelTorque) {
+
+                    if ( Math.Abs(element.rightWheel.rpm) >= this.maxRPM || Math.Abs(element.leftWheel.rpm) >= this.maxRPM ) {
+
+                        return true;
+                    } 
+                }
+            }
+
+        return false;
+
+    }
+
     void ActuateThrottle(AI2VCUDriveFMsg driveFMsg) {
 
         // Set variables valid for front throttle and give it the
         // value in the driveFmsg
 
+
+
         if (adsdvStateObject.GetAsState() == ADS_DV_State.AS_STATE_AS_DRIVING) {
 
+            if (IsWheelRPMAtLimit() == false) {
+
+                this.actuateThrottleFrontForce = driveFMsg.front_axle_trq_request_nm;
+
+            } else {
+
+                this.actuateThrottleFrontForce = 0;
+            }
 
             this.reverse = false;
-            this.actuateThrottleFrontForce = driveFMsg.front_axle_trq_request_nm;
             this.maxRPM = driveFMsg.front_motor_speed_max_rpm;
             this.brakingPercent = 0;
             this.throttleRequest = true;
+
+            adsdvStateObject.front_axle_torque_request = actuateThrottleFrontForce; // Is this correct?
 
         }
 
@@ -268,8 +303,17 @@ public class CarControl : MonoBehaviour
 
         if (adsdvStateObject.GetAsState() == ADS_DV_State.AS_STATE_AS_DRIVING) {
 
+
+            if (IsWheelRPMAtLimit() == false) {
+
+                this.actuateThrottleFrontForce = driveFMsg.front_axle_trq_request_nm;
+
+            } else {
+
+                this.actuateThrottleFrontForce = 0;
+            }
+
             this.reverse = true;
-            this.actuateThrottleFrontForce = driveFMsg.front_axle_trq_request_nm;
             this.maxRPM = driveFMsg.front_motor_speed_max_rpm;
             this.brakingPercent = 0;
             this.throttleRequest = true;
@@ -283,17 +327,22 @@ public class CarControl : MonoBehaviour
 
     private void FixedUpdate() {
 
-        foreach (WheelElements element in wheelData) {
+        if (IsWheelRPMAtLimit() == true) {
 
-            // If the wheels are spinning at faster than maxRPM then don't apply
-            // any more throttle
-
-            if (Math.Abs(element.leftWheel.rpm) >= maxRPM || Math.Abs(element.rightWheel.rpm) >= maxRPM) {
-
-                throttleRequest = false;
-            }
-
+            throttleRequest = false;
         }
+
+        // foreach (WheelElements element in wheelData) {
+
+        //     // If the wheels are spinning at faster than maxRPM then don't apply
+        //     // any more throttle
+
+        //     if (Math.Abs(element.leftWheel.rpm) >= maxRPM || Math.Abs(element.rightWheel.rpm) >= maxRPM) {
+
+        //         throttleRequest = false;
+        //     }
+
+        // }
 
 
         // Fraction of how much torque you could be applying because Input.GetAxis is between 0-1

@@ -43,6 +43,7 @@ public class GaussianGenerator
         
     }
     public double next(double mean_param, double standard_deviation_param) {
+        
         //return ((standard_deviation_param * random.NextDouble() * Math.Sqrt(-2.0 * Math.Log(random.NextDouble()))) + mean_param);
 
         // Box Muller Transform
@@ -58,6 +59,7 @@ public class GaussianGenerator
         return randNormal;
     }
 
+    // Scale if faster wheelspeeds etc. the bigger value the more error we have, the more friction, slip, vibration etc. smaller values have less error
     public double add_noise_scale(double original_value) {
         // Decimal of percentage of noise to add, next = noise gaussian
         return (original_value*(1.0 + next()));
