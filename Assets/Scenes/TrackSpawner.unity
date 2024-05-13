@@ -11307,14 +11307,16 @@ MonoBehaviour:
   tsButton: {fileID: 1147171214}
   missionStateDropdown: {fileID: 300794863}
   lapcounterText: {fileID: 424751935}
-
   stateText: {fileID: 1749666479}
   stateTextObject: {fileID: 1749666477}
   carRigidbody: {fileID: 2077238220}
-
-
+  carObject: {fileID: 919132149176747366}
+  fl_wheel_collider: {fileID: 793466063}
+  fr_wheel_collider: {fileID: 1510723492}
+  bl_wheel_collider: {fileID: 619927979}
+  br_wheel_collider: {fileID: 603915464}
+  assi_material_index: 5
   front_axle_torque_request: 0
-
 --- !u!114 &1482414516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12041,6 +12043,7 @@ GameObject:
   - component: {fileID: 1562825525}
   - component: {fileID: 1562825526}
   - component: {fileID: 1562825527}
+  - component: {fileID: 1562825528}
   m_Layer: 0
   m_Name: ROS Publishers
   m_TagString: Untagged
@@ -12275,6 +12278,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   imu_topic: /imu_tester
+--- !u!114 &1562825528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562825514}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7149762cdd628622a9dcfec2d65c93d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carObject: {fileID: 0}
+  poseStampedTopic: /car_pose_unity
+  longitude: 0
+  latitude: 0
+  altitude: 0
 --- !u!1 &1565161873
 GameObject:
   m_ObjectHideFlags: 0
@@ -15440,9 +15460,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2077238217}
   serializedVersion: 4
-
-  m_Mass: 2000
-
+  m_Mass: 1000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
